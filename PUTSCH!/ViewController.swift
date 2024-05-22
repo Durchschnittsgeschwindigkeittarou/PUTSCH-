@@ -42,8 +42,8 @@ class ViewController: UIViewController {
             mondai.text=String(nijoubig)+"*"+String(nijousmall)
             kotae.text=String(nijoubig*nijousmall)
         case 2:
-            let bonchi=Int.random(in:1..<10)*100
-            let manji=Int.random(in:1..<10)*100
+            let bonchi=Int.random(in:1..<10)
+            let manji=Int.random(in:1..<6)
             mondai.text=String(bonchi)+"^"+String(manji)
             kotae.text=String(ruijou(kisuu:bonchi,shisuu:manji))
         default:break
