@@ -64,6 +64,7 @@ class ViewController: UIViewController {
             nijousmall=randombig-randomsmall
         return
     }
+
 }
 
 //
