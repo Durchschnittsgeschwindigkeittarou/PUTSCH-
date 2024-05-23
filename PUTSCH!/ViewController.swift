@@ -67,6 +67,9 @@ class ViewController: UIViewController {
             nijousmall=randombig-randomsmall
         return
     }
+    @IBAction func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }
 
