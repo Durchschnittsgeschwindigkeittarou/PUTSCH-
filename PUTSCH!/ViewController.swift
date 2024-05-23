@@ -6,28 +6,17 @@
 //
 
 import UIKit
-//import SwiftUI
-
-//struct ContentView: View {
-//    var body: some View {
-//        Path { path in
-//            path.move(to: CGPoint(x: 0, y: 0))
-//            path.addLine(to: CGPoint(x: 200, y: 200))
-//      path.move(to: CGPoint(x: 200, y: 0))
-//            path.addLine(to: CGPoint(x: 0, y: 200))
-//        }
-//        .stroke(lineWidth: 5)
-//        .fill(Color.red)
-//        .frame(width: 200, height: 200)
-//    }
-//}
+import SwiftUI
+import Charts
 
 class ViewController: UIViewController {
+    //var chartView: LineChartView!
+    //var chartDataSet: LineChartDataSet!
     @IBOutlet var mondai:UILabel!
     @IBOutlet var kotae:UILabel!
     var nijoubig:Int!
     var nijousmall:Int!
-    var keisuu = [0]
+    var keisuu = [3,7]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,16 +25,24 @@ class ViewController: UIViewController {
     }
     @IBAction func shutudai(){
         //ボタン押した時ランダムに式
-        switch Int.random(in:1..<3){
+        switch Int.random(in:1..<4){
         case 1:
+            //掛け算
             hyouji()
             mondai.text=String(nijoubig)+"*"+String(nijousmall)
             kotae.text=String(nijoubig*nijousmall)
         case 2:
-            let bonchi=Int.random(in:1..<10)
-            let manji=Int.random(in:1..<6)
-            mondai.text=String(bonchi)+"^"+String(manji)
-            kotae.text=String(ruijou(kisuu:bonchi,shisuu:manji))
+            //累乗
+            let basic=Int.random(in:1..<7)
+            let over=Int.random(in:1..<6)
+            mondai.text=String(basic)+"^"+String(over)
+            kotae.text=String(ruijou(kisuu:basic,shisuu:over))
+        case 3:
+            let timing=Int.random(in:60..<600)
+            mondai.text=String(timing)+"秒"
+            kotae.text=String(timing/60)+"分"+String(timing%60)+"秒"
+            break
+           // mondai.text=String(keisuu[item])
         default:break
         }
     }
@@ -67,7 +64,6 @@ class ViewController: UIViewController {
             nijousmall=randombig-randomsmall
         return
     }
-    
 }
 
 //
