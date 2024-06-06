@@ -31,6 +31,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
         // Do any additional setup after loading the view.
         
     }
@@ -62,15 +63,11 @@ class ViewController: UIViewController {
     }
     func hyouji (){
         let randombig=Int.random(in:1..<10)*100
-            let randomsmall=Int.random(in:1..<9)
-            nijoubig=randombig+randomsmall
-            nijousmall=randombig-randomsmall
+        let randomsmall=Int.random(in:1..<9)
+        nijoubig=randombig+randomsmall
+        nijousmall=randombig-randomsmall
         return
     }
-    @IBAction func back(){
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 }
 
 //

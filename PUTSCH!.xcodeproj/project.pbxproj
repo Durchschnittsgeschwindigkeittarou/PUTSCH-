@@ -14,6 +14,8 @@
 		4B4512BC2BEB427A0065E38C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4512BB2BEB427A0065E38C /* Assets.xcassets */; };
 		4B4512BF2BEB427A0065E38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4512BD2BEB427A0065E38C /* LaunchScreen.storyboard */; };
 		4BBBF3D82BFF082600F2E72F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D72BFF082600F2E72F /* FirstViewController.swift */; };
+		4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */; };
+		4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4B4512BE2BEB427A0065E38C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B4512C02BEB427A0065E38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BBBF3D72BFF082600F2E72F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarExtension.swift; sourceTree = "<group>"; };
+		4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				4BBBF3D72BFF082600F2E72F /* FirstViewController.swift */,
+				4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */,
 				4B4512B22BEB42770065E38C /* AppDelegate.swift */,
 				4B4512B42BEB42770065E38C /* SceneDelegate.swift */,
 				4B4512B62BEB42770065E38C /* ViewController.swift */,
@@ -66,6 +71,7 @@
 				4B4512BB2BEB427A0065E38C /* Assets.xcassets */,
 				4B4512BD2BEB427A0065E38C /* LaunchScreen.storyboard */,
 				4B4512C02BEB427A0065E38C /* Info.plist */,
+				4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */,
 			);
 			path = "PUTSCH!";
 			sourceTree = "<group>";
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B4512B72BEB42770065E38C /* ViewController.swift in Sources */,
+				4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */,
 				4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */,
+				4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */,
 				4B4512B52BEB42770065E38C /* SceneDelegate.swift in Sources */,
 				4BBBF3D82BFF082600F2E72F /* FirstViewController.swift in Sources */,
 			);
