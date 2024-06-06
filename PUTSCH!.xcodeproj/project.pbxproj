@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		4B4512BA2BEB42770065E38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4512B82BEB42770065E38C /* Main.storyboard */; };
 		4B4512BC2BEB427A0065E38C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4512BB2BEB427A0065E38C /* Assets.xcassets */; };
 		4B4512BF2BEB427A0065E38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4512BD2BEB427A0065E38C /* LaunchScreen.storyboard */; };
+		4B8F25652C1179B300A2ADB5 /* LaTeXSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4B8F25642C1179B300A2ADB5 /* LaTeXSwiftUI */; };
 		4BBBF3D82BFF082600F2E72F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D72BFF082600F2E72F /* FirstViewController.swift */; };
 		4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */; };
 		4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */; };
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8F25652C1179B300A2ADB5 /* LaTeXSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +94,9 @@
 			dependencies = (
 			);
 			name = "PUTSCH!";
+			packageProductDependencies = (
+				4B8F25642C1179B300A2ADB5 /* LaTeXSwiftUI */,
+			);
 			productName = "PUTSCH!";
 			productReference = 4B4512AF2BEB42770065E38C /* PUTSCH!.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 4B4512A62BEB42770065E38C;
+			packageReferences = (
+				4B8F25632C1179B300A2ADB5 /* XCLocalSwiftPackageReference "../../../Downloads/LaTeXSwiftUI-main" */,
+			);
 			productRefGroup = 4B4512B02BEB42770065E38C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -375,6 +383,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		4B8F25632C1179B300A2ADB5 /* XCLocalSwiftPackageReference "../../../Downloads/LaTeXSwiftUI-main" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../Downloads/LaTeXSwiftUI-main";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B8F25642C1179B300A2ADB5 /* LaTeXSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LaTeXSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B4512A72BEB42770065E38C /* Project object */;
 }
