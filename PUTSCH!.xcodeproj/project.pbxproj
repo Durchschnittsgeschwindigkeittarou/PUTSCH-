@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B2E69352C12DE7B0006A0D0 /* MondaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */; };
 		4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B22BEB42770065E38C /* AppDelegate.swift */; };
 		4B4512B52BEB42770065E38C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B42BEB42770065E38C /* SceneDelegate.swift */; };
 		4B4512B72BEB42770065E38C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B62BEB42770065E38C /* ViewController.swift */; };
 		4B4512BA2BEB42770065E38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4512B82BEB42770065E38C /* Main.storyboard */; };
 		4B4512BC2BEB427A0065E38C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4512BB2BEB427A0065E38C /* Assets.xcassets */; };
 		4B4512BF2BEB427A0065E38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4512BD2BEB427A0065E38C /* LaunchScreen.storyboard */; };
-		4B8F25652C1179B300A2ADB5 /* LaTeXSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4B8F25642C1179B300A2ADB5 /* LaTeXSwiftUI */; };
 		4BBBF3D82BFF082600F2E72F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D72BFF082600F2E72F /* FirstViewController.swift */; };
 		4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */; };
 		4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondaiViewController.swift; sourceTree = "<group>"; };
 		4B4512AF2BEB42770065E38C /* PUTSCH!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PUTSCH!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4512B22BEB42770065E38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B4512B42BEB42770065E38C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B8F25652C1179B300A2ADB5 /* LaTeXSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +74,7 @@
 				4B4512BD2BEB427A0065E38C /* LaunchScreen.storyboard */,
 				4B4512C02BEB427A0065E38C /* Info.plist */,
 				4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */,
+				4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */,
 			);
 			path = "PUTSCH!";
 			sourceTree = "<group>";
@@ -95,7 +96,6 @@
 			);
 			name = "PUTSCH!";
 			packageProductDependencies = (
-				4B8F25642C1179B300A2ADB5 /* LaTeXSwiftUI */,
 			);
 			productName = "PUTSCH!";
 			productReference = 4B4512AF2BEB42770065E38C /* PUTSCH!.app */;
@@ -155,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B2E69352C12DE7B0006A0D0 /* MondaiViewController.swift in Sources */,
 				4B4512B72BEB42770065E38C /* ViewController.swift in Sources */,
 				4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */,
 				4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */,
@@ -390,13 +391,6 @@
 			relativePath = "../../../Downloads/LaTeXSwiftUI-main";
 		};
 /* End XCLocalSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		4B8F25642C1179B300A2ADB5 /* LaTeXSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LaTeXSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B4512A72BEB42770065E38C /* Project object */;
 }

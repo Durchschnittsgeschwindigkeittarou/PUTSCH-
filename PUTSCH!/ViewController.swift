@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
+//        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
         // Do any additional setup after loading the view.
         
     }
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         case 1:
             //掛け算
             hyouji()
-            mondai.text=String(nijoubig)+"*"+String(nijousmall)
+            mondai.text=String(nijoubig)+"×"+String(nijousmall)
             kotae.text=String(nijoubig*nijousmall)
         case 2:
             //累乗

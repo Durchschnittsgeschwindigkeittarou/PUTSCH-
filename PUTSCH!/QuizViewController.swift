@@ -31,7 +31,7 @@ class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
+//        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
         // Do any additional setup after loading the view.
         
     }
