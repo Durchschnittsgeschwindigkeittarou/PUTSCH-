@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B2E69352C12DE7B0006A0D0 /* MondaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */; };
 		4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B22BEB42770065E38C /* AppDelegate.swift */; };
 		4B4512B52BEB42770065E38C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B42BEB42770065E38C /* SceneDelegate.swift */; };
 		4B4512B72BEB42770065E38C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B62BEB42770065E38C /* ViewController.swift */; };
@@ -14,9 +15,12 @@
 		4B4512BC2BEB427A0065E38C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4512BB2BEB427A0065E38C /* Assets.xcassets */; };
 		4B4512BF2BEB427A0065E38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4512BD2BEB427A0065E38C /* LaunchScreen.storyboard */; };
 		4BBBF3D82BFF082600F2E72F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D72BFF082600F2E72F /* FirstViewController.swift */; };
+		4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */; };
+		4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondaiViewController.swift; sourceTree = "<group>"; };
 		4B4512AF2BEB42770065E38C /* PUTSCH!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PUTSCH!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4512B22BEB42770065E38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B4512B42BEB42770065E38C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		4B4512BE2BEB427A0065E38C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B4512C02BEB427A0065E38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BBBF3D72BFF082600F2E72F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarExtension.swift; sourceTree = "<group>"; };
+		4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				4BBBF3D72BFF082600F2E72F /* FirstViewController.swift */,
+				4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */,
 				4B4512B22BEB42770065E38C /* AppDelegate.swift */,
 				4B4512B42BEB42770065E38C /* SceneDelegate.swift */,
 				4B4512B62BEB42770065E38C /* ViewController.swift */,
@@ -66,6 +73,8 @@
 				4B4512BB2BEB427A0065E38C /* Assets.xcassets */,
 				4B4512BD2BEB427A0065E38C /* LaunchScreen.storyboard */,
 				4B4512C02BEB427A0065E38C /* Info.plist */,
+				4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */,
+				4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */,
 			);
 			path = "PUTSCH!";
 			sourceTree = "<group>";
@@ -86,6 +95,8 @@
 			dependencies = (
 			);
 			name = "PUTSCH!";
+			packageProductDependencies = (
+			);
 			productName = "PUTSCH!";
 			productReference = 4B4512AF2BEB42770065E38C /* PUTSCH!.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 4B4512A62BEB42770065E38C;
+			packageReferences = (
+				4B8F25632C1179B300A2ADB5 /* XCLocalSwiftPackageReference "../../../Downloads/LaTeXSwiftUI-main" */,
+			);
 			productRefGroup = 4B4512B02BEB42770065E38C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,8 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B2E69352C12DE7B0006A0D0 /* MondaiViewController.swift in Sources */,
 				4B4512B72BEB42770065E38C /* ViewController.swift in Sources */,
+				4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */,
 				4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */,
+				4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */,
 				4B4512B52BEB42770065E38C /* SceneDelegate.swift in Sources */,
 				4BBBF3D82BFF082600F2E72F /* FirstViewController.swift in Sources */,
 			);
@@ -367,6 +384,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		4B8F25632C1179B300A2ADB5 /* XCLocalSwiftPackageReference "../../../Downloads/LaTeXSwiftUI-main" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../Downloads/LaTeXSwiftUI-main";
+		};
+/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = 4B4512A72BEB42770065E38C /* Project object */;
 }
