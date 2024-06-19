@@ -19,9 +19,9 @@ class MondaiViewController: UIViewController {
     var nijousmall:Int!
     var keisuu = [3,7]
     
-    private var numberOnScreen: Int = 0
-    private var previousNumber: Int = 0
-    private var performingMath = false
+    private var numberOnScreen: Float = 0
+    private var numberOfDecide:Float=0
+    private var numberOfAnswer: Float = 0
     private var operation = 0
     
     override func viewDidLoad() {
@@ -29,19 +29,21 @@ class MondaiViewController: UIViewController {
         //        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
         // Do any additional setup after loading the view.
         //掛け算
-        hyouji()
+        shutudai()
         //mondai.text=String(nijoubig)+"×"+String(nijousmall)
         setupView()
         
     }
-    @IBAction func shutudai(){
+    func shutudai(){
         //ボタン押した時ランダムに式
         switch Int.random(in:1..<2){
         case 1:
             //掛け算
-            hyouji()
-            mondai.text=String(nijoubig)+"×"+String(nijousmall)
-            kotae.text=String(nijoubig*nijousmall)
+            let randombig=Int.random(in:1..<10)*10
+            let randomsmall=Int.random(in:1..<9)
+            mondai.text=String(randombig+randomsmall)+"×"+String(randombig-randomsmall)
+            //kotae.text=String(randombig^2-randomsmall^2)
+            numberOfAnswer=Float((randombig+randomsmall)*(randombig-randomsmall))
         case 2:
             //累乗
             let basic=Int.random(in:1..<7)
@@ -69,31 +71,22 @@ class MondaiViewController: UIViewController {
         //桁数を入れるとその桁の乱数が出てくる
         return  Int.random(in: ruijou(kisuu:10,shisuu:ketasuu)..<ruijou(kisuu:10,shisuu:ketasuu)*10)
     }
-    func hyouji (){
-        let randombig=Int.random(in:1..<10)*100
-        let randomsmall=Int.random(in:1..<9)
-        nijoubig=randombig+randomsmall
-        nijousmall=randombig-randomsmall
-        return
-    }
     
     
     
     private func setupView() {
         label.text = ""
+        //kotae.text = ""
     }
     
     //各ボタンが押された時の処理
     @IBAction func showNumber(_ sender: UIButton) {
-        if performingMath == true {
-            label.text = String(sender.tag - 1)
-            //numberOnScreen = Int(label.text!)!
-            numberOnScreen=sender.tag
-            performingMath = false
+        if label.text == "" {
+            numberOnScreen=Float(sender.tag-1)
+            label.text = String(sender.tag-1)
         }else {
-            label.text = label.text! + String(sender.tag - 1)
-           // numberOnScreen = Int(label.text!)!
-            numberOnScreen=numberOnScreen*10+sender.tag
+            numberOnScreen=Float(Int(numberOnScreen)*10+sender.tag-1)
+            label.text = label.text! + String(sender.tag-1)
         }
         
     }
@@ -101,7 +94,6 @@ class MondaiViewController: UIViewController {
     //各計算ボタンが押された時の処理
     @IBAction func calcAction(_ sender: UIButton) {
         if sender.tag == 13 && label.text=="" {
-           // previousNumber = Int(label.text!)!
             //labelに表示する文字を決める
                     label.text="-"
             operation = sender.tag
@@ -114,16 +106,20 @@ class MondaiViewController: UIViewController {
             switch(operation) {
             case 12:
                 label.text = label.text! + "."
-                numberOnScreen = Int(label.text!)!
+                numberOnScreen = Float(label.text!)!
             case 13:
-                numberOnScreen = -numberOnScreen
-                default:
+                numberOfDecide = Float(-numberOnScreen)
+                default:numberOfDecide = Float(numberOnScreen)
                 break
+            }
+            if numberOfDecide==numberOfAnswer{
+                mondai.text="ウニ"
+            }else{
+                mondai.text=String(numberOfAnswer)+"チガウヨー"
             }
         }else if sender.tag == 11 {
             //(Delete)が押されたら全てを初期値に戻す
             label.text = ""
-            previousNumber = 0
             numberOnScreen = 0
             operation = 0
         }
