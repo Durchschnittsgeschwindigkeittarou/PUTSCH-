@@ -30,7 +30,7 @@ class MondaiViewController: UIViewController {
         // Do any additional setup after loading the view.
         //掛け算
         hyouji()
-        mondai.text=String(nijoubig)+"×"+String(nijousmall)
+        //mondai.text=String(nijoubig)+"×"+String(nijousmall)
         setupView()
         
     }
@@ -53,7 +53,8 @@ class MondaiViewController: UIViewController {
             mondai.text=String(timing)+"秒"
             kotae.text=String(timing/60)+"分"+String(timing%60)+"秒"
             break
-            // mondai.text=String(keisuu[item])
+      //  case 4:
+          //  let warizanone
         default:break
         }
     }
@@ -86,37 +87,36 @@ class MondaiViewController: UIViewController {
     @IBAction func showNumber(_ sender: UIButton) {
         if performingMath == true {
             label.text = String(sender.tag - 1)
-            numberOnScreen = Int(label.text!)!
+            //numberOnScreen = Int(label.text!)!
+            numberOnScreen=sender.tag
             performingMath = false
         }else {
             label.text = label.text! + String(sender.tag - 1)
-            numberOnScreen = Int(label.text!)!
+           // numberOnScreen = Int(label.text!)!
+            numberOnScreen=numberOnScreen*10+sender.tag
         }
         
     }
     
     //各計算ボタンが押された時の処理
     @IBAction func calcAction(_ sender: UIButton) {
-        if sender.tag != 11 && sender.tag != 14 {
-            previousNumber = Int(label.text!)!
+        if sender.tag == 13 && label.text=="" {
+           // previousNumber = Int(label.text!)!
             //labelに表示する文字を決める
-            switch(sender.tag) {
-            case 12:
-                label.text = "."
-            case 13:
-                label.text = "−"
-            default:
-                break
-            }
+                    label.text="-"
             operation = sender.tag
-            performingMath = true
-        }else if sender.tag == 14 {
+        }else if sender.tag == 12{
+            
+            
+        }
+        else if sender.tag == 14 {
             //計算ボタン(Enter)が押された時の処理
             switch(operation) {
             case 12:
-                label.text = String(previousNumber / numberOnScreen)
+                label.text = label.text! + "."
+                numberOnScreen = Int(label.text!)!
             case 13:
-                label.text = String(previousNumber * numberOnScreen)
+                numberOnScreen = -numberOnScreen
                 default:
                 break
             }
