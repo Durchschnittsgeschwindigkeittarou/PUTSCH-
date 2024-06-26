@@ -13,7 +13,6 @@ class MondaiViewController: UIViewController {
     //var chartView: LineChartView!
     //var chartDataSet: LineChartDataSet!
     @IBOutlet var mondai:UILabel!
-    @IBOutlet var kotae:UILabel!
     @IBOutlet weak var label: UILabel!
     var nijoubig:Int!
     var nijousmall:Int!
@@ -23,6 +22,8 @@ class MondaiViewController: UIViewController {
     private var numberOfDecide:Float=0
     private var numberOfAnswer: Float = 0
     private var operation = 0
+    private var shosuHantei = false
+    private var shosuKurai:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +37,11 @@ class MondaiViewController: UIViewController {
     }
     func shutudai(){
         //ボタン押した時ランダムに式
-        switch Int.random(in:1..<2){
+        switch Int.random(in:1..<5){
         case 1:
             //掛け算
             let randombig=Int.random(in:1..<10)*10
-            let randomsmall=Int.random(in:1..<9)
+            let randomsmall=Int.random(in:1..<4)
             mondai.text=String(randombig+randomsmall)+"×"+String(randombig-randomsmall)
             //kotae.text=String(randombig^2-randomsmall^2)
             numberOfAnswer=Float((randombig+randomsmall)*(randombig-randomsmall))
@@ -49,14 +50,17 @@ class MondaiViewController: UIViewController {
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
             mondai.text=String(basic)+"^"+String(over)
-            kotae.text=String(ruijou(kisuu:basic,shisuu:over))
+            numberOfAnswer=Float(ruijou(kisuu:basic,shisuu:over))
         case 3:
             let timing=Int.random(in:60..<600)
-            mondai.text=String(timing)+"秒"
-            kotae.text=String(timing/60)+"分"+String(timing%60)+"秒"
+            mondai.text=String(timing)+"秒 (作成中。表示されている秒数そのまま入力して)"
+            numberOfAnswer=Float(timing)
             break
-      //  case 4:
-          //  let warizanone
+        case 4:
+            let warizanOne=Int.random(in:1..<10)
+            let warizanTwo=Int.random(in:1..<10)
+            mondai.text=String(warizanOne*warizanTwo)+"÷"+String(warizanOne)
+            numberOfAnswer=Float(warizanTwo)
         default:break
         }
     }
@@ -76,7 +80,6 @@ class MondaiViewController: UIViewController {
     
     private func setupView() {
         label.text = ""
-        //kotae.text = ""
     }
     
     //各ボタンが押された時の処理
@@ -88,7 +91,9 @@ class MondaiViewController: UIViewController {
             numberOnScreen=Float(Int(numberOnScreen)*10+sender.tag-1)
             label.text = label.text! + String(sender.tag-1)
         }
-        
+        if shosuHantei==true{
+            shosuKurai=shosuKurai+1
+        }
     }
     
     //各計算ボタンが押された時の処理
@@ -98,30 +103,32 @@ class MondaiViewController: UIViewController {
                     label.text="-"
             operation = sender.tag
         }else if sender.tag == 12{
-            
-            
+            label.text=label.text!+"."
+            shosuHantei=true
+            operation = sender.tag
         }
         else if sender.tag == 14 {
             //計算ボタン(Enter)が押された時の処理
             switch(operation) {
             case 12:
-                label.text = label.text! + "."
-                numberOnScreen = Float(label.text!)!
+                numberOfDecide=numberOnScreen/Float(ruijou(kisuu: 10, shisuu: shosuKurai))
             case 13:
                 numberOfDecide = Float(-numberOnScreen)
-                default:numberOfDecide = Float(numberOnScreen)
-                break
+            default:numberOfDecide = Float(numberOnScreen)
+            break
             }
             if numberOfDecide==numberOfAnswer{
                 mondai.text="ウニ"
             }else{
-                mondai.text=String(numberOfAnswer)+"チガウヨー"
+                mondai.text=String(numberOfDecide)+"チガウヨー"
             }
         }else if sender.tag == 11 {
             //(Delete)が押されたら全てを初期値に戻す
             label.text = ""
             numberOnScreen = 0
             operation = 0
+            shosuHantei=false
+            shosuKurai=0
         }
     }
 }
