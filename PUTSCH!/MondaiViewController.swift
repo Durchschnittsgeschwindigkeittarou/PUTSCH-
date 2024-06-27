@@ -19,7 +19,6 @@ class MondaiViewController: UIViewController {
     var keisuu = [3,7]
     
     private var numberOnScreen: Float = 0
-    private var numberOfDecide:Float=0
     private var numberOfAnswer: Float = 0
     private var operation = 0
     private var shosuHantei = false
@@ -40,7 +39,7 @@ class MondaiViewController: UIViewController {
         switch Int.random(in:1..<5){
         case 1:
             //掛け算
-            let randombig=Int.random(in:1..<10)*10
+            let randombig=Int.random(in:3..<10)*10
             let randomsmall=Int.random(in:1..<4)
             mondai.text=String(randombig+randomsmall)+"×"+String(randombig-randomsmall)
             //kotae.text=String(randombig^2-randomsmall^2)
@@ -52,15 +51,16 @@ class MondaiViewController: UIViewController {
             mondai.text=String(basic)+"^"+String(over)
             numberOfAnswer=Float(ruijou(kisuu:basic,shisuu:over))
         case 3:
-            let timing=Int.random(in:60..<600)
-            mondai.text=String(timing)+"秒 (作成中。表示されている秒数そのまま入力して)"
-            numberOfAnswer=Float(timing)
-            break
-        case 4:
             let warizanOne=Int.random(in:1..<10)
             let warizanTwo=Int.random(in:1..<10)
             mondai.text=String(warizanOne*warizanTwo)+"÷"+String(warizanOne)
             numberOfAnswer=Float(warizanTwo)
+            
+        case 99:
+            let timing=Int.random(in:60..<600)
+            mondai.text=String(timing)+"秒 (作成中。表示されている秒数そのまま入力して)"
+            numberOfAnswer=Float(timing)
+            break
         default:break
         }
     }
@@ -111,16 +111,15 @@ class MondaiViewController: UIViewController {
             //計算ボタン(Enter)が押された時の処理
             switch(operation) {
             case 12:
-                numberOfDecide=numberOnScreen/Float(ruijou(kisuu: 10, shisuu: shosuKurai))
+                numberOnScreen=numberOnScreen/Float(ruijou(kisuu: 10, shisuu: shosuKurai))
             case 13:
-                numberOfDecide = Float(-numberOnScreen)
-            default:numberOfDecide = Float(numberOnScreen)
-            break
+                numberOnScreen = Float(-numberOnScreen)
+            default:break
             }
-            if numberOfDecide==numberOfAnswer{
+            if numberOnScreen==numberOfAnswer{
                 mondai.text="ウニ"
             }else{
-                mondai.text=String(numberOfDecide)+"チガウヨー"
+                mondai.text=String(numberOnScreen)+"チガウヨー"
             }
         }else if sender.tag == 11 {
             //(Delete)が押されたら全てを初期値に戻す
