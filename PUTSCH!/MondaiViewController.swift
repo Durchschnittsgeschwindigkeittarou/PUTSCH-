@@ -26,6 +26,7 @@ class MondaiViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStatusBarBackgroundColor(.tintColor)
         //        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
         // Do any additional setup after loading the view.
         //掛け算
@@ -36,7 +37,7 @@ class MondaiViewController: UIViewController {
     }
     func shutudai(){
         //ボタン押した時ランダムに式
-        switch Int.random(in:1..<5){
+        switch Int.random(in:1..<2){
         case 1:
             //掛け算
             let randombig=Int.random(in:3..<10)*10
@@ -116,18 +117,32 @@ class MondaiViewController: UIViewController {
                 numberOnScreen = Float(-numberOnScreen)
             default:break
             }
-            if numberOnScreen==numberOfAnswer{
-                mondai.text="ウニ"
+            if numberOnScreen == numberOfAnswer{
+                //正解したら
+                mondai.text="正解"
+                view.backgroundColor = UIColor(hex: "b4f5ff")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
+                    self.shutudai()
+                    self.label.text = ""
+                    self.numberOnScreen = 0
+                    self.operation = 0
+                    self.view.backgroundColor = UIColor.systemBackground
+                }
+                
             }else{
-                mondai.text=String(numberOnScreen)+"チガウヨー"
+                //不正解だと
+                mondai.text=String(numberOfAnswer)+"チガウヨー"
+                label.text = ""
+                numberOnScreen = 0
+                operation = 0
             }
         }else if sender.tag == 11 {
             //(Delete)が押されたら全てを初期値に戻す
             label.text = ""
             numberOnScreen = 0
             operation = 0
-            shosuHantei=false
-            shosuKurai=0
         }
     }
 }
