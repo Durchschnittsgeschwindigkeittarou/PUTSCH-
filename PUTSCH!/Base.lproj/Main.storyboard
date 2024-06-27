@@ -16,42 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XS-oH-Rwv">
-                                <rect key="frame" x="0.0" y="451" width="393" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="たし算"/>
-                                <connections>
-                                    <segue destination="J7g-GS-afa" kind="push" id="vCh-pZ-kgt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5z-9r-Qbb">
-                                <rect key="frame" x="0.0" y="526" width="393" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="引き算"/>
-                                <connections>
-                                    <segue destination="CFU-ha-Ds6" kind="push" id="v30-cj-vqM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbb-kZ-cVY">
-                                <rect key="frame" x="0.0" y="601" width="393" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="掛け算"/>
-                                <connections>
-                                    <segue destination="HdH-ha-I4f" kind="push" id="pTm-hj-gqa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6L-xs-sTR">
-                                <rect key="frame" x="0.0" y="376" width="393" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="四則演算"/>
-                                <connections>
-                                    <segue destination="Y9b-ZZ-93o" kind="push" id="V0C-sq-h2i"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUS-Ck-9UJ">
                                 <rect key="frame" x="0.0" y="751" width="393" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -61,13 +25,13 @@
                                     <segue destination="1Zg-4W-0dd" kind="push" id="53x-ZL-x1A"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yQ-fx-e3I">
-                                <rect key="frame" x="0.0" y="676" width="393" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6L-xs-sTR">
+                                <rect key="frame" x="0.0" y="511" width="393" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="割り算"/>
+                                <buttonConfiguration key="configuration" style="plain" title="四則演算"/>
                                 <connections>
-                                    <segue destination="cfr-eD-fRQ" kind="push" id="026-s1-6wU"/>
+                                    <segue destination="hLs-3X-tlT" kind="push" id="ps2-2J-7Tz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921.37404580152668" y="-1.4084507042253522"/>
+            <point key="canvasLocation" x="33" y="9"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="V12-67-hGg">
@@ -94,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRW-lb-RHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3269" y="-295"/>
+            <point key="canvasLocation" x="2689" y="761"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RQf-Jx-yT2">
@@ -142,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Eq-Or-IS2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="-1382"/>
+            <point key="canvasLocation" x="33" y="-746"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RVa-xx-M5f">
@@ -165,7 +129,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGs-AD-BG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5.343511450381679" y="-1.4084507042253522"/>
+            <point key="canvasLocation" x="-625" y="-1"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="70e-Wc-czJ">
@@ -181,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eP-EQ-bSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234" y="-582"/>
+            <point key="canvasLocation" x="717" y="761"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="A5W-p0-sSw">
@@ -197,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUl-UN-dJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="822"/>
+            <point key="canvasLocation" x="1370" y="761"/>
         </scene>
         <!--Mondai View Controller-->
         <scene sceneID="F54-un-muu">
@@ -361,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnC-qu-R59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3267.9389312977096" y="488.73239436619718"/>
+            <point key="canvasLocation" x="2034" y="761"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ncH-Pf-ylf">
@@ -377,7 +341,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLG-ny-eDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="822"/>
+            <point key="canvasLocation" x="33" y="761"/>
+        </scene>
+        <!--First View Controller-->
+        <scene sceneID="52m-j7-0OE">
+            <objects>
+                <viewController id="hLs-3X-tlT" customClass="FirstViewController" customModule="PUTSCH_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FsH-R9-Uw2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7y-b2-yQy">
+                                <rect key="frame" x="0.0" y="451" width="393" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="たし算"/>
+                                <connections>
+                                    <segue destination="J7g-GS-afa" kind="push" id="kIq-GV-2NN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnr-4d-akE">
+                                <rect key="frame" x="0.0" y="526" width="393" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="引き算"/>
+                                <connections>
+                                    <segue destination="CFU-ha-Ds6" kind="push" id="c7a-ud-YPq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0p-PN-XYk">
+                                <rect key="frame" x="0.0" y="601" width="393" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="掛け算"/>
+                                <connections>
+                                    <segue destination="HdH-ha-I4f" kind="push" id="Keb-Af-cE1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-Ju-TvD">
+                                <rect key="frame" x="0.0" y="676" width="393" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="割り算"/>
+                                <connections>
+                                    <segue destination="cfr-eD-fRQ" kind="push" id="vvV-lz-XJQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2br-uV-Kab"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="71F-jz-ItV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iTM-oS-Ax1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717" y="8"/>
         </scene>
     </scenes>
     <resources>

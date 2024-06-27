@@ -17,6 +17,7 @@
 		4BBBF3D82BFF082600F2E72F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D72BFF082600F2E72F /* FirstViewController.swift */; };
 		4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */; };
 		4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */; };
+		4BD1BE8F2C2BEF4400E9092F /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1BE8E2C2BEF4400E9092F /* UIColorHex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4BBBF3D72BFF082600F2E72F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarExtension.swift; sourceTree = "<group>"; };
 		4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		4BD1BE8E2C2BEF4400E9092F /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				4B4512C02BEB427A0065E38C /* Info.plist */,
 				4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */,
 				4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */,
+				4BD1BE8E2C2BEF4400E9092F /* UIColorHex.swift */,
 			);
 			path = "PUTSCH!";
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */,
 				4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */,
 				4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */,
+				4BD1BE8F2C2BEF4400E9092F /* UIColorHex.swift in Sources */,
 				4B4512B52BEB42770065E38C /* SceneDelegate.swift in Sources */,
 				4BBBF3D82BFF082600F2E72F /* FirstViewController.swift in Sources */,
 			);
