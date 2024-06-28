@@ -117,7 +117,7 @@ class MondaiViewController: UIViewController {
                 numberOnScreen = Float(-numberOnScreen)
             default:break
             }
-            if numberOfDecide == numberOfAnswer{
+            if numberOnScreen == numberOfAnswer{
                 //正解したら
                 mondai.text="正解"
                 view.backgroundColor = UIColor(hex: "b4f5ff")
