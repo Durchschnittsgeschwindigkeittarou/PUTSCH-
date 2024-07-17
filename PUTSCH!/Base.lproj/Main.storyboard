@@ -811,7 +811,7 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="71F-jz-ItV">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5ji-Ri-R0E">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5ji-Ri-R0E">
                             <rect key="frame" x="128.33333333333331" y="0.0" width="136.33333333333331" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
