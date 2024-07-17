@@ -24,6 +24,9 @@ class MondaiViewController: UIViewController {
     private var shosuHantei = false
     private var shosuKurai:Int = 0
     
+    var outputValueOne:Int?
+    var outputValueTwo:Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarBackgroundColor(.tintColor)
@@ -37,26 +40,38 @@ class MondaiViewController: UIViewController {
     }
     func shutudai(){
         //ボタン押した時ランダムに式
-        switch Int.random(in:1..<2){
+        switch Int.random(in:outputValueOne!..<outputValueTwo!){
         case 1:
-            //掛け算
+            //足し算
+            let tashizanOne=Int.random(in:1..<10)
+            let tashizanTwo=Int.random(in:1..<10)
+            mondai.text=String(tashizanOne)+"+"+String(tashizanTwo)
+            numberOfAnswer=Float(tashizanOne+tashizanTwo)
+        case 2:
+            //引き算
+            let hikizanOne=Int.random(in:1..<10)
+            let hikizanTwo=Int.random(in:1..<10)
+            mondai.text=String(hikizanOne+hikizanTwo)+"-"+String(hikizanOne)
+            numberOfAnswer=Float(hikizanTwo)
+        case 3:
+            //掛け算(２乗の差)
             let randombig=Int.random(in:3..<10)*10
             let randomsmall=Int.random(in:1..<4)
             mondai.text=String(randombig+randomsmall)+"×"+String(randombig-randomsmall)
             //kotae.text=String(randombig^2-randomsmall^2)
             numberOfAnswer=Float((randombig+randomsmall)*(randombig-randomsmall))
-        case 2:
+        case 4:
+            //割り算
+            let warizanOne=Int.random(in:1..<10)
+            let warizanTwo=Int.random(in:1..<10)
+            mondai.text=String(warizanOne*warizanTwo)+"÷"+String(warizanOne)
+            numberOfAnswer=Float(warizanTwo)
+        case 5:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
             mondai.text=String(basic)+"^"+String(over)
             numberOfAnswer=Float(ruijou(kisuu:basic,shisuu:over))
-        case 3:
-            let warizanOne=Int.random(in:1..<10)
-            let warizanTwo=Int.random(in:1..<10)
-            mondai.text=String(warizanOne*warizanTwo)+"÷"+String(warizanOne)
-            numberOfAnswer=Float(warizanTwo)
-            
         case 99:
             let timing=Int.random(in:60..<600)
             mondai.text=String(timing)+"秒 (作成中。表示されている秒数そのまま入力して)"

@@ -1,13 +1,13 @@
 //
-//  tasuViewController.swift
+//  middleViewController.swift
 //  PUTSCH!
 //
-//  Created by clark on 2024/06/28.
+//  Created by clark on 2024/07/05.
 //
 
 import UIKit
 
-class tasuViewController: UIViewController {
+class middleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

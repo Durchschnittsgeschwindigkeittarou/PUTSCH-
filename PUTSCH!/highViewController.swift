@@ -1,13 +1,13 @@
 //
-//  hikuViewController.swift
+//  highViewController.swift
 //  PUTSCH!
 //
-//  Created by clark on 2024/06/28.
+//  Created by clark on 2024/07/05.
 //
 
 import UIKit
 
-class hikuViewController: UIViewController {
+class highViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

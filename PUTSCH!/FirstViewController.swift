@@ -14,6 +14,36 @@ class FirstViewController: UIViewController{
         setStatusBarBackgroundColor(.tintColor)
         // Do any additional setup after loading the view.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "toTashizan":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValueOne = 1
+                next?.outputValueTwo = 2
+        case "toHikizan":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValueOne = 2
+                next?.outputValueTwo = 3
+        case "toKakezan":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValueOne = 3
+                next?.outputValueTwo = 4
+        case "toWarizan":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValueOne = 4
+                next?.outputValueTwo = 5
+        case "toShisoku":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValueOne = 1
+                next?.outputValueTwo = 5
+        default:break;
+        }
+    }
     /*
     // MARK: - Navigation
 
