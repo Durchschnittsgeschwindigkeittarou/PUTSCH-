@@ -43,14 +43,14 @@ class MondaiViewController: UIViewController {
         switch Int.random(in:outputValueOne!..<outputValueTwo!){
         case 1:
             //足し算
-            let tashizanOne=Int.random(in:1..<10)
-            let tashizanTwo=Int.random(in:1..<10)
+            let tashizanOne=Int.random(in:1..<1000)
+            let tashizanTwo=Int.random(in:1..<1000)
             mondai.text=String(tashizanOne)+"+"+String(tashizanTwo)
             numberOfAnswer=Float(tashizanOne+tashizanTwo)
         case 2:
             //引き算
-            let hikizanOne=Int.random(in:1..<10)
-            let hikizanTwo=Int.random(in:1..<10)
+            let hikizanOne=Int.random(in:1..<1000)
+            let hikizanTwo=Int.random(in:1..<1000)
             mondai.text=String(hikizanOne+hikizanTwo)+"-"+String(hikizanOne)
             numberOfAnswer=Float(hikizanTwo)
         case 3:
@@ -62,8 +62,8 @@ class MondaiViewController: UIViewController {
             numberOfAnswer=Float((randombig+randomsmall)*(randombig-randomsmall))
         case 4:
             //割り算
-            let warizanOne=Int.random(in:1..<10)
-            let warizanTwo=Int.random(in:1..<10)
+            let warizanOne=Int.random(in:1..<100)
+            let warizanTwo=Int.random(in:1..<100)
             mondai.text=String(warizanOne*warizanTwo)+"÷"+String(warizanOne)
             numberOfAnswer=Float(warizanTwo)
         case 5:

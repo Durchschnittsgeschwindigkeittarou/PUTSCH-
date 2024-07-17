@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1E367C2C37C1CC00AC5F99 /* highViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E367B2C37C1CC00AC5F99 /* highViewController.swift */; };
+		4B1E367E2C37C1E500AC5F99 /* middleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E367D2C37C1E500AC5F99 /* middleViewController.swift */; };
 		4B2E69352C12DE7B0006A0D0 /* MondaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */; };
 		4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B22BEB42770065E38C /* AppDelegate.swift */; };
 		4B4512B52BEB42770065E38C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B42BEB42770065E38C /* SceneDelegate.swift */; };
@@ -18,12 +20,11 @@
 		4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */; };
 		4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */; };
 		4BD1BE8F2C2BEF4400E9092F /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1BE8E2C2BEF4400E9092F /* UIColorHex.swift */; };
-		4BD1BE912C2E811400E9092F /* waruViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1BE902C2E811400E9092F /* waruViewController.swift */; };
-		4BD1BE932C2E812D00E9092F /* tasuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1BE922C2E812D00E9092F /* tasuViewController.swift */; };
-		4BD1BE952C2E813C00E9092F /* hikuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1BE942C2E813C00E9092F /* hikuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B1E367B2C37C1CC00AC5F99 /* highViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highViewController.swift; sourceTree = "<group>"; };
+		4B1E367D2C37C1E500AC5F99 /* middleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = middleViewController.swift; sourceTree = "<group>"; };
 		4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondaiViewController.swift; sourceTree = "<group>"; };
 		4B4512AF2BEB42770065E38C /* PUTSCH!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PUTSCH!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4512B22BEB42770065E38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,9 +38,6 @@
 		4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarExtension.swift; sourceTree = "<group>"; };
 		4BBBF3DD2C0066BA00F2E72F /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		4BD1BE8E2C2BEF4400E9092F /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
-		4BD1BE902C2E811400E9092F /* waruViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waruViewController.swift; sourceTree = "<group>"; };
-		4BD1BE922C2E812D00E9092F /* tasuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasuViewController.swift; sourceTree = "<group>"; };
-		4BD1BE942C2E813C00E9092F /* hikuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hikuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +81,9 @@
 				4B4512C02BEB427A0065E38C /* Info.plist */,
 				4BBBF3D92BFF196600F2E72F /* StatusBarExtension.swift */,
 				4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */,
-				4BD1BE902C2E811400E9092F /* waruViewController.swift */,
-				4BD1BE922C2E812D00E9092F /* tasuViewController.swift */,
-				4BD1BE942C2E813C00E9092F /* hikuViewController.swift */,
 				4BD1BE8E2C2BEF4400E9092F /* UIColorHex.swift */,
+				4B1E367B2C37C1CC00AC5F99 /* highViewController.swift */,
+				4B1E367D2C37C1E500AC5F99 /* middleViewController.swift */,
 			);
 			path = "PUTSCH!";
 			sourceTree = "<group>";
@@ -168,14 +165,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B2E69352C12DE7B0006A0D0 /* MondaiViewController.swift in Sources */,
-				4BD1BE912C2E811400E9092F /* waruViewController.swift in Sources */,
+				4B1E367E2C37C1E500AC5F99 /* middleViewController.swift in Sources */,
 				4B4512B72BEB42770065E38C /* ViewController.swift in Sources */,
+				4B1E367C2C37C1CC00AC5F99 /* highViewController.swift in Sources */,
 				4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */,
 				4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */,
 				4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */,
 				4BD1BE8F2C2BEF4400E9092F /* UIColorHex.swift in Sources */,
-				4BD1BE952C2E813C00E9092F /* hikuViewController.swift in Sources */,
-				4BD1BE932C2E812D00E9092F /* tasuViewController.swift in Sources */,
 				4B4512B52BEB42770065E38C /* SceneDelegate.swift in Sources */,
 				4BBBF3D82BFF082600F2E72F /* FirstViewController.swift in Sources */,
 			);
