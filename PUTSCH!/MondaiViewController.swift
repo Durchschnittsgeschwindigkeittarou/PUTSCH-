@@ -19,7 +19,10 @@ class MondaiViewController: UIViewController {
     var keisuu = [3,7]
     
     private var numberOnScreen: Float = 0
-    private var numberOfAnswer: Float = 0
+    //private var numberOfAnswer: Float = 0
+    //private var numberOnScreen = [Float]()
+    private var numberOfAnswer = [Float]()
+    private var numberOfHold=[Float]()
     private var operation = 0
     private var shosuHantei = false
     private var shosuKurai:Int = 0
@@ -46,36 +49,35 @@ class MondaiViewController: UIViewController {
             let tashizanOne=Int.random(in:1..<1000)
             let tashizanTwo=Int.random(in:1..<1000)
             mondai.text=String(tashizanOne)+"+"+String(tashizanTwo)
-            numberOfAnswer=Float(tashizanOne+tashizanTwo)
+            numberOfAnswer+=[Float(tashizanOne+tashizanTwo)]
         case 2:
             //引き算
             let hikizanOne=Int.random(in:1..<1000)
             let hikizanTwo=Int.random(in:1..<1000)
             mondai.text=String(hikizanOne+hikizanTwo)+"-"+String(hikizanOne)
-            numberOfAnswer=Float(hikizanTwo)
+            numberOfAnswer=[Float(hikizanTwo)]
         case 3:
             //掛け算(２乗の差)
             let randombig=Int.random(in:3..<10)*10
             let randomsmall=Int.random(in:1..<4)
             mondai.text=String(randombig+randomsmall)+"×"+String(randombig-randomsmall)
-            //kotae.text=String(randombig^2-randomsmall^2)
-            numberOfAnswer=Float((randombig+randomsmall)*(randombig-randomsmall))
+            numberOfAnswer=[Float((randombig+randomsmall)*(randombig-randomsmall))]
         case 4:
             //割り算
             let warizanOne=Int.random(in:1..<100)
             let warizanTwo=Int.random(in:1..<100)
             mondai.text=String(warizanOne*warizanTwo)+"÷"+String(warizanOne)
-            numberOfAnswer=Float(warizanTwo)
+            numberOfAnswer=[Float(warizanTwo)]
         case 5:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
             mondai.text=String(basic)+"^"+String(over)
-            numberOfAnswer=Float(ruijou(kisuu:basic,shisuu:over))
+            numberOfAnswer=[Float(ruijou(kisuu:basic,shisuu:over))]
         case 99:
             let timing=Int.random(in:60..<600)
             mondai.text=String(timing)+"秒 (作成中。表示されている秒数そのまま入力して)"
-            numberOfAnswer=Float(timing)
+            numberOfAnswer=[Float(timing)]
             break
         default:break
         }
@@ -112,6 +114,9 @@ class MondaiViewController: UIViewController {
         }
     }
     
+    func input(){
+        
+    }
     //各計算ボタンが押された時の処理
     @IBAction func calcAction(_ sender: UIButton) {
         if sender.tag == 13 && label.text=="" {
@@ -122,6 +127,11 @@ class MondaiViewController: UIViewController {
             label.text=label.text!+"."
             shosuHantei=true
             operation = sender.tag
+        }else if sender.tag == 11 {
+            //(Delete)が押されたら全てを初期値に戻す
+                label.text = ""
+                numberOnScreen = 0
+                operation = 0
         }
         else if sender.tag == 14 {
             //計算ボタン(Enter)が押された時の処理
@@ -132,32 +142,43 @@ class MondaiViewController: UIViewController {
                 numberOnScreen = Float(-numberOnScreen)
             default:break
             }
-            if numberOnScreen == numberOfAnswer{
-                //正解したら
-                mondai.text="正解"
-                view.backgroundColor = UIColor(hex: "b4f5ff")
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
-                    self.shutudai()
-                    self.label.text = ""
-                    self.numberOnScreen = 0
-                    self.operation = 0
-                    self.view.backgroundColor = UIColor.systemBackground
+            numberOfHold+=[numberOnScreen]
+            //プレイヤーの解答入力数と模範解答数を比較
+            if numberOfHold.count == numberOfAnswer.count{//全部解答
+                var correct: Int=0
+                for i in 0..<numberOfAnswer.count{
+                    if numberOfHold[i]==numberOfAnswer[i]{
+                        correct+=1
+                    }
                 }
                 
-            }else{
-                //不正解だと
-                mondai.text=String(numberOfAnswer)+"チガウヨー"
+                if correct==numberOfAnswer.count{
+                    //正解したら
+                    mondai.text="正解"
+                    view.backgroundColor = UIColor(hex: "b4f5ff")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
+                        self.shutudai()
+                        self.label.text = ""
+                        self.numberOnScreen = 0
+                        self.operation = 0
+                        self.view.backgroundColor = UIColor.systemBackground
+                    }
+                    
+                }else{
+                    //不正解だと
+                    //mondai.text=String(numberOfAnswer)+"チガウヨー"
+                    mondai.text="チガウヨー"
+                    label.text = ""
+                    numberOnScreen = 0
+                    operation = 0
+                }
+            }else{//解答数未了
                 label.text = ""
                 numberOnScreen = 0
                 operation = 0
             }
-        }else if sender.tag == 11 {
-            //(Delete)が押されたら全てを初期値に戻す
-            label.text = ""
-            numberOnScreen = 0
-            operation = 0
         }
     }
 }
