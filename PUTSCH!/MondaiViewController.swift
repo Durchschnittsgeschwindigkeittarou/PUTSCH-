@@ -121,7 +121,7 @@ class MondaiViewController: UIViewController {
     @IBAction func calcAction(_ sender: UIButton) {
         if sender.tag == 13 && label.text=="" {
             //labelに表示する文字を決める
-                    label.text="-"
+            label.text="-"
             operation = sender.tag
         }else if sender.tag == 12{
             label.text=label.text!+"."
