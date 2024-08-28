@@ -7,8 +7,7 @@
 
 import UIKit
 
-class middleViewController: UIViewController{
-    
+class middleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarBackgroundColor(.tintColor)
