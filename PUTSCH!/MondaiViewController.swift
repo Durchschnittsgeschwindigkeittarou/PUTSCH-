@@ -116,7 +116,7 @@ class MondaiViewController: UIViewController {
     @IBAction func calcAction(_ sender: UIButton) {
         if sender.tag == 13 && label.text=="" {
             //labelに表示する文字を決める
-                    label.text="-"
+            label.text="-"
             operation = sender.tag
         }else if sender.tag == 12{
             label.text=label.text!+"."
@@ -138,7 +138,7 @@ class MondaiViewController: UIViewController {
                 view.backgroundColor = UIColor(hex: "b4f5ff")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
+                    //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
                     self.shutudai()
                     self.label.text = ""
                     self.numberOnScreen = 0
