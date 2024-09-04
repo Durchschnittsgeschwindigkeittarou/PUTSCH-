@@ -7,7 +7,8 @@
 
 import UIKit
 
-class middleViewController: UIViewController {
+class middleViewController: UIViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarBackgroundColor(.tintColor)
@@ -18,28 +19,28 @@ class middleViewController: UIViewController {
         case "toItigen":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 1
-                next?.outputValueTwo = 2
+                next?.outputValueOne = 5
+                next?.outputValueTwo = 6
         case "toRenritsu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 2
-                next?.outputValueTwo = 3
+                next?.outputValueOne = 6
+                next?.outputValueTwo = 7
         case "toHirei":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 3
-                next?.outputValueTwo = 4
+                next?.outputValueOne = 7
+                next?.outputValueTwo = 8
         case "toKakuritsu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 4
-                next?.outputValueTwo = 5
+                next?.outputValueOne = 8
+                next?.outputValueTwo = 9
         case "toMiddle":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 1
-                next?.outputValueTwo = 5
+                next?.outputValueOne = 5
+                next?.outputValueTwo = 9
         default:break;
         }
     }
