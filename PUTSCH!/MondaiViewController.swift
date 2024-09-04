@@ -16,7 +16,7 @@ class MondaiViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     var nijoubig:Int!
     var nijousmall:Int!
-    var keisuu = [3,7]
+    var ransuu = [Int]()
     
     private var numberOnScreen: Float = 0
     //private var numberOfAnswer: Float = 0
@@ -46,16 +46,16 @@ class MondaiViewController: UIViewController {
         switch Int.random(in:outputValueOne!..<outputValueTwo!){
         case 1:
             //足し算
-            let tashizanOne=Int.random(in:1..<1000)
-            let tashizanTwo=Int.random(in:1..<1000)
-            mondai.text=String(tashizanOne)+"+"+String(tashizanTwo)
-            numberOfAnswer+=[Float(tashizanOne+tashizanTwo)]
+            randomNumber(abc: 2, underline: 1, upline: 1000)
+            //[0]足される数、[1]足す数
+            mondai.text=String(ransuu[0])+"+"+String(ransuu[1])
+            numberOfAnswer+=[Float(ransuu[0]+ransuu[1])]
         case 2:
             //引き算
-            let hikizanOne=Int.random(in:1..<1000)
-            let hikizanTwo=Int.random(in:1..<1000)
-            mondai.text=String(hikizanOne+hikizanTwo)+"-"+String(hikizanOne)
-            numberOfAnswer=[Float(hikizanTwo)]
+            randomNumber(abc: 2, underline: 1, upline: 1000)
+            //[0]引かれる数、[1]引く数
+            mondai.text=String(ransuu[0]+ransuu[1])+"-"+String(ransuu[0])
+            numberOfAnswer=[Float(ransuu[1])]
         case 3:
             //掛け算(２乗の差)
             let randombig=Int.random(in:3..<10)*10
@@ -64,11 +64,19 @@ class MondaiViewController: UIViewController {
             numberOfAnswer=[Float((randombig+randomsmall)*(randombig-randomsmall))]
         case 4:
             //割り算
-            let warizanOne=Int.random(in:1..<100)
-            let warizanTwo=Int.random(in:1..<100)
-            mondai.text=String(warizanOne*warizanTwo)+"÷"+String(warizanOne)
-            numberOfAnswer=[Float(warizanTwo)]
+            randomNumber(abc: 2, underline: 1, upline: 100)
+            //[0]割られる数、[1]割る数
+            mondai.text=String(ransuu[0]*ransuu[1])+"÷"+String(ransuu[0])
+            numberOfAnswer=[Float(ransuu[1])]
         case 5:
+            //一元一次方程式
+            let itigenOne=Int.random(in:1..<10)
+            let itigenTwo=Int.random(in:1..<10)
+            let itigenX=Int.random(in:1..<100)
+            //[0]・[1]整数項
+            mondai.text=String(itigenOne)+"x+"+String(itigenTwo)+"="+String(itigenOne*itigenX+itigenTwo)+"\nx=??habukareteru";
+            numberOfAnswer=[Float(itigenX)]
+        case 6:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
@@ -93,7 +101,24 @@ class MondaiViewController: UIViewController {
         //桁数を入れるとその桁の乱数が出てくる
         return  Int.random(in: ruijou(kisuu:10,shisuu:ketasuu)..<ruijou(kisuu:10,shisuu:ketasuu)*10)
     }
-    
+    /// 最大公約数 GCD(greatest common divisor)
+    func gcd(_ a : Int, _ b : Int) -> Int {
+        var a = a
+        var b = b
+        while b != 0 {
+            (a, b) = (b, a % b)
+        }
+        return abs(a)
+    }
+    /// 最小公倍数 LCM(lowest common multiple)
+    func lcm(_ a : Int, _ b : Int) -> Int {
+        return (a / gcd(a, b)) * b
+    }
+    func randomNumber(abc:Int,underline:Int,upline:Int){
+        for i in 0..<abc {
+            ransuu.insert(Int.random(in:underline..<upline),at: i)
+        }
+    }
     
     
     private func setupView() {
