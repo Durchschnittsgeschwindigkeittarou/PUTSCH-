@@ -375,6 +375,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="1MI-3j-t8e"/>
+                    <connections>
+                        <outlet property="label" destination="Mbm-OW-8Zh" id="n5J-OF-k7C"/>
+                        <outlet property="mondai" destination="ToI-sd-fg4" id="SMN-27-UHO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eP-EQ-bSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -864,6 +868,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="一元一次方程式"/>
+                                <connections>
+                                    <segue destination="J7g-GS-afa" kind="show" identifier="toItigen" id="T0t-l2-vlf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pDi-ZJ-cz6"/>
