@@ -17,6 +17,7 @@ class MondaiViewController: UIViewController {
     var nijoubig:Int!
     var nijousmall:Int!
     var ransuu = [Int]()
+//    var conversion=[Int]()
     
     private var numberOnScreen: Float = 0
     //private var numberOfAnswer: Float = 0
@@ -35,7 +36,7 @@ class MondaiViewController: UIViewController {
         setStatusBarBackgroundColor(.tintColor)
         //        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
         // Do any additional setup after loading the view.
-        //掛け算
+        //出題
         shutudai()
         //mondai.text=String(nijoubig)+"×"+String(nijousmall)
         setupView()
@@ -69,14 +70,30 @@ class MondaiViewController: UIViewController {
             mondai.text=String(ransuu[0]*ransuu[1])+"÷"+String(ransuu[0])
             numberOfAnswer=[Float(ransuu[1])]
         case 5:
-            //一元一次方程式
-            let itigenOne=Int.random(in:1..<10)
+            //一元一次方程式（＋）
+            let itigenOne=Int.random(in:3..<10)
             let itigenTwo=Int.random(in:1..<10)
             let itigenX=Int.random(in:1..<100)
-            //[0]・[1]整数項
-            mondai.text=String(itigenOne)+"x+"+String(itigenTwo)+"="+String(itigenOne*itigenX+itigenTwo)+"\nx=??habukareteru";
+            mondai.text=String(itigenOne)+"x+"+String(itigenTwo)+"="+String(itigenOne*itigenX+itigenTwo)+"\nx=??";
             numberOfAnswer=[Float(itigenX)]
         case 6:
+            //一元一次方程式（-）
+            let itigenOne=Int.random(in:3..<10)
+            let itigenTwo=Int.random(in:1..<10)
+            let itigenX=Int.random(in:1..<100)
+            mondai.text=String(itigenOne)+"x-"+String(itigenTwo)+"="+String(itigenOne*itigenX-itigenTwo)+"\nx=??";
+            numberOfAnswer=[Float(itigenX)]
+        case 7:
+            //連立方程式(1)
+            let renritsuOne=Int.random(in: 2..<10)
+            let renritsuTwo=Int.random(in: 1..<10)
+            let renritsuX=Int.random(in: 1..<20)
+            let renritsuY=Int.random(in: 1..<20)
+            let renritsuR=Int.random(in: 1..<6)
+            let renritsuThree=Int.random(in: renritsuOne..<11)
+            mondai.text=String(renritsuOne)+"x+"+String(renritsuTwo)+"y="+String(renritsuOne*renritsuX+renritsuTwo*renritsuY)+"\n"+String(renritsuThree)+"x+"+String(renritsuTwo*renritsuR)+"y="+String(renritsuThree*renritsuX+renritsuTwo*renritsuR*renritsuY)+"\nx=??"
+            numberOfAnswer=[Float(renritsuX)]
+        case 8:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
@@ -184,10 +201,11 @@ class MondaiViewController: UIViewController {
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
-                        self.shutudai()
                         self.label.text = ""
                         self.numberOnScreen = 0
                         self.operation = 0
+                        self.numberOfHold=[]
+                        self.shutudai()
                         self.view.backgroundColor = UIColor.systemBackground
                     }
                     
