@@ -7,7 +7,6 @@
 
 import UIKit
 import SwiftUI
-import Charts
 
 class MondaiViewController: UIViewController {
     //var chartView: LineChartView!
@@ -49,7 +48,7 @@ class MondaiViewController: UIViewController {
             randomNumber(abc: 2, underline: 1, upline: 1000)
             //[0]足される数、[1]足す数
             mondai.text=String(ransuu[0])+"+"+String(ransuu[1])
-            numberOfAnswer+=[Float(ransuu[0]+ransuu[1])]
+            numberOfAnswer=[Float(ransuu[0]+ransuu[1])]
         case 2:
             //引き算
             randomNumber(abc: 2, underline: 1, upline: 1000)
@@ -70,13 +69,26 @@ class MondaiViewController: UIViewController {
             numberOfAnswer=[Float(ransuu[1])]
         case 5:
             //一元一次方程式
-            let itigenOne=Int.random(in:1..<10)
+            let itigenOne=Int.random(in:3..<10)
             let itigenTwo=Int.random(in:1..<10)
             let itigenX=Int.random(in:1..<100)
-            //[0]・[1]整数項
-            mondai.text=String(itigenOne)+"x+"+String(itigenTwo)+"="+String(itigenOne*itigenX+itigenTwo)+"\nx=??habukareteru";
+            mondai.text=String(itigenOne)+"x+"+String(itigenTwo)+"="+String(itigenOne*itigenX+itigenTwo)+"\n x=??habukareteru";
             numberOfAnswer=[Float(itigenX)]
-        case 6:
+        case 96:
+            //連立方程式途中
+            let itigenOne=Int.random(in:3..<10)
+            let itigenTwo=Int.random(in:1..<10)
+            let itigenX=Int.random(in:1..<100)
+            mondai.text=String(itigenOne)+"x+"+String(itigenTwo)+"="+String(itigenOne*itigenX+itigenTwo)+"\n x=??habukareteru";
+            numberOfAnswer=[Float(itigenX)]
+        case 97:
+            //分数たしざん
+            randomNumber(abc: 4, underline: 2, upline: 15)
+            let bunshi=ransuu[0]*ransuu[3]+ransuu[2]*ransuu[1]
+            let bunbo=ransuu[0]*ransuu[2]
+            mondai.text=String(ransuu[1])+"/"+String(ransuu[0])+"+"+String(ransuu[3])+"/"+String(ransuu[2]);
+            numberOfAnswer=[Float(bunshi/gcd(bunshi, bunbo)),Float(bunbo/gcd(bunshi, bunbo))]
+        case 98:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
@@ -98,7 +110,7 @@ class MondaiViewController: UIViewController {
         return kisuu*ruijou(kisuu:kisuu,shisuu:shisuu-1)
     }
     func keta(ketasuu: Int)->Int{
-        //桁数を入れるとその桁の乱数が出てくる
+        //桁数を入れるとその桁の乱数が出てくる　　追記：今んとこ使ってないっぽい。消してもいいかも
         return  Int.random(in: ruijou(kisuu:10,shisuu:ketasuu)..<ruijou(kisuu:10,shisuu:ketasuu)*10)
     }
     /// 最大公約数 GCD(greatest common divisor)
@@ -184,10 +196,11 @@ class MondaiViewController: UIViewController {
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
-                        self.shutudai()
                         self.label.text = ""
                         self.numberOnScreen = 0
                         self.operation = 0
+                        self.numberOfHold=[]
+                        self.shutudai()
                         self.view.backgroundColor = UIColor.systemBackground
                     }
                     
