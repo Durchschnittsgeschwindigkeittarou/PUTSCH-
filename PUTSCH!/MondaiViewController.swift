@@ -85,15 +85,77 @@ class MondaiViewController: UIViewController {
             numberOfAnswer=[Float(itigenX)]
         case 7:
             //連立方程式(1)
-            let renritsuOne=Int.random(in: 2..<10)
-            let renritsuTwo=Int.random(in: 1..<10)
-            let renritsuX=Int.random(in: 1..<20)
-            let renritsuY=Int.random(in: 1..<20)
+            randomNumber(abc: 4, underline: 1, upline: 16)
             let renritsuR=Int.random(in: 1..<6)
-            let renritsuThree=Int.random(in: renritsuOne..<11)
-            mondai.text=String(renritsuOne)+"x+"+String(renritsuTwo)+"y="+String(renritsuOne*renritsuX+renritsuTwo*renritsuY)+"\n"+String(renritsuThree)+"x+"+String(renritsuTwo*renritsuR)+"y="+String(renritsuThree*renritsuX+renritsuTwo*renritsuR*renritsuY)+"\nx=??"
-            numberOfAnswer=[Float(renritsuX)]
+            let renritsuThree=Int.random(in: ransuu[0]..<20)
+            let renritsuAnswer1=ransuu[0]*ransuu[1]+ransuu[2]*ransuu[3]
+            let renritsuAnswer2=renritsuThree*ransuu[1]+ransuu[2]*renritsuR*ransuu[3]
+            mondai.text="\(ransuu[0])x+\(ransuu[2])y=\(renritsuAnswer1)\n\(renritsuThree)x+\(ransuu[2]*renritsuR)y=\(renritsuAnswer2)\nx=??"
+            numberOfAnswer=[Float(ransuu[1])]
         case 8:
+            //連立方程式(2)
+            randomNumber(abc: 4, underline: 1, upline: 16)
+            let renritsuR=Int.random(in: 1..<6)
+            let renritsuThree=Int.random(in: ransuu[0]..<20)
+            let renritsuAnswer1=ransuu[0]*ransuu[1]+ransuu[2]*ransuu[3]
+            let renritsuAnswer2=renritsuThree*ransuu[1]-ransuu[2]*renritsuR*ransuu[3]
+            mondai.text="\(ransuu[0])x+\(ransuu[2])y=\(renritsuAnswer1)\n\(renritsuThree)x-\(ransuu[2]*renritsuR)y=\(renritsuAnswer2)\nx=??"
+            numberOfAnswer=[Float(ransuu[1])]
+        case 9:
+            //連立方程式(3)
+            randomNumber(abc: 4, underline: 1, upline: 16)
+            let renritsuR=Int.random(in: 1..<6)
+            let renritsuThree=Int.random(in: ransuu[0]..<20)
+            let renritsuAnswer1=ransuu[0]*ransuu[1]-ransuu[2]*ransuu[3]
+            let renritsuAnswer2=renritsuThree*ransuu[1]+ransuu[2]*renritsuR*ransuu[3]
+            mondai.text="\(ransuu[0])x-\(ransuu[2])y=\(renritsuAnswer1)\n\(renritsuThree)x+\(ransuu[2]*renritsuR)y=\(renritsuAnswer2)\nx=??"
+            numberOfAnswer=[Float(ransuu[1])]
+        case 10:
+            //連立方程式(4)
+            randomNumber(abc: 4, underline: 1, upline: 16)
+            let renritsuR=Int.random(in: 1..<6)
+            let renritsuThree=Int.random(in: ransuu[0]..<20)
+            let renritsuAnswer1=ransuu[0]*ransuu[1]-ransuu[2]*ransuu[3]
+            let renritsuAnswer2=renritsuThree*ransuu[1]-ransuu[2]*renritsuR*ransuu[3]
+            mondai.text="\(ransuu[0])x-\(ransuu[2])y=\(renritsuAnswer1)\n\(renritsuThree)x-\(ransuu[2]*renritsuR)y=\(renritsuAnswer2)\nx=??"
+            numberOfAnswer=[Float(ransuu[1])]
+        case 11:
+            //連立方程式(5)
+            randomNumber(abc: 4, underline: 1, upline: 16)
+            let renritsuR=Int.random(in: 1..<6)
+            let renritsuThree=Int.random(in: ransuu[0]..<20)
+            let renritsuAnswer1=ransuu[0]*ransuu[1]+ransuu[2]*ransuu[3]
+            let renritsuAnswer2=ransuu[0]*renritsuR*ransuu[1]+renritsuThree*ransuu[3]
+            mondai.text="\(ransuu[0])x+\(ransuu[2])y=\(renritsuAnswer1)\n\(ransuu[0]*renritsuR)x+\(renritsuThree)y=\(renritsuAnswer2)\ny=??"
+            numberOfAnswer=[Float(ransuu[3])]
+        case 12:
+            //連立方程式(6)
+            randomNumber(abc: 4, underline: 1, upline: 16)
+            let renritsuR=Int.random(in: 1..<6)
+            let renritsuThree=Int.random(in: ransuu[0]..<20)
+            let renritsuAnswer1=ransuu[0]*ransuu[1]+ransuu[2]*ransuu[3]
+            let renritsuAnswer2=ransuu[0]*renritsuR*ransuu[1]-renritsuThree*ransuu[3]
+            mondai.text="\(ransuu[0])x+\(ransuu[2])y=\(renritsuAnswer1)\n\(ransuu[0]*renritsuR)x-\(renritsuThree)y=\(renritsuAnswer2)\ny=??"
+            numberOfAnswer=[Float(ransuu[3])]
+        case 13:
+            //連立方程式(7)
+            randomNumber(abc: 4, underline: 1, upline: 16)
+            let renritsuR=Int.random(in: 1..<6)
+            let renritsuThree=Int.random(in: ransuu[0]..<20)
+            let renritsuAnswer1=ransuu[0]*ransuu[1]-ransuu[2]*ransuu[3]
+            let renritsuAnswer2=ransuu[0]*renritsuR*ransuu[1]+renritsuThree*ransuu[3]
+            mondai.text="\(ransuu[0])x-\(ransuu[2])y=\(renritsuAnswer1)\n\(ransuu[0]*renritsuR)x+\(renritsuThree)y=\(renritsuAnswer2)\ny=??"
+            numberOfAnswer=[Float(ransuu[3])]
+        case 14:
+            //連立方程式(8)
+            randomNumber(abc: 4, underline: 1, upline: 16)
+            let renritsuR=Int.random(in: 1..<6)
+            let renritsuThree=Int.random(in: ransuu[0]..<20)
+            let renritsuAnswer1=ransuu[0]*ransuu[1]-ransuu[2]*ransuu[3]
+            let renritsuAnswer2=ransuu[0]*renritsuR*ransuu[1]-renritsuThree*ransuu[3]
+            mondai.text="\(ransuu[0])x-\(ransuu[2])y=\(renritsuAnswer1)\n\(ransuu[0]*renritsuR)x-\(renritsuThree)y=\(renritsuAnswer2)\ny=??"
+            numberOfAnswer=[Float(ransuu[3])]
+        case 15:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)

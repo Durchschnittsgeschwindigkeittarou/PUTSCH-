@@ -25,22 +25,22 @@ class middleViewController: UIViewController{
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValueOne = 7
-                next?.outputValueTwo = 8
+                next?.outputValueTwo = 15
         case "toHirei":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 9
-                next?.outputValueTwo = 10
+                next?.outputValueOne = 15
+                next?.outputValueTwo = 16
         case "toKakuritsu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 10
-                next?.outputValueTwo = 11
+                next?.outputValueOne = 16
+                next?.outputValueTwo = 17
         case "toMiddle":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValueOne = 5
-                next?.outputValueTwo = 9
+                next?.outputValueTwo = 17
         default:break;
         }
     }
