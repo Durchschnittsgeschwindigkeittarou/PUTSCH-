@@ -59,19 +59,6 @@ class MondaiViewController: UIViewController {
             let randomsmall=Int.random(in:1..<4)
             mondai.text=String(randombig+randomsmall)+"×"+String(randombig-randomsmall)
             numberOfAnswer=[Float((randombig+randomsmall)*(randombig-randomsmall))]
-        case 4:
-            //割り算
-            randomNumber(abc: 2, underline: 1, upline: 100)
-            //[0]割られる数、[1]割る数
-            mondai.text=String(ransuu[0]*ransuu[1])+"÷"+String(ransuu[0])
-            numberOfAnswer=[Float(ransuu[1])]
-        case 5:
-            //一元一次方程式
-            let itigenOne=Int.random(in:3..<10)
-            let itigenTwo=Int.random(in:1..<10)
-            let itigenX=Int.random(in:1..<100)
-            mondai.text=String(itigenOne)+"x+"+String(itigenTwo)+"="+String(itigenOne*itigenX+itigenTwo)+"\nx=?";
-            numberOfAnswer=[Float(itigenX)]
         case 95:
             //比例(比)
             randomNumber(abc: 3, underline: 1, upline: 20)
@@ -85,6 +72,19 @@ class MondaiViewController: UIViewController {
                 numberOfAnswer=[Float(ransuu[1])]
             default:break
             }
+        case 4:
+            //割り算
+            randomNumber(abc: 2, underline: 1, upline: 100)
+            //[0]割られる数、[1]割る数
+            mondai.text=String(ransuu[0]*ransuu[1])+"÷"+String(ransuu[0])
+            numberOfAnswer=[Float(ransuu[1])]
+        case 5:
+            //一元一次方程式
+            let itigenOne=Int.random(in:3..<10)
+            let itigenTwo=Int.random(in:1..<10)
+            let itigenX=Int.random(in:1..<100)
+            mondai.text=String(itigenOne)+"x+"+String(itigenTwo)+"="+String(itigenOne*itigenX+itigenTwo)+"\nx=?";
+            numberOfAnswer=[Float(itigenX)]
         case 96:
             //連立方程式二号機
             randomNumber(abc: 3, underline: 1, upline: 16)
