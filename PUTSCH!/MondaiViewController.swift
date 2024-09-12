@@ -7,7 +7,6 @@
 
 import UIKit
 import SwiftUI
-import Charts
 
 class MondaiViewController: UIViewController {
     //var chartView: LineChartView!
@@ -17,7 +16,7 @@ class MondaiViewController: UIViewController {
     var nijoubig:Int!
     var nijousmall:Int!
     var ransuu = [Int]()
-//    var conversion=[Int]()
+    var ransuuSecond=[Int]()//何となく作った乱数用の配列二つ目　今んとこ使ってない
     
     private var numberOnScreen: Float = 0
     //private var numberOnScreen = [Float]()
@@ -37,7 +36,6 @@ class MondaiViewController: UIViewController {
         // Do any additional setup after loading the view.
         //出題
         shutudai()
-        //mondai.text=String(nijoubig)+"×"+String(nijousmall)
         setupView()
         
     }
@@ -56,7 +54,7 @@ class MondaiViewController: UIViewController {
             //[0]引かれる数、[1]引く数
             mondai.text=String(ransuu[0]+ransuu[1])+"-"+String(ransuu[0])
             numberOfAnswer=[Float(ransuu[1])]
-        case 3:
+        case 73:
             //掛け算(２乗の差)
             let randombig=Int.random(in:3..<10)*10
             let randomsmall=Int.random(in:1..<4)
@@ -170,11 +168,57 @@ class MondaiViewController: UIViewController {
             let over=Int.random(in:1..<6)
             mondai.text=String(basic)+"^"+String(over)
             numberOfAnswer=[Float(ruijou(kisuu:basic,shisuu:over))]
+        case 16:
+            //比例(比)
+            randomNumber(abc: 3, underline: 1, upline: 20)
+            let ratio=Int.random(in:2..<9)
+            switch Int.random(in:1..<5){
+            case 1:
+                mondai.text="x:"+String(ransuu[1])+"="+String(ransuu[0]*ratio)+":"+String(ransuu[1]*ratio)+"\nx=?"
+                numberOfAnswer=[Float(ransuu[0])]
+            case 2:
+                mondai.text=String(ransuu[0])+":x="+String(ransuu[0]*ratio)+":"+String(ransuu[1]*ratio)+"\n=x?"
+                numberOfAnswer=[Float(ransuu[1])]
+            case 3:
+                mondai.text=String(ransuu[0])+":"+String(ransuu[1])+"=x:"+String(ransuu[1]*ratio)+"\n=x?"
+                numberOfAnswer=[Float(ransuu[0]*ratio)]
+            case 4:
+                mondai.text=String(ransuu[0])+":"+String(ransuu[1])+"="+String(ransuu[0]*ratio)+":x"+"\n=x?"
+                numberOfAnswer=[Float(ransuu[1]*ratio)]
+            default:break
+            }
         case 99:
             let timing=Int.random(in:60..<600)
             mondai.text=String(timing)+"秒 (作成中。表示されている秒数そのまま入力して)"
             numberOfAnswer=[Float(timing)]
-            break
+        case 101:
+            randomNumber(abc: 3, underline: 2, upline: 10)
+            let schale=Int.random(in:2..<6)
+            mondai.text=String(ransuu[2])+"x^2+"+String(ransuu[1])+"x+"+String(ransuu[0])+"\nx="+String(schale)
+            dainyu(numbereleven: schale)
+            numberOfAnswer=[Float(ransuu[0]+ransuu[1]+ransuu[2])]
+
+        case 102:
+            randomNumber(abc: 3, underline: 2, upline: 10)
+            let vorn=Int.random(in:2..<6)
+            let unten=Int.random(in:2..<6)
+            mondai.text=String(ransuu[2])+"x^2+"+String(ransuu[1])+"x+"+String(ransuu[0])+"\nx="+String(vorn)+"  "+String(unten)
+            sekibunjunbi()
+            dainyu(numbereleven: vorn,numbertwelve: unten)
+            let bunshi=6*ransuu[1]+3*ransuu[2]+2*ransuu[3]
+            let yakubun=gcd(bunshi, 6)
+            numberOfAnswer=[Float(bunshi/yakubun),Float(6/yakubun)]
+        case 103:  //nPr
+            let randombig=Int.random(in:3..<10)
+            let randomsmall=Int.random(in:1..<randombig+1)
+            mondai.text=String(randombig)+"P"+String(randomsmall)
+            numberOfAnswer=[Float(kaijou(maxim: randombig)/kaijou(maxim: randombig-randomsmall))]
+        case 104: //nCr
+            let randombig=Int.random(in:3..<10)
+            let randomsmall=Int.random(in:1..<randombig+1)
+            let bunbobunbo=kaijou(maxim: randombig-randomsmall)*kaijou(maxim: randomsmall)
+            mondai.text=String(randombig)+"C"+String(randomsmall)
+            numberOfAnswer=[Float(kaijou(maxim: randombig)/bunbobunbo)]
         default:break
         }
     }
@@ -184,10 +228,6 @@ class MondaiViewController: UIViewController {
             //基数、指数の順で入れると累乗ができる
         }
         return kisuu*ruijou(kisuu:kisuu,shisuu:shisuu-1)
-    }
-    func keta(ketasuu: Int)->Int{
-        //桁数を入れるとその桁の乱数が出てくる
-        return  Int.random(in: ruijou(kisuu:10,shisuu:ketasuu)..<ruijou(kisuu:10,shisuu:ketasuu)*10)
     }
     /// 最大公約数 GCD(greatest common divisor)
     func gcd(_ a : Int, _ b : Int) -> Int {
@@ -207,7 +247,25 @@ class MondaiViewController: UIViewController {
             ransuu.insert(Int.random(in:underline..<upline),at: i)
         }
     }
-    
+    func sekibunjunbi(){
+        let mass = ransuu.count
+        ransuu+=[0]
+        for i in 0..<mass{
+            ransuu[mass-i]=ransuu[mass-i-1]
+        }
+        ransuu[0]=0
+    }
+    func dainyu(numbereleven:Int,numbertwelve:Int=0){
+        for i in 0..<ransuu.count{
+            ransuu[i]=ransuu[i]*(ruijou(kisuu: numbereleven, shisuu: i)-ruijou(kisuu: numbertwelve, shisuu: i))
+        }
+    }
+    func kaijou(maxim:Int)->Int{
+        if maxim==0{
+            return 1
+        }
+        return maxim*kaijou(maxim: maxim-1)
+    }
     
     private func setupView() {
         label.text = ""
@@ -282,7 +340,6 @@ class MondaiViewController: UIViewController {
                     
                 }else{
                     //不正解だと
-                    //mondai.text=String(numberOfAnswer)+"チガウヨー"
                     mondai.text="チガウヨー"
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）

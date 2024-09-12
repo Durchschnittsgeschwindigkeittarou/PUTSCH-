@@ -62,9 +62,9 @@
             filePath = "PUTSCH!/MondaiViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "showNumber(_:)"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "shutudai()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,9 +78,9 @@
             filePath = "PUTSCH!/MondaiViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "calcAction(_:)"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "randomNumber(abc:underline:upline:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
