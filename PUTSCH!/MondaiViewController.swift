@@ -19,6 +19,7 @@ class MondaiViewController: UIViewController {
     var ransuuSecond=[Int]()//何となく作った乱数用の配列二つ目　今んとこ使ってない
     
     private var numberOnScreen: Float = 0
+    //private var numberOnScreen = [Float]()
     private var numberOfAnswer = [Float]()
     private var numberOfHold=[Float]()
     private var operation = 0
@@ -53,7 +54,7 @@ class MondaiViewController: UIViewController {
             //[0]引かれる数、[1]引く数
             mondai.text=String(ransuu[0]+ransuu[1])+"-"+String(ransuu[0])
             numberOfAnswer=[Float(ransuu[1])]
-        case 73:
+        case 3:
             //掛け算(２乗の差)
             let randombig=Int.random(in:3..<10)*10
             let randomsmall=Int.random(in:1..<4)
@@ -152,6 +153,16 @@ class MondaiViewController: UIViewController {
             mondai.text="\(ransuu[0])x-\(ransuu[2])y=\(renritsuAnswer1)\n\(ransuu[0]*renritsuR)x-\(renritsuThree)y=\(renritsuAnswer2)\ny=??"
             numberOfAnswer=[Float(ransuu[3])]
         case 15:
+            //比例
+            randomNumber(abc: 2, underline: 5, upline: 40)
+            mondai.text="yはxに比例し、x＝\(ransuu[0])の時y＝\(ransuu[0]*ransuu[1])\ny=??x"
+            numberOfAnswer=[Float(ransuu[1])]
+        case 16:
+            //反比例
+            randomNumber(abc: 2, underline: 5, upline: 30)
+            mondai.text="yはxに反比例し、x＝\(ransuu[0])の時y＝\(ransuu[0]*ransuu[1]/ransuu[0])\ny=??/x"
+            numberOfAnswer=[Float(ransuu[0]*ransuu[1])]
+        case 17:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
