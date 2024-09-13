@@ -1,21 +1,49 @@
 //
-//  highViewController.swift
+//  FirstViewController.swift
 //  PUTSCH!
 //
-//  Created by clark on 2024/07/05.
+//  Created by clark on 2024/05/23.
 //
 
 import UIKit
 
-class highViewController: UIViewController {
-
+class highViewController: UIViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setStatusBarBackgroundColor(.tintColor)
         // Do any additional setup after loading the view.
     }
-    
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "toKakuritsu":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValueOne = 18
+                next?.outputValueTwo = 20
+        case "toSuuretsu":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValueOne = 20
+                next?.outputValueTwo = 21
+        case "toBibunn":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValueOne = 21
+                next?.outputValueTwo = 22
+        case "toKyokugenn":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValueOne = 23
+                next?.outputValueTwo = 24
+        case "tohigh":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValueOne = 5
+                next?.outputValueTwo = 18
+        default:break;
+        }
+    }
     /*
     // MARK: - Navigation
 

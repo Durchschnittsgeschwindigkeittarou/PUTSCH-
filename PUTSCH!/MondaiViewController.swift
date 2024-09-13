@@ -54,7 +54,7 @@ class MondaiViewController: UIViewController {
             //[0]引かれる数、[1]引く数
             mondai.text=String(ransuu[0]+ransuu[1])+"-"+String(ransuu[0])
             numberOfAnswer=[Float(ransuu[1])]
-        case 73:
+        case 3:
             //掛け算(２乗の差)
             let randombig=Int.random(in:3..<10)*10
             let randomsmall=Int.random(in:1..<4)
@@ -163,12 +163,28 @@ class MondaiViewController: UIViewController {
             mondai.text="yはxに反比例し、x＝\(ransuu[0])の時y＝\(ransuu[0]*ransuu[1]/ransuu[0])\ny=??/x"
             numberOfAnswer=[Float(ransuu[0]*ransuu[1])]
         case 17:
+            //二次方程式
+            randomNumber(abc: 2, underline: 3, upline: 100)
+            mondai.text="x²-\(ransuu[0]+ransuu[1])x+\(ransuu[0]*ransuu[1])=0\nx=\(ransuu[0])、??"
+            numberOfAnswer=[Float(ransuu[1])]
+        case 18:  //確率（nPr）
+            let randombig=Int.random(in:3..<10)
+            let randomsmall=Int.random(in:1..<randombig+1)
+            mondai.text="\(String(randombig))個の中から\(String(randomsmall))個取り出して並べるとき、並べ方の総数は？\n??通り"
+            numberOfAnswer=[Float(kaijou(maxim: randombig)/kaijou(maxim: randombig-randomsmall))]
+        case 19: //確率（nCr）
+            let randombig=Int.random(in:3..<10)
+            let randomsmall=Int.random(in:1..<randombig+1)
+            let bunbobunbo=kaijou(maxim: randombig-randomsmall)*kaijou(maxim: randomsmall)
+            mondai.text="\(String(randombig))個の中から\(String(randomsmall))個取り出して組み合わせる時、組み合わせ方の総数は？\n??通り"
+            numberOfAnswer=[Float(kaijou(maxim: randombig)/bunbobunbo)]
+        case 20:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
             mondai.text=String(basic)+"^"+String(over)
             numberOfAnswer=[Float(ruijou(kisuu:basic,shisuu:over))]
-        case 16:
+        case 98:
             //比例(比)
             randomNumber(abc: 3, underline: 1, upline: 20)
             let ratio=Int.random(in:2..<9)
@@ -208,17 +224,6 @@ class MondaiViewController: UIViewController {
             let bunshi=6*ransuu[1]+3*ransuu[2]+2*ransuu[3]
             let yakubun=gcd(bunshi, 6)
             numberOfAnswer=[Float(bunshi/yakubun),Float(6/yakubun)]
-        case 103:  //nPr
-            let randombig=Int.random(in:3..<10)
-            let randomsmall=Int.random(in:1..<randombig+1)
-            mondai.text=String(randombig)+"P"+String(randomsmall)
-            numberOfAnswer=[Float(kaijou(maxim: randombig)/kaijou(maxim: randombig-randomsmall))]
-        case 104: //nCr
-            let randombig=Int.random(in:3..<10)
-            let randomsmall=Int.random(in:1..<randombig+1)
-            let bunbobunbo=kaijou(maxim: randombig-randomsmall)*kaijou(maxim: randomsmall)
-            mondai.text=String(randombig)+"C"+String(randomsmall)
-            numberOfAnswer=[Float(kaijou(maxim: randombig)/bunbobunbo)]
         default:break
         }
     }

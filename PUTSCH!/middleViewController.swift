@@ -31,7 +31,7 @@ class middleViewController: UIViewController{
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValueOne = 15
                 next?.outputValueTwo = 17
-        case "toKakuritsu":
+        case "toNiji":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValueOne = 17
@@ -40,7 +40,7 @@ class middleViewController: UIViewController{
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValueOne = 5
-                next?.outputValueTwo = 17
+                next?.outputValueTwo = 18
         default:break;
         }
     }
