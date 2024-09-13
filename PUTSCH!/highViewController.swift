@@ -25,7 +25,7 @@ class highViewController: UIViewController{
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValueOne = 20
-                next?.outputValueTwo = 21
+                next?.outputValueTwo = 22
         case "toBibunn":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す

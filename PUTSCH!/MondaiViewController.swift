@@ -178,13 +178,24 @@ class MondaiViewController: UIViewController {
             let bunbobunbo=kaijou(maxim: randombig-randomsmall)*kaijou(maxim: randomsmall)
             mondai.text="\(String(randombig))個の中から\(String(randomsmall))個取り出して組み合わせる時、組み合わせ方の総数は？\n??通り"
             numberOfAnswer=[Float(kaijou(maxim: randombig)/bunbobunbo)]
-        case 20:
+        case 20:  //等差の和
+            randomNumber(abc: 3, underline: 2, upline: 7)
+            let synthesis=2*ransuu[0]+(ransuu[2]-1)*ransuu[1]
+            mondai.text="初項が\(String(ransuu[0]))、公差が\(String(ransuu[1]))の等差数列において、\n第\(String(ransuu[2]))項までの総和は？"
+            numberOfAnswer=[Float(ransuu[2]*synthesis/2)]
+        case 21:  //等比の和
+            randomNumber(abc: 3, underline: 2, upline: 7)
+        //let kagiri=Int.random(in:2..<5)  「n項まで」の部分用乱数。　今のままじゃ難しいのならばransuu[2]をこれに置き換えるべし
+            let synthesis=ransuu[0]*ruijou(kisuu: ransuu[1], shisuu: ransuu[2])
+            mondai.text="初項が\(String(ransuu[0]))、公比が\(String(ransuu[1]))の等比数列において、\n第\(String(ransuu[2]))項までの総和は？"
+            numberOfAnswer=[Float((synthesis-ransuu[0])/(ransuu[1]-1))]
+        case 22:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
             mondai.text=String(basic)+"^"+String(over)
             numberOfAnswer=[Float(ruijou(kisuu:basic,shisuu:over))]
-        case 18:
+        case 102:
             //比例(比)
             randomNumber(abc: 3, underline: 1, upline: 20)
             let ratio=Int.random(in:2..<9)
@@ -214,7 +225,7 @@ class MondaiViewController: UIViewController {
             dainyu(numbereleven: schale)
             numberOfAnswer=[Float(ransuu[0]+ransuu[1]+ransuu[2])]
 
-        case 2:
+        case 202:
             randomNumber(abc: 3, underline: 2, upline: 10)
             let vorn=Int.random(in:2..<6)
             let unten=Int.random(in:1..<vorn)
@@ -224,28 +235,6 @@ class MondaiViewController: UIViewController {
             let bunshi=6*ransuu[1]+3*ransuu[2]+2*ransuu[3]
             let yakubun=gcd(bunshi, 6)
             numberOfAnswer=[Float(bunshi/yakubun),Float(6/yakubun)]
-        case 103:  //nPr
-            let randombig=Int.random(in:3..<10)
-            let randomsmall=Int.random(in:1..<randombig+1)
-            mondai.text=String(randombig)+"P"+String(randomsmall)
-            numberOfAnswer=[Float(kaijou(maxim: randombig)/kaijou(maxim: randombig-randomsmall))]
-        case 104: //nCr
-            let randombig=Int.random(in:3..<10)
-            let randomsmall=Int.random(in:1..<randombig+1)
-            let bunbobunbo=kaijou(maxim: randombig-randomsmall)*kaijou(maxim: randomsmall)
-            mondai.text=String(randombig)+"C"+String(randomsmall)
-            numberOfAnswer=[Float(kaijou(maxim: randombig)/bunbobunbo)]
-        case 105:  //等差の和
-            randomNumber(abc: 3, underline: 2, upline: 7)
-            let synthesis=2*ransuu[0]+(ransuu[2]-1)*ransuu[1]
-            mondai.text="初項が\(String(ransuu[0]))、公差が\(String(ransuu[1]))の等差数列において、\n第\(String(ransuu[2]))項までの総和は？"
-            numberOfAnswer=[Float(ransuu[2]*synthesis/2)]
-        case 1:  //等比の和
-            randomNumber(abc: 3, underline: 2, upline: 7)
-        //let kagiri=Int.random(in:2..<5)  「n項まで」の部分用乱数。　今のままじゃ難しいのならばransuu[2]をこれに置き換えるべし
-            let synthesis=ransuu[0]*ruijou(kisuu: ransuu[1], shisuu: ransuu[2])
-            mondai.text="初項が\(String(ransuu[0]))、公比が\(String(ransuu[1]))の等比数列において、\n第\(String(ransuu[2]))項までの総和は？"
-            numberOfAnswer=[Float((synthesis-ransuu[0])/(ransuu[1]-1))]
         default:break
         }
     }

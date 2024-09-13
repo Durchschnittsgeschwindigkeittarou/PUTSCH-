@@ -924,6 +924,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="等差数列・等比数列"/>
+                                <connections>
+                                    <segue destination="cfr-eD-fRQ" kind="show" identifier="toSuuretsu" id="Lq9-fo-IHN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHX-yH-7Wm">
                                 <rect key="frame" x="0.0" y="601" width="393" height="67"/>
@@ -950,6 +953,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dyc-5J-tCR"/>
+        <segue reference="Lq9-fo-IHN"/>
         <segue reference="txZ-X2-lAN"/>
     </inferredMetricsTieBreakers>
     <resources>
