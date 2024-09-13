@@ -55,6 +55,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2C0EAED1-1700-403E-A3B0-1BA9ED333580"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PUTSCH!/MondaiViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "shutudai()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "E9C6029A-BFF7-45FD-9165-E51038DFC821"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -62,9 +78,9 @@
             filePath = "PUTSCH!/MondaiViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "dainyu(numbereleven:numbertwelve:)"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "gcd(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
