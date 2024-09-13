@@ -42,13 +42,13 @@ class MondaiViewController: UIViewController {
     func shutudai(){
         //ボタン押した時ランダムに式
         switch Int.random(in:outputValueOne!..<outputValueTwo!){
-        case 1000:
+        case 201:
             //足し算
             randomNumber(abc: 2, underline: 1, upline: 1000)
             //[0]足される数、[1]足す数
             mondai.text=String(ransuu[0])+"+"+String(ransuu[1])
             numberOfAnswer+=[Float(ransuu[0]+ransuu[1])]
-        case 72:
+        case 2:
             //引き算
             randomNumber(abc: 2, underline: 1, upline: 1000)
             //[0]引かれる数、[1]引く数
@@ -224,7 +224,17 @@ class MondaiViewController: UIViewController {
             mondai.text=String(ransuu[2])+"x^2+"+String(ransuu[1])+"x+"+String(ransuu[0])+"\nx="+String(schale)
             dainyu(numbereleven: schale)
             numberOfAnswer=[Float(ransuu[0]+ransuu[1]+ransuu[2])]
-
+        case 103://極限　案１
+            let schale=Int.random(in:2..<6)
+            mondai.text="lim n→\(schale)  (x^3-\(ruijou(kisuu: schale, shisuu: 3)))/(x-\(schale))"
+            numberOfAnswer=[Float(schale*schale+schale+1)]
+        case 1:
+            randomNumber(abc: 3, underline: 2, upline: 10)
+            let vorsitz=Int.random(in:2..<6)
+            mondai.text="f(x)=\(ransuu[2])x^2+\(ransuu[1])x+\(ransuu[0])\nf'(\(vorsitz))=?"
+            bibunjunbi()
+            //dainyu(numbereleven: vorsitz)
+            numberOfAnswer=[Float(ransuu[1]*vorsitz+ransuu[0])]
         case 202:
             randomNumber(abc: 3, underline: 2, upline: 10)
             let vorn=Int.random(in:2..<6)
@@ -262,6 +272,12 @@ class MondaiViewController: UIViewController {
         for i in 0..<abc {
             ransuu.insert(Int.random(in:underline..<upline),at: i)
         }
+    }
+    func bibunjunbi(){
+        for i in 0..<ransuu.count-1{
+            ransuu[i]=ransuu[i+1]*(i+1)
+        }
+        ransuu.removeLast()
     }
     func sekibunjunbi(){
         let mass = ransuu.count
