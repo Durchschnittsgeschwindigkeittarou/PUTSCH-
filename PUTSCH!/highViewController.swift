@@ -29,14 +29,14 @@ class highViewController: UIViewController{
         case "toBibunn":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 21
-                next?.outputValueTwo = 22
-        case "toKyokugenn":
+                next?.outputValueOne = 22
+                next?.outputValueTwo = 24
+        case "toShisuu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 23
-                next?.outputValueTwo = 24
-        case "tohigh":
+                next?.outputValueOne = 24
+                next?.outputValueTwo = 27
+        case "toHigh":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValueOne = 5

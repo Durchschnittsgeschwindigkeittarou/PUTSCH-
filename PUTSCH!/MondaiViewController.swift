@@ -25,6 +25,7 @@ class MondaiViewController: UIViewController {
     private var operation = 0
     private var shosuHantei = false
     private var shosuKurai:Int = 0
+    private var shisuu:[String]=["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹"]
     
     var outputValueOne:Int?
     var outputValueTwo:Int?
@@ -42,13 +43,13 @@ class MondaiViewController: UIViewController {
     func shutudai(){
         //ボタン押した時ランダムに式
         switch Int.random(in:outputValueOne!..<outputValueTwo!){
-        case 1000:
+        case 1:
             //足し算
             randomNumber(abc: 2, underline: 1, upline: 1000)
             //[0]足される数、[1]足す数
             mondai.text=String(ransuu[0])+"+"+String(ransuu[1])
             numberOfAnswer+=[Float(ransuu[0]+ransuu[1])]
-        case 72:
+        case 2:
             //引き算
             randomNumber(abc: 2, underline: 1, upline: 1000)
             //[0]引かれる数、[1]引く数
@@ -178,18 +179,49 @@ class MondaiViewController: UIViewController {
             let bunbobunbo=kaijou(maxim: randombig-randomsmall)*kaijou(maxim: randomsmall)
             mondai.text="\(String(randombig))個の中から\(String(randomsmall))個取り出して組み合わせる時、組み合わせ方の総数は？\n??通り"
             numberOfAnswer=[Float(kaijou(maxim: randombig)/bunbobunbo)]
-        case 20:  //等差の和
+        case 20:  
+            //等差の和
             randomNumber(abc: 3, underline: 2, upline: 7)
             let synthesis=2*ransuu[0]+(ransuu[2]-1)*ransuu[1]
             mondai.text="初項が\(String(ransuu[0]))、公差が\(String(ransuu[1]))の等差数列において、\n第\(String(ransuu[2]))項までの総和は？"
             numberOfAnswer=[Float(ransuu[2]*synthesis/2)]
-        case 21:  //等比の和
+        case 21:  
+            //等比の和
             randomNumber(abc: 3, underline: 2, upline: 7)
-        //let kagiri=Int.random(in:2..<5)  「n項まで」の部分用乱数。　今のままじゃ難しいのならばransuu[2]をこれに置き換えるべし
+            //let kagiri=Int.random(in:2..<5)  「n項まで」の部分用乱数。　今のままじゃ難しいのならばransuu[2]をこれに置き換えるべし
             let synthesis=ransuu[0]*ruijou(kisuu: ransuu[1], shisuu: ransuu[2])
             mondai.text="初項が\(String(ransuu[0]))、公比が\(String(ransuu[1]))の等比数列において、\n第\(String(ransuu[2]))項までの総和は？"
             numberOfAnswer=[Float((synthesis-ransuu[0])/(ransuu[1]-1))]
         case 22:
+            //微分（2次）
+            mondai.text=""
+            numberOfAnswer=[Float()]
+        case 23:
+            //微分（3次）
+            mondai.text=""
+            numberOfAnswer=[Float()]
+        case 24:
+            //指数
+            let OneShisuu=Int.random(in: 0..<10)
+            let TwoShisuu=Int.random(in: 0..<10)
+            randomNumber(abc: 1, underline: 1, upline: 10)
+            mondai.text="\(ransuu[0])\(shisuu[OneShisuu])×\(ransuu[0])\(shisuu[TwoShisuu])の時の指数は？"
+            numberOfAnswer=[Float(OneShisuu+TwoShisuu)]
+        case 25:
+            //指数
+            let OneShisuu=Int.random(in: 0..<10)
+            let TwoShisuu=Int.random(in: 0..<10)
+            randomNumber(abc: 1, underline: 1, upline: 10)
+            mondai.text="\(ransuu[0])\(shisuu[OneShisuu])÷\(ransuu[0])\(shisuu[TwoShisuu])の時の指数は？"
+            numberOfAnswer=[Float(TwoShisuu/OneShisuu)]
+        case 26:
+            //指数
+            let OneShisuu=Int.random(in: 0..<10)
+            let TwoShisuu=Int.random(in: 0..<10)
+            randomNumber(abc: 1, underline: 1, upline: 10)
+            mondai.text="(\(ransuu[0])\(shisuu[OneShisuu]))\(shisuu[TwoShisuu])の時の指数は？"
+            numberOfAnswer=[Float(OneShisuu*TwoShisuu)]
+        case 27:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
@@ -308,10 +340,10 @@ class MondaiViewController: UIViewController {
     @IBAction func calcAction(_ sender: UIButton) {
         if sender.tag == 13 && label.text=="" {
             //labelに表示する文字を決める
-            label.text="-"
+            label.text="x"
             operation = sender.tag
         }else if sender.tag == 12{
-            label.text=label.text!+"."
+            label.text=label.text!+"y"
             shosuHantei=true
             operation = sender.tag
         }else if sender.tag == 11 {
