@@ -37,11 +37,13 @@ class MondaiViewController: UIViewController {
         //        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
         // Do any additional setup after loading the view.
         //出題
+        questionNumber=1
         shutudai()
         setupView()
         
     }
     func shutudai(){
+        nanmonme.text="\(questionNumber)/10"
         //ボタン押した時ランダムに式
         switch Int.random(in:outputValueOne!..<outputValueTwo!){
         case 1:
@@ -391,7 +393,6 @@ class MondaiViewController: UIViewController {
             numberOfHold+=[numberOnScreen]
             //プレイヤーの解答入力数と模範解答数を比較
             if numberOfHold.count == numberOfAnswer.count{//全部解答
-                questionNumber=questionNumber+1
                 var correct: Int=0
                 for i in 0..<numberOfAnswer.count{
                     if numberOfHold[i]==numberOfAnswer[i]{
@@ -413,18 +414,7 @@ class MondaiViewController: UIViewController {
                     //不正解だと
                     mondai.text="残念\(numberOfAnswer[0])"
                     view.backgroundColor = UIColor(hex: "ffb6c1")
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
-                        self.label.text = ""
-                        self.numberOnScreen = 0
-                        self.operation = 0
-                        self.numberOfHold=[]
-                        self.numberOfAnswer=[]
-                        self.shosuKurai=0
-                        self.shosuHantei=false
-                        self.shutudai()
-                        self.view.backgroundColor = UIColor.systemBackground
-                    }
+                    resetAction()
                 }
             }else{//解答数未了
                 label.text = ""
@@ -434,6 +424,7 @@ class MondaiViewController: UIViewController {
         }//if sender.tag==14
     }//calcAction
     func resetAction(){
+        questionNumber=questionNumber+1
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
             self.label.text = ""
@@ -447,5 +438,5 @@ class MondaiViewController: UIViewController {
             self.view.backgroundColor = UIColor.systemBackground
         }
     }
-}// mondaiviewcontroller
+}
 

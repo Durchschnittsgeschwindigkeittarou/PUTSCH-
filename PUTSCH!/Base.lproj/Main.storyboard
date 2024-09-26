@@ -700,8 +700,8 @@
                                     <action selector="calcAction:" destination="HdH-ha-I4f" eventType="touchUpInside" id="3wK-Lb-wEF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED0-Ut-gFM">
-                                <rect key="frame" x="113" y="56" width="159" height="55"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED0-Ut-gFM">
+                                <rect key="frame" x="235" y="103" width="120" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -715,6 +715,7 @@
                     <connections>
                         <outlet property="label" destination="Pze-5r-GjP" id="Vc1-vD-xyq"/>
                         <outlet property="mondai" destination="vHN-ut-3iL" id="PKo-UY-9A6"/>
+                        <outlet property="nanmonme" destination="ED0-Ut-gFM" id="qMt-aA-77J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnC-qu-R59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
