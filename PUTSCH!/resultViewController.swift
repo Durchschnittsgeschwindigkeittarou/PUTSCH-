@@ -9,6 +9,9 @@ import UIKit
 
 class resultViewController: UIViewController {
 
+    @IBOutlet var seikou:UILabel!
+    @IBOutlet var sippai:UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

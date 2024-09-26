@@ -193,14 +193,19 @@ class MondaiViewController: UIViewController {
             let synthesis=ransuu[0]*ruijou(kisuu: ransuu[1], shisuu: ransuu[2])
             mondai.text="初項が\(String(ransuu[0]))、公比が\(String(ransuu[1]))の等比数列において、\n第\(String(ransuu[2]))項までの総和は？"
             numberOfAnswer=[Float((synthesis-ransuu[0])/(ransuu[1]-1))]
-        case 22:
-            //微分（2次）
-            mondai.text=""
-            numberOfAnswer=[Float()]
-        case 23:
-            //微分（3次）
-            mondai.text=""
-            numberOfAnswer=[Float()]
+        case 22: //微分 2乗
+            randomNumber(abc: 3, underline: 2, upline: 10)
+            let vorsitz=Int.random(in:2..<6)
+            mondai.text="f(x)=\(ransuu[2])x²+\(ransuu[1])x+\(ransuu[0])\nf '(\(vorsitz))=?"
+            bibunjunbi()
+            //dainyu(numbereleven: vorsitz)
+            numberOfAnswer=[Float(ransuu[1]*vorsitz+ransuu[0])]
+        case 23: //微分 3乗
+            randomNumber(abc: 4, underline: 2, upline: 10)
+            let vorsitz=Int.random(in:2..<6)
+            mondai.text="f(x)=\(ransuu[3])x³+\(ransuu[2])x²+\(ransuu[1])x+\(ransuu[0])\nf '(\(vorsitz))=?"
+            bibunjunbi()
+            numberOfAnswer=[Float(ransuu[2]*vorsitz*vorsitz+ransuu[1]*vorsitz+ransuu[0])]
         case 24:
             //指数(+)
             let OneShisuu=Int.random(in: 0..<20)
@@ -257,19 +262,6 @@ class MondaiViewController: UIViewController {
             mondai.text=String(ransuu[2])+"x^2+"+String(ransuu[1])+"x+"+String(ransuu[0])+"\nx="+String(schale)
             dainyu(numbereleven: schale)
             numberOfAnswer=[Float(ransuu[0]+ransuu[1]+ransuu[2])]
-        case 201: //微分 2乗
-            randomNumber(abc: 3, underline: 2, upline: 10)
-            let vorsitz=Int.random(in:2..<6)
-            mondai.text="f(x)=\(ransuu[2])x²+\(ransuu[1])x+\(ransuu[0])\nf '(\(vorsitz))=?"
-            bibunjunbi()
-            //dainyu(numbereleven: vorsitz)
-            numberOfAnswer=[Float(ransuu[1]*vorsitz+ransuu[0])]
-        case 202: //微分 3乗
-            randomNumber(abc: 4, underline: 2, upline: 10)
-            let vorsitz=Int.random(in:2..<6)
-            mondai.text="f(x)=\(ransuu[3])x³+\(ransuu[2])x²+\(ransuu[1])x+\(ransuu[0])\nf '(\(vorsitz))=?"
-            bibunjunbi()
-            numberOfAnswer=[Float(ransuu[2]*vorsitz*vorsitz+ransuu[1]*vorsitz+ransuu[0])]
         case 203: //積分
             randomNumber(abc: 3, underline: 2, upline: 10)
             let vorn=Int.random(in:2..<6)

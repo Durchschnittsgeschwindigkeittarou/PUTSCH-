@@ -192,6 +192,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Nn-My-U6e"/>
+                    <connections>
+                        <segue destination="Yya-pj-nXd" kind="show" id="77O-bI-w0V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRW-lb-RHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -378,6 +381,7 @@
                     <connections>
                         <outlet property="label" destination="Mbm-OW-8Zh" id="n5J-OF-k7C"/>
                         <outlet property="mondai" destination="ToI-sd-fg4" id="SMN-27-UHO"/>
+                        <segue destination="Yya-pj-nXd" kind="show" id="W1F-to-MBI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eP-EQ-bSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -544,11 +548,28 @@
                     <connections>
                         <outlet property="label" destination="xug-5u-sSa" id="rHS-G3-j5Z"/>
                         <outlet property="mondai" destination="RDO-8L-VMd" id="G61-sm-FfF"/>
+                        <segue destination="Yya-pj-nXd" kind="show" id="ODb-6Z-Ico"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUl-UN-dJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1554.9618320610687" y="16.901408450704228"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JNx-cC-Vd6">
+            <objects>
+                <viewController id="Yya-pj-nXd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M9E-iO-c68">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DnG-n0-6yd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h1X-QD-Ny5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RcX-ll-dAc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="-656"/>
         </scene>
         <!--Mondai View Controller-->
         <scene sceneID="F54-un-muu">
@@ -708,6 +729,7 @@
                     <connections>
                         <outlet property="label" destination="Pze-5r-GjP" id="Vc1-vD-xyq"/>
                         <outlet property="mondai" destination="vHN-ut-3iL" id="PKo-UY-9A6"/>
+                        <segue destination="Yya-pj-nXd" kind="show" id="tV9-aQ-Pve"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnC-qu-R59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -911,6 +933,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="高校">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="cfr-eD-fRQ" kind="show" identifier="toHigh" id="Adz-Pk-x0b"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8O-tA-1oL">
                                 <rect key="frame" x="0.0" y="451" width="393" height="67"/>
@@ -944,6 +969,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="微分"/>
+                                <connections>
+                                    <segue destination="cfr-eD-fRQ" kind="show" identifier="toBibunn" id="RvF-uo-10m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pna-wq-Mra"/>
@@ -958,7 +986,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dyc-5J-tCR"/>
-        <segue reference="qQc-6O-h9U"/>
+        <segue reference="W1F-to-MBI"/>
+        <segue reference="RvF-uo-10m"/>
         <segue reference="txZ-X2-lAN"/>
     </inferredMetricsTieBreakers>
     <resources>
