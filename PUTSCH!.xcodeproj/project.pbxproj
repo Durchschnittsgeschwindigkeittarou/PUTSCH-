@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0C30EF2CA5324600570582 /* resultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0C30EE2CA5324600570582 /* resultViewController.swift */; };
 		4B1E367C2C37C1CC00AC5F99 /* highViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E367B2C37C1CC00AC5F99 /* highViewController.swift */; };
 		4B1E367E2C37C1E500AC5F99 /* middleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E367D2C37C1E500AC5F99 /* middleViewController.swift */; };
 		4B2E69352C12DE7B0006A0D0 /* MondaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B0C30EE2CA5324600570582 /* resultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultViewController.swift; sourceTree = "<group>"; };
 		4B1E367B2C37C1CC00AC5F99 /* highViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highViewController.swift; sourceTree = "<group>"; };
 		4B1E367D2C37C1E500AC5F99 /* middleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = middleViewController.swift; sourceTree = "<group>"; };
 		4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondaiViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				4BD1BE8E2C2BEF4400E9092F /* UIColorHex.swift */,
 				4B1E367B2C37C1CC00AC5F99 /* highViewController.swift */,
 				4B1E367D2C37C1E500AC5F99 /* middleViewController.swift */,
+				4B0C30EE2CA5324600570582 /* resultViewController.swift */,
 			);
 			path = "PUTSCH!";
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */,
 				4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */,
 				4BD1BE8F2C2BEF4400E9092F /* UIColorHex.swift in Sources */,
+				4B0C30EF2CA5324600570582 /* resultViewController.swift in Sources */,
 				4B4512B52BEB42770065E38C /* SceneDelegate.swift in Sources */,
 				4BBBF3D82BFF082600F2E72F /* FirstViewController.swift in Sources */,
 			);

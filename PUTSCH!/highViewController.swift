@@ -39,8 +39,8 @@ class highViewController: UIViewController{
         case "toHigh":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 5
-                next?.outputValueTwo = 18
+                next?.outputValueOne = 18
+                next?.outputValueTwo = 27
         default:break;
         }
     }
