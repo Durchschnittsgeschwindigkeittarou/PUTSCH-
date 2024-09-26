@@ -25,7 +25,7 @@ class MondaiViewController: UIViewController {
     private var operation = 0
     private var shosuHantei = false
     private var shosuKurai:Int = 0
-    private var shisuu:[String]=["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹"]
+    private var shisuu:[String]=["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹","¹⁰","¹¹","¹²","¹³","¹⁴","¹⁵","¹⁶","¹⁷","¹⁸","¹⁹","²⁰"]
     
     var outputValueOne:Int?
     var outputValueTwo:Int?
@@ -201,23 +201,23 @@ class MondaiViewController: UIViewController {
             mondai.text=""
             numberOfAnswer=[Float()]
         case 24:
-            //指数
-            let OneShisuu=Int.random(in: 0..<10)
-            let TwoShisuu=Int.random(in: 0..<10)
+            //指数(+)
+            let OneShisuu=Int.random(in: 0..<20)
+            let TwoShisuu=Int.random(in: 0..<20)
             randomNumber(abc: 1, underline: 1, upline: 10)
             mondai.text="\(ransuu[0])\(shisuu[OneShisuu])×\(ransuu[0])\(shisuu[TwoShisuu])の時の指数は？"
             numberOfAnswer=[Float(OneShisuu+TwoShisuu)]
         case 25:
-            //指数
-            let OneShisuu=Int.random(in: 0..<10)
-            let TwoShisuu=Int.random(in: 0..<10)
+            //指数(-)
+            let OneShisuu=Int.random(in: 5..<20)
+            let TwoShisuu=Int.random(in: 0..<OneShisuu)
             randomNumber(abc: 1, underline: 1, upline: 10)
             mondai.text="\(ransuu[0])\(shisuu[OneShisuu])÷\(ransuu[0])\(shisuu[TwoShisuu])の時の指数は？"
-            numberOfAnswer=[Float(TwoShisuu/OneShisuu)]
+            numberOfAnswer=[Float(OneShisuu-TwoShisuu)]
         case 26:
-            //指数
-            let OneShisuu=Int.random(in: 0..<10)
-            let TwoShisuu=Int.random(in: 0..<10)
+            //指数(*)
+            let OneShisuu=Int.random(in: 0..<20)
+            let TwoShisuu=Int.random(in: 0..<20)
             randomNumber(abc: 1, underline: 1, upline: 10)
             mondai.text="(\(ransuu[0])\(shisuu[OneShisuu]))\(shisuu[TwoShisuu])の時の指数は？"
             numberOfAnswer=[Float(OneShisuu*TwoShisuu)]
