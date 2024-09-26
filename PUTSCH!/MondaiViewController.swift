@@ -13,13 +13,14 @@ class MondaiViewController: UIViewController {
     //var chartDataSet: LineChartDataSet!
     @IBOutlet var mondai:UILabel!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet var nanmonme: UILabel!
     var nijoubig:Int!
     var nijousmall:Int!
     var ransuu = [Int]()
     var ransuuSecond=[Int]()//何となく作った乱数用の配列二つ目　今んとこ使ってない
     
     private var numberOnScreen: Float = 0
-    //private var numberOnScreen = [Float]()
+    private var questionNumber: Int = 0
     private var numberOfAnswer = [Float]()
     private var numberOfHold=[Float]()
     private var operation = 0
@@ -256,29 +257,35 @@ class MondaiViewController: UIViewController {
             mondai.text=String(ransuu[2])+"x^2+"+String(ransuu[1])+"x+"+String(ransuu[0])+"\nx="+String(schale)
             dainyu(numbereleven: schale)
             numberOfAnswer=[Float(ransuu[0]+ransuu[1]+ransuu[2])]
-        case 201: //微分
+        case 201: //微分 2乗
             randomNumber(abc: 3, underline: 2, upline: 10)
             let vorsitz=Int.random(in:2..<6)
-            mondai.text="f(x)=\(ransuu[2])x^2+\(ransuu[1])x+\(ransuu[0])\nf '(\(vorsitz))=?"
+            mondai.text="f(x)=\(ransuu[2])x²+\(ransuu[1])x+\(ransuu[0])\nf '(\(vorsitz))=?"
             bibunjunbi()
             //dainyu(numbereleven: vorsitz)
             numberOfAnswer=[Float(ransuu[1]*vorsitz+ransuu[0])]
-        case 202: //積分
+        case 202: //微分 3乗
+            randomNumber(abc: 4, underline: 2, upline: 10)
+            let vorsitz=Int.random(in:2..<6)
+            mondai.text="f(x)=\(ransuu[3])x³+\(ransuu[2])x²+\(ransuu[1])x+\(ransuu[0])\nf '(\(vorsitz))=?"
+            bibunjunbi()
+            numberOfAnswer=[Float(ransuu[2]*vorsitz*vorsitz+ransuu[1]*vorsitz+ransuu[0])]
+        case 203: //積分
             randomNumber(abc: 3, underline: 2, upline: 10)
             let vorn=Int.random(in:2..<6)
             let unten=Int.random(in:1..<vorn)
-            mondai.text=String(ransuu[2])+"x^2+"+String(ransuu[1])+"x+"+String(ransuu[0])+"\nx="+String(vorn)+"  "+String(unten)
+            mondai.text=String(ransuu[2])+"x²+"+String(ransuu[1])+"x+"+String(ransuu[0])+"\nx="+String(vorn)+"  "+String(unten)
             sekibunjunbi()
             dainyu(numbereleven: vorn,numbertwelve: unten)
             let bunshi=6*ransuu[1]+3*ransuu[2]+2*ransuu[3]
             let yakubun=gcd(bunshi, 6)
             numberOfAnswer=[Float(bunshi/yakubun),Float(6/yakubun)]
-        case 2:// 平均値
+        case 204:// 平均値
             randomNumber(abc: 5, underline: 1, upline: 15)
             mondai.text="[\(ransuu[0]),\(ransuu[1]),\(ransuu[2]),\(ransuu[3]),\(ransuu[4])]\nの平均値は？"
             let summ = ransuu[0]+ransuu[1]+ransuu[2]+ransuu[3]+ransuu[4]
             numberOfAnswer=[Float(summ)/5]
-        case 204:// 中央値
+        case 205:// 中央値
             randomNumber(abc: 5, underline: 1, upline: 15)
             mondai.text="[\(ransuu[0]),\(ransuu[1]),\(ransuu[2]),\(ransuu[3]),\(ransuu[4])]\nの中央値は？"
             ransuu.sort()
@@ -356,9 +363,6 @@ class MondaiViewController: UIViewController {
         }
     }
     
-    func input(){
-        
-    }
     //各計算ボタンが押された時の処理
     @IBAction func calcAction(_ sender: UIButton) {
         if sender.tag == 13 && label.text=="" {
@@ -387,6 +391,7 @@ class MondaiViewController: UIViewController {
             numberOfHold+=[numberOnScreen]
             //プレイヤーの解答入力数と模範解答数を比較
             if numberOfHold.count == numberOfAnswer.count{//全部解答
+                questionNumber=questionNumber+1
                 var correct: Int=0
                 for i in 0..<numberOfAnswer.count{
                     if numberOfHold[i]==numberOfAnswer[i]{
@@ -398,18 +403,10 @@ class MondaiViewController: UIViewController {
                     //正解したら
                     mondai.text="正解"
                     view.backgroundColor = UIColor(hex: "b4f5ff")
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
-                        self.label.text = ""
-                        self.numberOnScreen = 0
-                        self.operation = 0
-                        self.numberOfHold=[]
-                        self.numberOfAnswer=[]
-                        self.shosuKurai=0
-                        self.shosuHantei=false
-                        self.shutudai()
-                        self.view.backgroundColor = UIColor.systemBackground
+                    if(questionNumber==10){
+                        self.performSegue(withIdentifier: "byebye", sender: self)
+                    }else{
+                        resetAction()
                     }
                     
                 }else{
@@ -434,7 +431,21 @@ class MondaiViewController: UIViewController {
                 numberOnScreen = 0
                 operation = 0
             }
+        }//if sender.tag==14
+    }//calcAction
+    func resetAction(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
+            self.label.text = ""
+            self.numberOnScreen = 0
+            self.operation = 0
+            self.numberOfHold=[]
+            self.numberOfAnswer=[]
+            self.shosuKurai=0
+            self.shosuHantei=false
+            self.shutudai()
+            self.view.backgroundColor = UIColor.systemBackground
         }
     }
-}
+}// mondaiviewcontroller
 
