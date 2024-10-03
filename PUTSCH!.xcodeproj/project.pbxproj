@@ -11,6 +11,7 @@
 		4B1E367C2C37C1CC00AC5F99 /* highViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E367B2C37C1CC00AC5F99 /* highViewController.swift */; };
 		4B1E367E2C37C1E500AC5F99 /* middleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E367D2C37C1E500AC5F99 /* middleViewController.swift */; };
 		4B2E69352C12DE7B0006A0D0 /* MondaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */; };
+		4B43E2F52CAE65640098FAD8 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B43E2F42CAE65640098FAD8 /* TitleViewController.swift */; };
 		4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B22BEB42770065E38C /* AppDelegate.swift */; };
 		4B4512B52BEB42770065E38C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B42BEB42770065E38C /* SceneDelegate.swift */; };
 		4B4512B72BEB42770065E38C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4512B62BEB42770065E38C /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		4B1E367B2C37C1CC00AC5F99 /* highViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highViewController.swift; sourceTree = "<group>"; };
 		4B1E367D2C37C1E500AC5F99 /* middleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = middleViewController.swift; sourceTree = "<group>"; };
 		4B2E69342C12DE7B0006A0D0 /* MondaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MondaiViewController.swift; sourceTree = "<group>"; };
+		4B43E2F42CAE65640098FAD8 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		4B4512AF2BEB42770065E38C /* PUTSCH!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PUTSCH!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4512B22BEB42770065E38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B4512B42BEB42770065E38C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				4B1E367B2C37C1CC00AC5F99 /* highViewController.swift */,
 				4B1E367D2C37C1E500AC5F99 /* middleViewController.swift */,
 				4B0C30EE2CA5324600570582 /* resultViewController.swift */,
+				4B43E2F42CAE65640098FAD8 /* TitleViewController.swift */,
 			);
 			path = "PUTSCH!";
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				4B4512B72BEB42770065E38C /* ViewController.swift in Sources */,
 				4B1E367C2C37C1CC00AC5F99 /* highViewController.swift in Sources */,
 				4BBBF3DA2BFF196600F2E72F /* StatusBarExtension.swift in Sources */,
+				4B43E2F52CAE65640098FAD8 /* TitleViewController.swift in Sources */,
 				4B4512B32BEB42770065E38C /* AppDelegate.swift in Sources */,
 				4BBBF3DE2C0066BA00F2E72F /* QuizViewController.swift in Sources */,
 				4BD1BE8F2C2BEF4400E9092F /* UIColorHex.swift in Sources */,

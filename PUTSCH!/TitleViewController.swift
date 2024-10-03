@@ -1,21 +1,17 @@
 //
-//  resultViewController.swift
+//  TitleViewController.swift
 //  PUTSCH!
 //
-//  Created by clark on 2024/09/26.
+//  Created by clark on 2024/10/03.
 //
 
 import UIKit
 
-class resultViewController: UIViewController {
+class TitleViewController: UIViewController {
+    @IBAction func backToFirst(_ segue: UIStoryboardSegue) {
+           print("\(segue.identifier!)")
+       }
 
-    @IBOutlet var seikai:UILabel!
-    @IBOutlet var sippai:UILabel!
-    @IBAction func closeAllViewController(_ sender: Any) {
-            self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-            self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-        }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarBackgroundColor(.tintColor)

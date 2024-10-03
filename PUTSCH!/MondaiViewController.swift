@@ -439,6 +439,7 @@ class MondaiViewController: UIViewController {
             numberOfHold+=[numberOnScreen]
             //プレイヤーの解答入力数と模範解答数を比較
             if numberOfHold.count == numberOfAnswer.count{//全部解答
+                questionNumber=questionNumber+1
                 var correct: Int=0
                 for i in 0..<numberOfAnswer.count{
                     if numberOfHold[i]==numberOfAnswer[i]{
@@ -449,14 +450,16 @@ class MondaiViewController: UIViewController {
                 if correct==numberOfAnswer.count{
                     //正解したら
                     mondai.text="正解"
-                    view.backgroundColor = UIColor(hex: "ffb6c1")
-                    resetAction()
+                    view.backgroundColor = UIColor(hex: "b4f5ff")
+                    if(questionNumber==3){
+                        self.performSegue(withIdentifier: "result", sender: self)
+                    }else{
+                        resetAction()
+                    }
                     
                 }else{
                     //不正解だと
-                    //mondai.text="残念"
                     mondai.text="残念\(numberOfAnswer[0])"
-                    //デバッグ時にこれにしとくと便利やもしれん
                     view.backgroundColor = UIColor(hex: "ffb6c1")
                     resetAction()
                 }
