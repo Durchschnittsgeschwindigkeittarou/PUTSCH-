@@ -27,7 +27,7 @@ class MondaiViewController: UIViewController {
     private var shosuHantei = false
     private var shosuKurai:Int = 0
     private var shisuu:[String]=["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹","¹⁰","¹¹","¹²","¹³","¹⁴","¹⁵","¹⁶","¹⁷","¹⁸","¹⁹","²⁰"]
-    
+    private var enzankigoh:[String] = ["+","-","×","÷"]
     var outputValueOne:Int?
     var outputValueTwo:Int?
     
@@ -37,11 +37,13 @@ class MondaiViewController: UIViewController {
         //        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
         // Do any additional setup after loading the view.
         //出題
+        questionNumber=1
         shutudai()
         setupView()
         
     }
     func shutudai(){
+        nanmonme.text="\(questionNumber)/10"
         //ボタン押した時ランダムに式
         switch Int.random(in:outputValueOne!..<outputValueTwo!){
         case 1:
@@ -50,7 +52,7 @@ class MondaiViewController: UIViewController {
             //[0]足される数、[1]足す数
             mondai.text=String(ransuu[0])+"+"+String(ransuu[1])
             numberOfAnswer+=[Float(ransuu[0]+ransuu[1])]
-        case 2:
+        case 211:
             //引き算
             randomNumber(abc: 2, underline: 1, upline: 1000)
             //[0]引かれる数、[1]引く数
@@ -282,7 +284,24 @@ class MondaiViewController: UIViewController {
             mondai.text="[\(ransuu[0]),\(ransuu[1]),\(ransuu[2]),\(ransuu[3]),\(ransuu[4])]\nの中央値は？"
             ransuu.sort()
             numberOfAnswer=[Float(ransuu[2])]
-            
+        case 2:
+            randomNumber(abc: 5, underline: 1, upline: 15)
+            randomNumberSecond(abc: 4, underline: 0, upline: 4)
+            for i in 0..<4{
+                if ransuuSecond[i]==3{
+                    ransuu[warizankenshou(enzankou: i)]=ransuu[warizankenshou(enzankou: i)]*ransuu[i+1]
+                }
+            }
+            mondai.text="\(ransuu[0])\(enzankigoh[ransuuSecond[0]])\(ransuu[1])\(enzankigoh[ransuuSecond[1]])\(ransuu[2])\(enzankigoh[ransuuSecond[2]])\(ransuu[3])\(enzankigoh[ransuuSecond[3]])\(ransuu[4])=?"
+            kakewarikeisan()
+            ransuu.removeAll(where: { (value) in // removeAllメソッドの引数whereにクロージャを指定することで、条件に一致する要素を削除する
+                value == 27
+            })
+            ransuuSecond.removeAll(where: { (value) in // removeAllメソッドの引数whereにクロージャを指定することで、条件に一致する要素を削除する
+                value == 27
+            })
+            minuslize()
+            numberOfAnswer = [Float(ransuu.reduce(0, +))]
         default:break
         }
     }
@@ -311,6 +330,11 @@ class MondaiViewController: UIViewController {
             ransuu.insert(Int.random(in:underline..<upline),at: i)
         }
     }
+    func randomNumberSecond(abc:Int,underline:Int,upline:Int){
+        for i in 0..<abc {
+            ransuuSecond.insert(Int.random(in:underline..<upline),at: i)
+        }
+    }
     func bibunjunbi(){
         for i in 0..<ransuu.count-1{
             ransuu[i]=ransuu[i+1]*(i+1)
@@ -336,7 +360,39 @@ class MondaiViewController: UIViewController {
         }
         return maxim*kaijou(maxim: maxim-1)
     }
-    
+    func warizankenshou(enzankou:Int)->Int{
+        if enzankou==0{
+            return 0
+        }
+        if ransuuSecond[enzankou-1] == 3 {
+            return warizankenshou(enzankou: enzankou-1)
+        }
+        return enzankou
+    }
+    func kakewarikeisan(){
+        let national = ransuuSecond.count
+        for i in 0..<national{
+            if ransuuSecond[i] == 2 {
+                ransuu[i]=ransuu[i]*ransuu[i+1]
+            }
+            if ransuuSecond[i] == 3 {
+                ransuu[i]=ransuu[i]/ransuu[i+1]
+            }
+            if ransuuSecond[i] == 2 || ransuuSecond[i] == 3{
+                ransuu.remove(at:i+1)
+                ransuu.insert(27, at: 0)
+                ransuuSecond.remove(at:i)
+                ransuuSecond.insert(27, at: 0)
+            }
+        }
+    }
+    func minuslize(){
+        for i in 0..<ransuuSecond.count{
+            if ransuuSecond[i] == 1{
+                ransuu[i+1] = -1*ransuu[i+1]
+            }
+        }
+    }
     private func setupView() {
         label.text = ""
     }
@@ -383,7 +439,6 @@ class MondaiViewController: UIViewController {
             numberOfHold+=[numberOnScreen]
             //プレイヤーの解答入力数と模範解答数を比較
             if numberOfHold.count == numberOfAnswer.count{//全部解答
-                questionNumber=questionNumber+1
                 var correct: Int=0
                 for i in 0..<numberOfAnswer.count{
                     if numberOfHold[i]==numberOfAnswer[i]{
@@ -394,34 +449,16 @@ class MondaiViewController: UIViewController {
                 if correct==numberOfAnswer.count{
                     //正解したら
                     mondai.text="正解"
-                    view.backgroundColor = UIColor(hex: "b4f5ff")
-                    if(questionNumber==3){
-                        self.performSegue(withIdentifier: "result", sender: self)
-                    }else{
-                        resetAction()
-                    }
+                    view.backgroundColor = UIColor(hex: "ffb6c1")
+                    resetAction()
                     
                 }else{
                     //不正解だと
+                    //mondai.text="残念"
                     mondai.text="残念\(numberOfAnswer[0])"
+                    //デバッグ時にこれにしとくと便利やもしれん
                     view.backgroundColor = UIColor(hex: "ffb6c1")
-                    if(questionNumber==3){
-                        self.performSegue(withIdentifier: "result", sender: self)
-                    }else{
-                        resetAction()
-                    }
-                   DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                        //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
-                        self.label.text = ""
-                        self.numberOnScreen = 0
-                        self.operation = 0
-                        self.numberOfHold=[]
-                        self.numberOfAnswer=[]
-                        self.shosuKurai=0
-                        self.shosuHantei=false
-                        self.shutudai()
-                        self.view.backgroundColor = UIColor.systemBackground
-                    }
+                    resetAction()
                 }
             }else{//解答数未了
                 label.text = ""
@@ -431,18 +468,25 @@ class MondaiViewController: UIViewController {
         }//if sender.tag==14
     }//calcAction
     func resetAction(){
+        questionNumber=questionNumber+1
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
-            self.label.text = ""
-            self.numberOnScreen = 0
-            self.operation = 0
-            self.numberOfHold=[]
-            self.numberOfAnswer=[]
-            self.shosuKurai=0
-            self.shosuHantei=false
-            self.shutudai()
-            self.view.backgroundColor = UIColor.systemBackground
+            if(self.questionNumber==10){
+                self.performSegue(withIdentifier: "result", sender: self)
+            }else{
+                //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
+                self.label.text = ""
+                self.numberOnScreen = 0
+                self.operation = 0
+                self.numberOfHold=[]
+                self.numberOfAnswer=[]
+                self.ransuu=[]
+                self.ransuuSecond=[]
+                self.shosuKurai=0
+                self.shosuHantei=false
+                self.shutudai()
+                self.view.backgroundColor = UIColor.systemBackground
+            }
         }
-    }
-}// mondaiviewcontroller
+    }//resetAction
+}
 
