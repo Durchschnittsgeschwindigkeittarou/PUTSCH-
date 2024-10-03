@@ -9,12 +9,16 @@ import UIKit
 
 class resultViewController: UIViewController {
 
-    @IBOutlet var seikou:UILabel!
+    @IBOutlet var seikai:UILabel!
     @IBOutlet var sippai:UILabel!
+    @IBAction func closeAllViewController(_ sender: Any) {
+            self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setStatusBarBackgroundColor(.tintColor)
         // Do any additional setup after loading the view.
     }
     

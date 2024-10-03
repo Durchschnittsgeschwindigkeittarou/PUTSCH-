@@ -395,8 +395,8 @@ class MondaiViewController: UIViewController {
                     //正解したら
                     mondai.text="正解"
                     view.backgroundColor = UIColor(hex: "b4f5ff")
-                    if(questionNumber==10){
-                        self.performSegue(withIdentifier: "byebye", sender: self)
+                    if(questionNumber==3){
+                        self.performSegue(withIdentifier: "result", sender: self)
                     }else{
                         resetAction()
                     }
@@ -405,7 +405,12 @@ class MondaiViewController: UIViewController {
                     //不正解だと
                     mondai.text="残念\(numberOfAnswer[0])"
                     view.backgroundColor = UIColor(hex: "ffb6c1")
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    if(questionNumber==3){
+                        self.performSegue(withIdentifier: "result", sender: self)
+                    }else{
+                        resetAction()
+                    }
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
                         self.label.text = ""
                         self.numberOnScreen = 0

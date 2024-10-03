@@ -8,10 +8,13 @@
 import UIKit
 
 class TitleViewController: UIViewController {
+    @IBAction func backToFirst(_ segue: UIStoryboardSegue) {
+           print("\(segue.identifier!)")
+       }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setStatusBarBackgroundColor(.tintColor)
         // Do any additional setup after loading the view.
     }
     
