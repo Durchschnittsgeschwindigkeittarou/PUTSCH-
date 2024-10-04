@@ -14,10 +14,11 @@ class MondaiViewController: UIViewController {
     @IBOutlet var mondai:UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet var nanmonme: UILabel!
+    @IBOutlet var tokinotabibito: UILabel!
     var nijoubig:Int!
     var nijousmall:Int!
     var ransuu = [Int]()
-    var ransuuSecond=[Int]()//何となく作った乱数用の配列二つ目　今んとこ使ってない
+    var ransuuSecond=[Int]()
     
     private var numberOnScreen: Float = 0
     private var questionNumber: Int = 0
@@ -28,6 +29,9 @@ class MondaiViewController: UIViewController {
     private var shosuKurai:Int = 0
     private var shisuu:[String]=["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹","¹⁰","¹¹","¹²","¹³","¹⁴","¹⁵","¹⁶","¹⁷","¹⁸","¹⁹","²⁰"]
     private var enzankigoh:[String] = ["+","-","×","÷"]
+    private var time:Int = 0
+    private var timer:Timer = Timer()
+    
     var outputValueOne:Int?
     var outputValueTwo:Int?
     
@@ -38,6 +42,14 @@ class MondaiViewController: UIViewController {
         // Do any additional setup after loading the view.
         //出題
         questionNumber=1
+        tokinotabibito.text=String(time)
+        Timer.scheduledTimer(
+                withTimeInterval: 1.0,
+                repeats: true
+            ) { _ in
+                self.time = self.time+1
+                self.tokinotabibito.text=String(self.time)
+            }
         shutudai()
         setupView()
         
@@ -439,7 +451,6 @@ class MondaiViewController: UIViewController {
             numberOfHold+=[numberOnScreen]
             //プレイヤーの解答入力数と模範解答数を比較
             if numberOfHold.count == numberOfAnswer.count{//全部解答
-                questionNumber=questionNumber+1
                 var correct: Int=0
                 for i in 0..<numberOfAnswer.count{
                     if numberOfHold[i]==numberOfAnswer[i]{
@@ -451,15 +462,13 @@ class MondaiViewController: UIViewController {
                     //正解したら
                     mondai.text="正解"
                     view.backgroundColor = UIColor(hex: "b4f5ff")
-                    if(questionNumber==3){
-                        self.performSegue(withIdentifier: "result", sender: self)
-                    }else{
-                        resetAction()
-                    }
+                    resetAction()
                     
                 }else{
                     //不正解だと
-                    mondai.text="残念\(numberOfAnswer[0])"
+                    mondai.text="残念"
+                    //mondai.text="残念\(numberOfAnswer[0])"
+                    //↑のやつはデバッグ中に使うとどこで間違えてるかがわかりやすくなる...かも
                     view.backgroundColor = UIColor(hex: "ffb6c1")
                     resetAction()
                 }
@@ -471,12 +480,12 @@ class MondaiViewController: UIViewController {
         }//if sender.tag==14
     }//calcAction
     func resetAction(){
-        questionNumber=questionNumber+1
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            if(self.questionNumber==10){
+            if(self.questionNumber==3){
                 self.performSegue(withIdentifier: "result", sender: self)
             }else{
                 //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
+                self.questionNumber=self.questionNumber+1
                 self.label.text = ""
                 self.numberOnScreen = 0
                 self.operation = 0

@@ -187,18 +187,26 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Delete"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3z-Y2-JTM">
+                                <rect key="frame" x="288" y="122" width="58" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="34c-Gf-4Yd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Nn-My-U6e"/>
                     <connections>
+                        <outlet property="nanmonme" destination="t3z-Y2-JTM" id="Kya-GF-Fbk"/>
                         <segue destination="Yya-pj-nXd" kind="show" identifier="result" id="77O-bI-w0V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRW-lb-RHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553" y="-655"/>
+            <point key="canvasLocation" x="1551.9083969465648" y="-655.63380281690149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RVa-xx-M5f">
@@ -373,6 +381,13 @@
                                     <action selector="calcAction:" destination="J7g-GS-afa" eventType="touchUpInside" id="dyj-Rw-Gsa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9A-cg-F8s">
+                                <rect key="frame" x="264" y="103" width="58" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qlv-W1-mFS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -381,6 +396,7 @@
                     <connections>
                         <outlet property="label" destination="Mbm-OW-8Zh" id="n5J-OF-k7C"/>
                         <outlet property="mondai" destination="ToI-sd-fg4" id="SMN-27-UHO"/>
+                        <outlet property="nanmonme" destination="D9A-cg-F8s" id="VJz-h0-fyZ"/>
                         <segue destination="Yya-pj-nXd" kind="show" identifier="result" id="W1F-to-MBI"/>
                     </connections>
                 </viewController>
@@ -540,6 +556,13 @@
                                     <action selector="calcAction:" destination="cfr-eD-fRQ" eventType="touchUpInside" id="Zt6-ke-xcN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhm-C4-n2o">
+                                <rect key="frame" x="292" y="103" width="58" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q5Z-lr-vkh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -548,6 +571,7 @@
                     <connections>
                         <outlet property="label" destination="xug-5u-sSa" id="rHS-G3-j5Z"/>
                         <outlet property="mondai" destination="RDO-8L-VMd" id="G61-sm-FfF"/>
+                        <outlet property="nanmonme" destination="3cf-us-NMf" id="uO0-9E-d9A"/>
                         <segue destination="Yya-pj-nXd" kind="show" identifier="result" id="ODb-6Z-Ico"/>
                     </connections>
                 </viewController>
@@ -779,6 +803,20 @@
                                     <action selector="calcAction:" destination="HdH-ha-I4f" eventType="touchUpInside" id="3wK-Lb-wEF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cf-us-NMf">
+                                <rect key="frame" x="297" y="103" width="58" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-pv-vOP">
+                                <rect key="frame" x="89" y="128" width="162" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l5e-ih-Ogf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -787,6 +825,8 @@
                     <connections>
                         <outlet property="label" destination="Pze-5r-GjP" id="Vc1-vD-xyq"/>
                         <outlet property="mondai" destination="vHN-ut-3iL" id="PKo-UY-9A6"/>
+                        <outlet property="nanmonme" destination="3cf-us-NMf" id="r1g-hq-dpY"/>
+                        <outlet property="tokinotabibito" destination="hbl-pv-vOP" id="SRv-AO-TFB"/>
                         <segue destination="Yya-pj-nXd" kind="show" identifier="result" id="tV9-aQ-Pve"/>
                     </connections>
                 </viewController>
@@ -1044,7 +1084,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dyc-5J-tCR"/>
-        <segue reference="W1F-to-MBI"/>
+        <segue reference="tV9-aQ-Pve"/>
         <segue reference="Adz-Pk-x0b"/>
         <segue reference="txZ-X2-lAN"/>
     </inferredMetricsTieBreakers>
