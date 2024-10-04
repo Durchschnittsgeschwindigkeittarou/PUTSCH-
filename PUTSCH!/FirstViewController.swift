@@ -33,6 +33,10 @@ class FirstViewController: UIViewController{
             let next = segue.destination as? MondaiViewController
                 next?.outputValueOne = 4
                 next?.outputValueTwo = 5
+        case "toKongou":
+            let next = segue.destination as? MondaiViewController
+                next?.outputValueOne = 5
+                next?.outputValueTwo = 6
         case "toShisoku":
             let next = segue.destination as? MondaiViewController
                 next?.outputValueOne = 1
