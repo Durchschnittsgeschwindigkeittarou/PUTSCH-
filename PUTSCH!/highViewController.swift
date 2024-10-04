@@ -19,28 +19,28 @@ class highViewController: UIViewController{
         case "toKakuritsu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 18
-                next?.outputValueTwo = 20
+                next?.outputValueOne = 19
+                next?.outputValueTwo = 21
         case "toSuuretsu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 20
-                next?.outputValueTwo = 22
+                next?.outputValueOne = 21
+                next?.outputValueTwo = 23
         case "toBibunn":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 22
-                next?.outputValueTwo = 24
+                next?.outputValueOne = 23
+                next?.outputValueTwo = 25
         case "toShisuu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 24
-                next?.outputValueTwo = 27
+                next?.outputValueOne = 25
+                next?.outputValueTwo = 28
         case "toHigh":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 18
-                next?.outputValueTwo = 27
+                next?.outputValueOne = 19
+                next?.outputValueTwo = 28
         default:break;
         }
     }

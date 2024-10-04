@@ -187,26 +187,15 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Delete"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3z-Y2-JTM">
-                                <rect key="frame" x="288" y="122" width="58" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="34c-Gf-4Yd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Nn-My-U6e"/>
-                    <connections>
-                        <outlet property="nanmonme" destination="t3z-Y2-JTM" id="Kya-GF-Fbk"/>
-                        <segue destination="Yya-pj-nXd" kind="show" identifier="result" id="77O-bI-w0V"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRW-lb-RHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551.9083969465648" y="-655.63380281690149"/>
+            <point key="canvasLocation" x="1553" y="-655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RVa-xx-M5f">
@@ -381,8 +370,8 @@
                                     <action selector="calcAction:" destination="J7g-GS-afa" eventType="touchUpInside" id="dyj-Rw-Gsa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9A-cg-F8s">
-                                <rect key="frame" x="264" y="103" width="58" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otj-Jj-Pis">
+                                <rect key="frame" x="284" y="117" width="83" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -396,8 +385,6 @@
                     <connections>
                         <outlet property="label" destination="Mbm-OW-8Zh" id="n5J-OF-k7C"/>
                         <outlet property="mondai" destination="ToI-sd-fg4" id="SMN-27-UHO"/>
-                        <outlet property="nanmonme" destination="D9A-cg-F8s" id="VJz-h0-fyZ"/>
-                        <segue destination="Yya-pj-nXd" kind="show" identifier="result" id="W1F-to-MBI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eP-EQ-bSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -556,8 +543,8 @@
                                     <action selector="calcAction:" destination="cfr-eD-fRQ" eventType="touchUpInside" id="Zt6-ke-xcN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhm-C4-n2o">
-                                <rect key="frame" x="292" y="103" width="58" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5D-dU-h7V">
+                                <rect key="frame" x="284" y="117" width="83" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -571,8 +558,6 @@
                     <connections>
                         <outlet property="label" destination="xug-5u-sSa" id="rHS-G3-j5Z"/>
                         <outlet property="mondai" destination="RDO-8L-VMd" id="G61-sm-FfF"/>
-                        <outlet property="nanmonme" destination="3cf-us-NMf" id="uO0-9E-d9A"/>
-                        <segue destination="Yya-pj-nXd" kind="show" identifier="result" id="ODb-6Z-Ico"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUl-UN-dJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -582,7 +567,7 @@
         <!--Result View Controller-->
         <scene sceneID="JNx-cC-Vd6">
             <objects>
-                <viewController id="Yya-pj-nXd" customClass="resultViewController" customModule="PUTSCH_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resultpage" id="Yya-pj-nXd" customClass="resultViewController" customModule="PUTSCH_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M9E-iO-c68">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,10 +593,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="失敗" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSf-Fq-8JY">
-                                <rect key="frame" x="224" y="246" width="135" height="135"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="不正解" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSf-Fq-8JY">
+                                <rect key="frame" x="207" y="246" width="169" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <color key="textColor" systemColor="tableCellBlueTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -803,15 +788,8 @@
                                     <action selector="calcAction:" destination="HdH-ha-I4f" eventType="touchUpInside" id="3wK-Lb-wEF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cf-us-NMf">
-                                <rect key="frame" x="297" y="103" width="58" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-pv-vOP">
-                                <rect key="frame" x="89" y="128" width="162" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzq-bQ-J64">
+                                <rect key="frame" x="272" y="117" width="83" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -825,9 +803,7 @@
                     <connections>
                         <outlet property="label" destination="Pze-5r-GjP" id="Vc1-vD-xyq"/>
                         <outlet property="mondai" destination="vHN-ut-3iL" id="PKo-UY-9A6"/>
-                        <outlet property="nanmonme" destination="3cf-us-NMf" id="r1g-hq-dpY"/>
-                        <outlet property="tokinotabibito" destination="hbl-pv-vOP" id="SRv-AO-TFB"/>
-                        <segue destination="Yya-pj-nXd" kind="show" identifier="result" id="tV9-aQ-Pve"/>
+                        <outlet property="nanmonme" destination="nzq-bQ-J64" id="exD-0S-tIL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnC-qu-R59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -846,7 +822,19 @@
                                 <rect key="frame" x="0.0" y="643" width="393" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="累乗"/>
+                                <buttonConfiguration key="configuration" style="plain" title="幾何学"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovo-4N-ROp">
+                                <rect key="frame" x="0.0" y="568" width="393" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="物理学"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FP-Vs-OTh">
+                                <rect key="frame" x="0.0" y="493" width="393" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="解析学"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24o-p4-wsC">
                                 <rect key="frame" x="16" y="290" width="361" height="63"/>
@@ -855,6 +843,12 @@
                                 <buttonConfiguration key="configuration" style="plain" title="大学">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRE-Ed-3py">
+                                <rect key="frame" x="0.0" y="718" width="393" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="線形代数"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gbw-H9-Gpn"/>
@@ -924,11 +918,22 @@
                                 <rect key="frame" x="16" y="272" width="361" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="四則混合">
+                                <buttonConfiguration key="configuration" style="plain" title="四則演算">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="HdH-ha-I4f" kind="show" identifier="toShisoku" id="dyc-5J-tCR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb1-rp-HRb">
+                                <rect key="frame" x="16" y="201" width="361" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="四則混合">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="HdH-ha-I4f" kind="show" identifier="toKongou" id="7ZD-HY-sGj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1083,8 +1088,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dyc-5J-tCR"/>
-        <segue reference="tV9-aQ-Pve"/>
+        <segue reference="7ZD-HY-sGj"/>
         <segue reference="Adz-Pk-x0b"/>
         <segue reference="txZ-X2-lAN"/>
     </inferredMetricsTieBreakers>
