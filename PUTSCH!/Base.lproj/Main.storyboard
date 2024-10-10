@@ -336,7 +336,7 @@
                                 <rect key="frame" x="201" y="746" width="75" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="y">
+                                <buttonConfiguration key="configuration" style="plain" title="・">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -365,7 +365,7 @@
                                 <rect key="frame" x="118" y="748" width="75" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="x"/>
+                                <buttonConfiguration key="configuration" style="plain" title="-"/>
                                 <connections>
                                     <action selector="calcAction:" destination="J7g-GS-afa" eventType="touchUpInside" id="dyj-Rw-Gsa"/>
                                 </connections>
@@ -385,6 +385,7 @@
                     <connections>
                         <outlet property="label" destination="Mbm-OW-8Zh" id="n5J-OF-k7C"/>
                         <outlet property="mondai" destination="ToI-sd-fg4" id="SMN-27-UHO"/>
+                        <outlet property="nanmonme" destination="otj-Jj-Pis" id="gs2-hh-p1c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eP-EQ-bSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -507,7 +508,7 @@
                                 <rect key="frame" x="201" y="746" width="75" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="y">
+                                <buttonConfiguration key="configuration" style="plain" title="・">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -536,7 +537,7 @@
                                 <rect key="frame" x="117" y="748" width="75" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="x">
+                                <buttonConfiguration key="configuration" style="plain" title="-">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -558,6 +559,7 @@
                     <connections>
                         <outlet property="label" destination="xug-5u-sSa" id="rHS-G3-j5Z"/>
                         <outlet property="mondai" destination="RDO-8L-VMd" id="G61-sm-FfF"/>
+                        <outlet property="nanmonme" destination="S5D-dU-h7V" id="LlE-sq-7iF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUl-UN-dJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -754,7 +756,7 @@
                                 <rect key="frame" x="197" y="746" width="75" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="y">
+                                <buttonConfiguration key="configuration" style="plain" title="・">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -783,7 +785,7 @@
                                 <rect key="frame" x="113" y="748" width="75" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="x"/>
+                                <buttonConfiguration key="configuration" style="plain" title="-"/>
                                 <connections>
                                     <action selector="calcAction:" destination="HdH-ha-I4f" eventType="touchUpInside" id="3wK-Lb-wEF"/>
                                 </connections>

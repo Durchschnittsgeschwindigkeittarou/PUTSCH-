@@ -9,8 +9,6 @@ import UIKit
 import SwiftUI
 
 class MondaiViewController: UIViewController {
-    //var chartView: LineChartView!
-    //var chartDataSet: LineChartDataSet!
     @IBOutlet var mondai:UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet var nanmonme: UILabel!
@@ -20,6 +18,7 @@ class MondaiViewController: UIViewController {
     var ransuu = [Int]()
     var ransuuSecond=[Int]()
     
+    private var answering = false
     private var numberOnScreen: Float = 0
     private var questionNumber: Int = 0
     private var numberOfAnswer = [Float]()
@@ -35,24 +34,15 @@ class MondaiViewController: UIViewController {
     var outputValueOne:Int?
     var outputValueTwo:Int?
     public var seikaiCount:Int = 0
-    let delaySecond=2.0
+    let delaySecond=1.5
     let allmondai=10
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarBackgroundColor(.tintColor)
-        //        setStatusBarBackgroundColor(<#T##color: UIColor?##UIColor?#>)
         // Do any additional setup after loading the view.
         //出題
         questionNumber=1
-        tokinotabibito.text=String(time)
-        Timer.scheduledTimer(
-                withTimeInterval: 1.0,
-                repeats: true
-            ) { _ in
-                self.time = self.time+1
-                self.tokinotabibito.text=String(self.time)
-            }
         shutudai()
         setupView()
         
@@ -414,12 +404,14 @@ class MondaiViewController: UIViewController {
     
     //各ボタンが押された時の処理
     @IBAction func showNumber(_ sender: UIButton) {
-        if label.text == "" {
-            numberOnScreen=Float(sender.tag-1)
-            label.text = String(sender.tag-1)
-        }else {
-            numberOnScreen=Float(Int(numberOnScreen)*10+sender.tag-1)
-            label.text = label.text! + String(sender.tag-1)
+        if answering==false{
+            if label.text == "" {
+                numberOnScreen=Float(sender.tag-1)
+                label.text = String(sender.tag-1)
+            }else {
+                numberOnScreen=Float(Int(numberOnScreen)*10+sender.tag-1)
+                label.text = label.text! + String(sender.tag-1)
+            }
         }
         if shosuHantei==true{
             shosuKurai=shosuKurai+1
@@ -442,7 +434,9 @@ class MondaiViewController: UIViewController {
                 numberOnScreen = 0
                 operation = 0
         }
-        else if sender.tag == 14 {
+        else if sender.tag == 14 && answering==false {
+            answering=true
+            print("sender14")
             //計算ボタン(Enter)が押された時の処理
             switch(operation) {
             case 12:
@@ -482,10 +476,12 @@ class MondaiViewController: UIViewController {
         }//if sender.tag==14
     }//calcAction
     func resetAction(){
+        print("resetaction")
         questionNumber=questionNumber+1
-//        DispatchQueue.global().asyncAfter(deadline: .now() + delaySecond) { [self] in
+        DispatchQueue.global().asyncAfter(deadline: .now() + delaySecond) { [self] in
+       // Thread.sleep(forTimeInterval: delaySecond)
             resultif()
-//        }
+        }
         }
     func resultif(){
         if(questionNumber>allmondai){
@@ -501,18 +497,22 @@ class MondaiViewController: UIViewController {
             }
         }else{
             //（ここに遅延させたい命令を書きます。(func)、このDispatchQueueが入るfunc以外で定義されたラベル名などをここに書く場合は、先頭にself.が必要です。）
-            self.label.text = ""
-            self.numberOnScreen = 0
-            self.operation = 0
-            self.numberOfHold=[]
-            self.numberOfAnswer=[]
-            self.ransuu=[]
-            self.ransuuSecond=[]
-            self.shosuKurai=0
-            self.shosuHantei=false
-            self.shutudai()
-            self.view.backgroundColor = UIColor.systemBackground
+            print("resultif")
+            DispatchQueue.main.async {
+                self.label.text = ""
+                self.numberOnScreen = 0
+                self.operation = 0
+                self.numberOfHold=[]
+                self.numberOfAnswer=[]
+                self.ransuu=[]
+                self.ransuuSecond=[]
+                self.shosuKurai=0
+                self.answering=false
+                self.shosuHantei=false
+                self.view.backgroundColor = UIColor.systemBackground
+                self.shutudai()
+            }
         }
+    }//resultif
     }
-    }//resetAction
 
