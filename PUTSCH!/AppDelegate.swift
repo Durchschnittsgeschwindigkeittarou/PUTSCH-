@@ -10,7 +10,9 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    // var  firstPlace = [Int](repeating: 30, count: 0)
+    // var  secondPlace = [Int](repeating: 30, count: 0)
+    // var  thirdPlace = [Int](repeating: 30, count: 0)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

@@ -12,15 +12,16 @@ class resultViewController: UIViewController {
     @IBOutlet var seikai:UILabel!
     @IBOutlet var sippai:UILabel!
     var resultseikai=0
-    var resultsippai=0
     var allresult = 0
+    //var clearTime = 0
     @IBAction func closeAllViewController(_ sender: Any) {
             self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
             self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+       // let leaderboard = UIApplication.shared.delegate as! AppDelegate
+       // leaderboard.firstPlace[0] = clearTime
         setStatusBarBackgroundColor(.tintColor)
         seikai.text = String(resultseikai)
         sippai.text = String(allresult-resultseikai)

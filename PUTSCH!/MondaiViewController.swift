@@ -12,7 +12,7 @@ class MondaiViewController: UIViewController {
     @IBOutlet var mondai:UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet var nanmonme: UILabel!
-    @IBOutlet var tokinotabibito: UILabel!
+   // @IBOutlet var tokinotabibito: UILabel!
     var nijoubig:Int!
     var nijousmall:Int!
     var ransuu = [Int]()
@@ -35,13 +35,21 @@ class MondaiViewController: UIViewController {
     var outputValueTwo:Int?
     public var seikaiCount:Int = 0
     let delaySecond=1.5
-    let allmondai=10
+    let allmondai=3
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarBackgroundColor(.tintColor)
         // Do any additional setup after loading the view.
         //出題
+     //   tokinotabibito.text=String(time)
+     //           Timer.scheduledTimer(
+     //                   withTimeInterval: 1.0,
+     //                   repeats: true
+     //               ) { _ in
+     //                   self.time = self.time+1
+     //                   self.tokinotabibito.text=String(self.time)
+     //               }
         questionNumber=1
         shutudai()
         setupView()
@@ -76,6 +84,7 @@ class MondaiViewController: UIViewController {
             mondai.text=String(ransuu[0]*ransuu[1])+"÷"+String(ransuu[0])
             numberOfAnswer=[Float(ransuu[1])]
         case 5:
+            //四則混合（５項）
             randomNumber(abc: 5, underline: 1, upline: 15)
             randomNumberSecond(abc: 4, underline: 0, upline: 4)
             for i in 0..<4{
@@ -88,7 +97,7 @@ class MondaiViewController: UIViewController {
             ransuu.removeAll(where: { (value) in // removeAllメソッドの引数whereにクロージャを指定することで、条件に一致する要素を削除する
                 value == 27
             })
-            ransuuSecond.removeAll(where: { (value) in // removeAllメソッドの引数whereにクロージャを指定することで、条件に一致する要素を削除する
+            ransuuSecond.removeAll(where: { (value) in
                 value == 27
             })
             minuslize()
@@ -459,6 +468,7 @@ class MondaiViewController: UIViewController {
                     //正解したら
                     mondai.text="正解"
                     view.backgroundColor = UIColor(hex: "b4f5ff")
+                    seikaiCount=seikaiCount+1
                     resetAction()
                 }else{
                     //不正解だと
@@ -490,6 +500,7 @@ class MondaiViewController: UIViewController {
                 if let resultpage = storyboard.instantiateViewController(withIdentifier: "resultpage") as? resultViewController {
                     resultpage.resultseikai = self.seikaiCount
                     resultpage.allresult = self.allmondai
+                    //resultpage.clearTime = self.time
                     resultpage.modalTransitionStyle = .crossDissolve
                     resultpage.modalPresentationStyle = .fullScreen
                     self.present(resultpage, animated: false)
