@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUTSCH!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VE-lu-o2i">
-                                <rect key="frame" x="92.666666666666671" y="160" width="207.66666666666663" height="60"/>
+                                <rect key="frame" x="92.666666666666671" y="153" width="207.66666666666663" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="UDo-Wl-6sp">
-                                <rect key="frame" x="128.33333333333331" y="467" width="136.33333333333331" height="317"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="UDo-Wl-6sp">
+                                <rect key="frame" x="128.33333333333331" y="479" width="136.33333333333331" height="305"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUS-Ck-9UJ">
                                         <rect key="frame" x="0.0" y="0.0" width="136.33333333333334" height="50"/>
@@ -36,7 +36,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vch-sX-POI">
-                                        <rect key="frame" x="0.0" y="89" width="136.33333333333334" height="50"/>
+                                        <rect key="frame" x="0.0" y="85" width="136.33333333333334" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="高校">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -46,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e41-rZ-rEK">
-                                        <rect key="frame" x="0.0" y="178" width="136.33333333333334" height="50"/>
+                                        <rect key="frame" x="0.0" y="170" width="136.33333333333334" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="中学">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -56,7 +56,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6L-xs-sTR">
-                                        <rect key="frame" x="0.0" y="267" width="136.33333333333334" height="50"/>
+                                        <rect key="frame" x="0.0" y="255" width="136.33333333333334" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="四則演算">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -72,7 +72,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UDo-Wl-6sp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5cU-cP-f5Z"/>
-                            <constraint firstItem="8VE-lu-o2i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="CVj-1U-GuT"/>
+                            <constraint firstItem="8VE-lu-o2i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="CVj-1U-GuT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UDo-Wl-6sp" secondAttribute="bottom" constant="34" id="PO2-ci-UHe"/>
                             <constraint firstItem="8VE-lu-o2i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SXJ-Lx-nPq"/>
                         </constraints>
@@ -116,19 +116,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出力欄" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xug-5u-sSa">
-                                <rect key="frame" x="171" y="359.33333333333331" width="51" height="19"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題文" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDO-8L-VMd">
                                 <rect key="frame" x="166.66666666666666" y="176" width="60" height="22.333333333333343"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="hlR-8l-zYM">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="hlR-8l-zYM">
                                 <rect key="frame" x="34" y="514" width="325" height="304"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="azR-aV-ev1">
@@ -323,10 +317,19 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5D-dU-h7V">
-                                <rect key="frame" x="284" y="117" width="83" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5D-dU-h7V">
+                                <rect key="frame" x="309" y="103" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5xZ-ep-Ufd"/>
+                                    <constraint firstAttribute="height" constant="50" id="OKO-KR-6G0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="出力欄" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xug-5u-sSa">
+                                <rect key="frame" x="16" y="313" width="361" height="63"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -335,9 +338,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RDO-8L-VMd" firstAttribute="top" secondItem="Q5Z-lr-vkh" secondAttribute="top" constant="73" id="5Ow-Wg-sVt"/>
+                            <constraint firstItem="S5D-dU-h7V" firstAttribute="top" secondItem="Q5Z-lr-vkh" secondAttribute="top" id="Q5d-f1-LHr"/>
                             <constraint firstItem="xug-5u-sSa" firstAttribute="centerX" secondItem="ZMR-cl-dSL" secondAttribute="centerX" id="SAQ-sg-s09"/>
-                            <constraint firstItem="xug-5u-sSa" firstAttribute="top" secondItem="RDO-8L-VMd" secondAttribute="bottom" constant="161" id="W15-TO-WW2"/>
+                            <constraint firstItem="Q5Z-lr-vkh" firstAttribute="trailing" secondItem="S5D-dU-h7V" secondAttribute="trailing" constant="34" id="TuE-Ja-PCm"/>
                             <constraint firstItem="RDO-8L-VMd" firstAttribute="centerX" secondItem="ZMR-cl-dSL" secondAttribute="centerX" id="ZFs-yV-8cd"/>
+                            <constraint firstItem="hlR-8l-zYM" firstAttribute="centerX" secondItem="ZMR-cl-dSL" secondAttribute="centerX" id="dri-TS-hYS"/>
+                            <constraint firstItem="hlR-8l-zYM" firstAttribute="bottom" secondItem="Q5Z-lr-vkh" secondAttribute="bottom" id="ebd-VP-XPS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8cy-YZ-4Oq"/>
@@ -464,7 +470,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24o-p4-wsC">
-                                <rect key="frame" x="137.66666666666666" y="253" width="117.66666666666666" height="74"/>
+                                <rect key="frame" x="137.66666666666666" y="153" width="118" height="74"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="大学">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
@@ -474,7 +480,7 @@
                         <viewLayoutGuide key="safeArea" id="gbw-H9-Gpn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="24o-p4-wsC" firstAttribute="top" secondItem="gbw-H9-Gpn" secondAttribute="top" constant="150" id="Izk-EH-T9z"/>
+                            <constraint firstItem="24o-p4-wsC" firstAttribute="top" secondItem="gbw-H9-Gpn" secondAttribute="top" constant="50" id="Izk-EH-T9z"/>
                             <constraint firstItem="24o-p4-wsC" firstAttribute="centerX" secondItem="qkM-A7-x5G" secondAttribute="centerX" id="XFF-uH-Xht"/>
                         </constraints>
                     </view>
@@ -502,8 +508,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="VW7-xH-F9v">
-                                <rect key="frame" x="142.33333333333334" y="449" width="108.33333333333334" height="335"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="VW7-xH-F9v">
+                                <rect key="frame" x="142.33333333333334" y="479" width="108.33333333333334" height="305"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7y-b2-yQy">
                                         <rect key="frame" x="0.0" y="0.0" width="108.33333333333333" height="50"/>
@@ -516,7 +522,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnr-4d-akE">
-                                        <rect key="frame" x="0.0" y="95" width="108.33333333333333" height="50"/>
+                                        <rect key="frame" x="0.0" y="85" width="108.33333333333333" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="引き算">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -526,7 +532,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0p-PN-XYk">
-                                        <rect key="frame" x="0.0" y="190" width="108.33333333333333" height="50"/>
+                                        <rect key="frame" x="0.0" y="170" width="108.33333333333333" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="掛け算">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -536,7 +542,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-Ju-TvD">
-                                        <rect key="frame" x="0.0" y="285" width="108.33333333333333" height="50"/>
+                                        <rect key="frame" x="0.0" y="255" width="108.33333333333333" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="割り算">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -548,23 +554,23 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HZa-qq-H6E">
-                                <rect key="frame" x="91.000000000000014" y="203" width="211.33333333333337" height="156"/>
+                                <rect key="frame" x="109.66666666666669" y="123" width="174" height="132"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb1-rp-HRb">
-                                        <rect key="frame" x="0.0" y="0.0" width="211.33333333333334" height="74"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="62"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="四則混合">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="cfr-eD-fRQ" kind="show" identifier="toKongou" id="eKZ-Hf-sns"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1e3-3H-33T">
-                                        <rect key="frame" x="0.0" y="82" width="211.33333333333334" height="74"/>
+                                        <rect key="frame" x="0.0" y="70" width="174" height="62"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="四則演算">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="cfr-eD-fRQ" kind="show" identifier="toShisoku" id="IPz-kE-LDl"/>
@@ -577,7 +583,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VW7-xH-F9v" firstAttribute="centerX" secondItem="FsH-R9-Uw2" secondAttribute="centerX" id="9dM-tu-fXn"/>
-                            <constraint firstItem="HZa-qq-H6E" firstAttribute="top" secondItem="2br-uV-Kab" secondAttribute="top" constant="100" id="DVD-s5-Uct"/>
+                            <constraint firstItem="HZa-qq-H6E" firstAttribute="top" secondItem="2br-uV-Kab" secondAttribute="top" constant="20" id="DVD-s5-Uct"/>
                             <constraint firstItem="2br-uV-Kab" firstAttribute="bottom" secondItem="VW7-xH-F9v" secondAttribute="bottom" constant="34" id="fSX-Iu-c5Y"/>
                             <constraint firstItem="HZa-qq-H6E" firstAttribute="centerX" secondItem="FsH-R9-Uw2" secondAttribute="centerX" id="rRn-uo-yO8"/>
                         </constraints>
@@ -607,7 +613,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRb-kA-pIR">
-                                <rect key="frame" x="114.33333333333333" y="253" width="164.33333333333337" height="74"/>
+                                <rect key="frame" x="114.33333333333333" y="153" width="164.33333333333337" height="74"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="中学校">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
@@ -616,11 +622,11 @@
                                     <segue destination="cfr-eD-fRQ" kind="show" identifier="toMiddle" id="kFM-W8-RQ0"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Vig-NZ-SSv">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Vig-NZ-SSv">
                                 <rect key="frame" x="86.333333333333329" y="449" width="220.66666666666669" height="335"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6w-bB-t8h">
-                                        <rect key="frame" x="0.0" y="0.0" width="220.66666666666666" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6w-bB-t8h">
+                                        <rect key="frame" x="0.0" y="0.0" width="220.66666666666666" height="80"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="一元一次方程式">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -629,8 +635,8 @@
                                             <segue destination="cfr-eD-fRQ" kind="show" identifier="toItigen" id="crM-q9-H7E"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABH-Hk-iZN">
-                                        <rect key="frame" x="0.0" y="95" width="220.66666666666666" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABH-Hk-iZN">
+                                        <rect key="frame" x="0.0" y="115" width="220.66666666666666" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="比例・反比例">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -639,8 +645,8 @@
                                             <segue destination="cfr-eD-fRQ" kind="show" identifier="toHirei" id="wmi-5I-Igk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJm-Ud-anh">
-                                        <rect key="frame" x="0.0" y="190" width="220.66666666666666" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJm-Ud-anh">
+                                        <rect key="frame" x="0.0" y="200" width="220.66666666666666" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="連立方程式">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -649,7 +655,7 @@
                                             <segue destination="cfr-eD-fRQ" kind="show" identifier="toRenritsu" id="ojg-AE-nx7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhU-Gl-CkH">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhU-Gl-CkH">
                                         <rect key="frame" x="0.0" y="285" width="220.66666666666666" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="二次方程式">
@@ -671,7 +677,7 @@
                             <constraint firstItem="uRb-kA-pIR" firstAttribute="centerX" secondItem="FY6-P7-LYF" secondAttribute="centerX" id="2CA-tA-HiL"/>
                             <constraint firstItem="Vig-NZ-SSv" firstAttribute="centerX" secondItem="FY6-P7-LYF" secondAttribute="centerX" id="7Sp-yR-Qk5"/>
                             <constraint firstItem="pDi-ZJ-cz6" firstAttribute="bottom" secondItem="Vig-NZ-SSv" secondAttribute="bottom" constant="34" id="F0q-ob-Blb"/>
-                            <constraint firstItem="uRb-kA-pIR" firstAttribute="top" secondItem="pDi-ZJ-cz6" secondAttribute="top" constant="150" id="Nxl-3e-hCR"/>
+                            <constraint firstItem="uRb-kA-pIR" firstAttribute="top" secondItem="pDi-ZJ-cz6" secondAttribute="top" constant="50" id="Nxl-3e-hCR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tWM-7v-TyK"/>
@@ -689,7 +695,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRL-gN-cNG">
-                                <rect key="frame" x="137.66666666666666" y="253" width="117.66666666666666" height="74"/>
+                                <rect key="frame" x="137.66666666666666" y="153" width="117.66666666666666" height="74"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="高校">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
@@ -698,8 +704,8 @@
                                     <segue destination="cfr-eD-fRQ" kind="show" identifier="toHigh" id="Adz-Pk-x0b"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="51" translatesAutoresizingMaskIntoConstraints="NO" id="Xew-zx-I6e">
-                                <rect key="frame" x="58.333333333333343" y="431" width="276.66666666666663" height="353"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Xew-zx-I6e">
+                                <rect key="frame" x="58.333333333333343" y="479" width="276.66666666666663" height="305"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8O-tA-1oL">
                                         <rect key="frame" x="0.0" y="0.0" width="276.66666666666669" height="50"/>
@@ -712,7 +718,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrj-Rq-mba">
-                                        <rect key="frame" x="0.0" y="101" width="276.66666666666669" height="50"/>
+                                        <rect key="frame" x="0.0" y="85" width="276.66666666666669" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="微分">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -722,7 +728,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6Y-La-Uc7">
-                                        <rect key="frame" x="0.0" y="202" width="276.66666666666669" height="50"/>
+                                        <rect key="frame" x="0.0" y="170" width="276.66666666666669" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="等差数列・等比数列">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -732,7 +738,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHX-yH-7Wm">
-                                        <rect key="frame" x="0.0" y="303" width="276.66666666666669" height="50"/>
+                                        <rect key="frame" x="0.0" y="255" width="276.66666666666669" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="指数">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -747,7 +753,7 @@
                         <viewLayoutGuide key="safeArea" id="pna-wq-Mra"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tRL-gN-cNG" firstAttribute="top" secondItem="pna-wq-Mra" secondAttribute="top" constant="150" id="642-Ku-gg5"/>
+                            <constraint firstItem="tRL-gN-cNG" firstAttribute="top" secondItem="pna-wq-Mra" secondAttribute="top" constant="50" id="642-Ku-gg5"/>
                             <constraint firstItem="pna-wq-Mra" firstAttribute="bottom" secondItem="Xew-zx-I6e" secondAttribute="bottom" constant="34" id="A9u-4b-T0m"/>
                             <constraint firstItem="Xew-zx-I6e" firstAttribute="centerX" secondItem="qMq-31-Ze2" secondAttribute="centerX" id="LVE-gj-fpW"/>
                             <constraint firstItem="tRL-gN-cNG" firstAttribute="centerX" secondItem="qMq-31-Ze2" secondAttribute="centerX" id="VB3-b1-kfN"/>
@@ -755,7 +761,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SqE-XA-wRz">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6aG-Gb-rwY">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6aG-Gb-rwY">
                             <rect key="frame" x="156.33333333333334" y="0.0" width="80.333333333333343" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
@@ -771,7 +777,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Iq2-I5-OXj"/>
+        <segue reference="RvF-uo-10m"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
