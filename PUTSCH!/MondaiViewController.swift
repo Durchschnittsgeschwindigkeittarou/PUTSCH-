@@ -27,6 +27,7 @@ class MondaiViewController: UIViewController {
     private var shosuHantei = false
     private var shosuKurai:Int = 0
     private var shisuu:[String]=["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹","¹⁰","¹¹","¹²","¹³","¹⁴","¹⁵","¹⁶","¹⁷","¹⁸","¹⁹","²⁰"]
+    private var shita:[String]=["₀","₁","₂","₃","₄","₅","₆","₇","₈","₉","₁₀","₁₁","₁₂","₁₃","₁₄","₁₅","₁₆","₁₇","₁₈","₁₉","₂₀"]
     private var enzankigoh:[String] = ["+","-","×","÷"]
     private var time:Int = 0
     private var timer:Timer = Timer()
@@ -61,7 +62,7 @@ class MondaiViewController: UIViewController {
         switch Int.random(in:outputValueOne!..<outputValueTwo!){
         case 1:
             //足し算
-            randomNumber(abc: 2, underline: 1, upline: 1000)
+            randomNumber(abc: 2, underline: 1, upline: 100)
             //[0]足される数、[1]足す数
             mondai.text=String(ransuu[0])+"+"+String(ransuu[1])
             numberOfAnswer+=[Float(ransuu[0]+ransuu[1])]
@@ -73,8 +74,8 @@ class MondaiViewController: UIViewController {
             numberOfAnswer=[Float(ransuu[1])]
         case 3:
             //掛け算(２乗の差)
-            let randombig=Int.random(in:3..<10)*10
-            let randomsmall=Int.random(in:1..<4)
+            let randombig=Int.random(in:1..<6)*10
+            let randomsmall=Int.random(in:1..<10)
             mondai.text=String(randombig+randomsmall)+"×"+String(randombig-randomsmall)
             numberOfAnswer=[Float((randombig+randomsmall)*(randombig-randomsmall))]
         case 4:
@@ -261,7 +262,17 @@ class MondaiViewController: UIViewController {
             randomNumber(abc: 1, underline: 1, upline: 10)
             mondai.text="(\(ransuu[0])\(shisuu[OneShisuu]))\(shisuu[TwoShisuu])の時の指数は？"
             numberOfAnswer=[Float(OneShisuu*TwoShisuu)]
-        case 28:
+        case 28: //積分
+            randomNumber(abc: 3, underline: 2, upline: 10)
+            let vorn=Int.random(in:2..<6)
+            let unten=Int.random(in:1..<vorn)
+            mondai.text=shisuu[vorn]+"∫ "+String(ransuu[2])+"x²+"+String(ransuu[1])+"x+"+String(ransuu[0])+" dx\n"+shisuu[unten]+" 　　　　　x=?\n（分子→分母の順に入力）"
+            sekibunjunbi()
+            dainyu(numbereleven: vorn,numbertwelve: unten)
+            let bunshi=6*ransuu[1]+3*ransuu[2]+2*ransuu[3]
+            let yakubun=gcd(bunshi, 6)
+            numberOfAnswer=[Float(bunshi/yakubun),Float(6/yakubun)]
+        case 29:
             //累乗
             let basic=Int.random(in:1..<7)
             let over=Int.random(in:1..<6)
@@ -296,16 +307,6 @@ class MondaiViewController: UIViewController {
             mondai.text=String(ransuu[2])+"x^2+"+String(ransuu[1])+"x+"+String(ransuu[0])+"\nx="+String(schale)
             dainyu(numbereleven: schale)
             numberOfAnswer=[Float(ransuu[0]+ransuu[1]+ransuu[2])]
-        case 203: //積分
-            randomNumber(abc: 3, underline: 2, upline: 10)
-            let vorn=Int.random(in:2..<6)
-            let unten=Int.random(in:1..<vorn)
-            mondai.text=String(ransuu[2])+"x²+"+String(ransuu[1])+"x+"+String(ransuu[0])+"\nx="+String(vorn)+"  "+String(unten)
-            sekibunjunbi()
-            dainyu(numbereleven: vorn,numbertwelve: unten)
-            let bunshi=6*ransuu[1]+3*ransuu[2]+2*ransuu[3]
-            let yakubun=gcd(bunshi, 6)
-            numberOfAnswer=[Float(bunshi/yakubun),Float(6/yakubun)]
         case 204:// 平均値
             randomNumber(abc: 5, underline: 1, upline: 15)
             mondai.text="[\(ransuu[0]),\(ransuu[1]),\(ransuu[2]),\(ransuu[3]),\(ransuu[4])]\nの平均値は？"
@@ -488,6 +489,7 @@ class MondaiViewController: UIViewController {
     func resetAction(){
         print("resetaction")
         questionNumber=questionNumber+1
+
         DispatchQueue.global().asyncAfter(deadline: .now() + delaySecond) { [self] in
        // Thread.sleep(forTimeInterval: delaySecond)
             resultif()
@@ -520,6 +522,7 @@ class MondaiViewController: UIViewController {
                 self.shosuKurai=0
                 self.answering=false
                 self.shosuHantei=false
+                self.shutudai()
                 self.view.backgroundColor = UIColor.systemBackground
                 self.shutudai()
             }
