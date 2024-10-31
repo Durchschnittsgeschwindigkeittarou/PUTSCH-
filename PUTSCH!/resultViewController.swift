@@ -14,6 +14,7 @@ class resultViewController: UIViewController {
     var resultseikai=0
     var allresult = 0
     //var clearTime = 0
+    //var 
     @IBAction func closeAllViewController(_ sender: Any) {
             self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
             self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
