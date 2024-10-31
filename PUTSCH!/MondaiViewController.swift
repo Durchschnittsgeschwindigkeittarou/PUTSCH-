@@ -503,6 +503,7 @@ class MondaiViewController: UIViewController {
                     resultpage.resultseikai = self.seikaiCount
                     resultpage.allresult = self.allmondai
                     //resultpage.clearTime = self.time
+                    //resultpage.field=self.outputValue!
                     resultpage.modalTransitionStyle = .crossDissolve
                     resultpage.modalPresentationStyle = .fullScreen
                     self.present(resultpage, animated: false)

@@ -14,7 +14,7 @@ class resultViewController: UIViewController {
     var resultseikai=0
     var allresult = 0
     //var clearTime = 0
-    //var 
+    //var field = 0
     @IBAction func closeAllViewController(_ sender: Any) {
             self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
             self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -22,7 +22,7 @@ class resultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        // let leaderboard = UIApplication.shared.delegate as! AppDelegate
-       // leaderboard.firstPlace[0] = clearTime
+       // leaderboard.firstPlace[field] = clearTime
         setStatusBarBackgroundColor(.tintColor)
         seikai.text = String(resultseikai)
         sippai.text = String(allresult-resultseikai)
