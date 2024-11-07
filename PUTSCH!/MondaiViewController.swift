@@ -496,13 +496,14 @@ class MondaiViewController: UIViewController {
                     resetAction()
                 }else{
                     //不正解だと
-                    //mondai.text="残念"
-                    mondai.text="残念\(numberOfAnswer[0])"
+                    mondai.text="残念"
+                    //mondai.text="残念\(numberOfAnswer[0])"
                     //デバッグ時にこれにしとくと便利やもしれん
                     view.backgroundColor = UIColor(hex: "ffb6c1")
                     resetAction()
                 }
             }else{//解答数未了
+                answering=false
                 label.text = ""
                 numberOnScreen = 0
                 operation = 0
@@ -548,6 +549,6 @@ class MondaiViewController: UIViewController {
                 self.view.backgroundColor = UIColor.systemBackground
             }
         }
-    }//resultif
+      }//resultif
     }
 

@@ -32,10 +32,14 @@ class resultViewController: UIViewController {
         }else{
             ranking.text="9:59"
         }
-        if leaderboard.firstPlace[0]>clearTime{
-         leaderboard.firstPlace[field] = clearTime
+        if leaderboard.firstPlace[field]>clearTime{
+            leaderboard.firstPlace[field] = clearTime
+        }else if leaderboard.secondPlace[field]>clearTime{
+            leaderboard.secondPlace[field] = clearTime
+        }else if leaderboard.thirdPlace[field]>clearTime{
+            leaderboard.thirdPlace[field] = clearTime
         }
-        record.text="これまでの記録\n"+String(format: "%01d", leaderboard.firstPlace[field]/60)+":"+String(format: "%02d", leaderboard.firstPlace[field]%60)+"\n"+String(format: "%01d", leaderboard.secondPlace[field]/60)+":"+String(format: "%02d", leaderboard.secondPlace[field]%60)+"\n"+String(format: "%01d", leaderboard.thirdPlace[field]/60)+":"+String(format: "%02d", leaderboard.thirdPlace[field]%60)
+        record.text="これまでの記録\n1."+String(format: "%01d", leaderboard.firstPlace[field]/60)+":"+String(format: "%02d", leaderboard.firstPlace[field]%60)+"\n2."+String(format: "%01d", leaderboard.secondPlace[field]/60)+":"+String(format: "%02d", leaderboard.secondPlace[field]%60)+"\n3."+String(format: "%01d", leaderboard.thirdPlace[field]/60)+":"+String(format: "%02d", leaderboard.thirdPlace[field]%60)
     }
     
 
