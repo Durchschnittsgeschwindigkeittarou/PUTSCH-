@@ -26,11 +26,10 @@ class resultViewController: UIViewController {
         setStatusBarBackgroundColor(.tintColor)
         seikai.text = String(resultseikai)
         sippai.text = String(allresult-resultseikai)
-        if leaderboard.firstPlace[1]>clearTime{
-            
+        ranking.text=String(format: "%02d", clearTime/60)+":"+String(format: "%03d", clearTime%60)
+        if leaderboard.firstPlace[0]>clearTime{
+         leaderboard.firstPlace[field] = clearTime
         }
-        // leaderboard.firstPlace[field] = clearTime
-         ranking.text=String()
     }
     
 

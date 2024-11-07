@@ -34,7 +34,7 @@ class MondaiViewController: UIViewController {
     var outputValue:Int?
     public var seikaiCount:Int = 0
     let delaySecond=1.5
-    let allmondai=3
+    let allmondai=1 //デバッグするたびに10問も答えてられるか！
     
     override func viewDidLoad() {
         super.viewDidLoad()
