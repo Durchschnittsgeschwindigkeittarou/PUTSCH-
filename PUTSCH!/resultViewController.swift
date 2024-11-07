@@ -11,7 +11,7 @@ class resultViewController: UIViewController {
 
     @IBOutlet var seikai:UILabel!
     @IBOutlet var sippai:UILabel!
-    //@IBOutlet var ranking:UILabel!
+    @IBOutlet var ranking:UILabel!
     var resultseikai=0
     var allresult = 0
     var clearTime = 0
@@ -26,8 +26,11 @@ class resultViewController: UIViewController {
         setStatusBarBackgroundColor(.tintColor)
         seikai.text = String(resultseikai)
         sippai.text = String(allresult-resultseikai)
+        if leaderboard.firstPlace[1]>clearTime{
+            
+        }
         // leaderboard.firstPlace[field] = clearTime
-         //ranking.text=
+         ranking.text=String()
     }
     
 
