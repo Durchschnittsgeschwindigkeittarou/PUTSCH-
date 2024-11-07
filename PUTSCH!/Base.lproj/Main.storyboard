@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Oi-gP-oDU">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,20 +13,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TitleViewController" customModule="PUTSCH_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUTSCH!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VE-lu-o2i">
-                                <rect key="frame" x="92.666666666666671" y="153" width="207.66666666666663" height="60"/>
+                                <rect key="frame" x="84" y="114" width="207.5" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="UDo-Wl-6sp">
-                                <rect key="frame" x="128.33333333333331" y="479" width="136.33333333333331" height="305"/>
+                                <rect key="frame" x="119.5" y="328" width="136.5" height="305"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUS-Ck-9UJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="136.33333333333334" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="136.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="大学">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -36,7 +36,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vch-sX-POI">
-                                        <rect key="frame" x="0.0" y="85" width="136.33333333333334" height="50"/>
+                                        <rect key="frame" x="0.0" y="85" width="136.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="高校">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -46,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e41-rZ-rEK">
-                                        <rect key="frame" x="0.0" y="170" width="136.33333333333334" height="50"/>
+                                        <rect key="frame" x="0.0" y="170" width="136.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="中学">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -56,7 +56,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6L-xs-sTR">
-                                        <rect key="frame" x="0.0" y="255" width="136.33333333333334" height="50"/>
+                                        <rect key="frame" x="0.0" y="255" width="136.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="四則演算">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -91,7 +91,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="4Oi-gP-oDU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y67-cV-jPZ">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,17 +113,17 @@
             <objects>
                 <viewController id="cfr-eD-fRQ" customClass="MondaiViewController" customModule="PUTSCH_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZMR-cl-dSL">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題文" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDO-8L-VMd">
-                                <rect key="frame" x="166.66666666666666" y="176" width="60" height="22.333333333333343"/>
+                                <rect key="frame" x="157.5" y="137" width="60" height="22.5"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="hlR-8l-zYM">
-                                <rect key="frame" x="34" y="514" width="325" height="304"/>
+                                <rect key="frame" x="25" y="363" width="325" height="304"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="azR-aV-ev1">
                                         <rect key="frame" x="0.0" y="0.0" width="241" height="304"/>
@@ -318,7 +318,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5D-dU-h7V">
-                                <rect key="frame" x="309" y="103" width="50" height="50"/>
+                                <rect key="frame" x="291" y="64" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="5xZ-ep-Ufd"/>
                                     <constraint firstAttribute="height" constant="50" id="OKO-KR-6G0"/>
@@ -328,7 +328,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出力欄" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xug-5u-sSa">
-                                <rect key="frame" x="96.666666666666686" y="298.33333333333331" width="200" height="19"/>
+                                <rect key="frame" x="87.5" y="259.5" width="200" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="999" constant="100" id="u76-sE-fdx"/>
                                     <constraint firstAttribute="width" constant="200" id="vVB-hf-jli"/>
@@ -370,17 +370,17 @@
             <objects>
                 <viewController storyboardIdentifier="resultpage" id="Yya-pj-nXd" customClass="resultViewController" customModule="PUTSCH_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M9E-iO-c68">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="結果" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRg-iv-B0M">
-                                <rect key="frame" x="112.33333333333333" y="103" width="168.66666666666669" height="107.66666666666669"/>
+                                <rect key="frame" x="103.5" y="64" width="168.5" height="107.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="90"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="XJs-82-jXg">
-                                <rect key="frame" x="37" y="493" width="319" height="135"/>
+                                <rect key="frame" x="28" y="412" width="319" height="135"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="N3w-Vi-XAh">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="135"/>
@@ -410,16 +410,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="S8D-yD-KO8">
-                                <rect key="frame" x="47" y="389.66666666666669" width="299" height="67.333333333333314"/>
+                                <rect key="frame" x="38" y="304" width="299" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正解" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-Bc-X1b">
-                                        <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="67.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <color key="textColor" systemColor="systemPinkColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不正解" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSf-Fq-8JY">
-                                        <rect key="frame" x="144.33333333333337" y="0.0" width="154.66666666666663" height="67.333333333333329"/>
+                                        <rect key="frame" x="144.5" y="0.0" width="154.5" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                         <color key="textColor" systemColor="tableCellBlueTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -427,13 +427,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイム" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cK0-Z7-EAV">
-                                <rect key="frame" x="126.33333333333333" y="250.66666666666663" width="140.33333333333337" height="60"/>
+                                <rect key="frame" x="117.5" y="204" width="140.5" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3y-NI-QLI">
-                                <rect key="frame" x="96.666666666666686" y="708" width="200" height="50"/>
+                                <rect key="frame" x="87.5" y="557" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aOU-tv-q9f"/>
                                     <constraint firstAttribute="width" constant="200" id="qSM-UR-bGz"/>
@@ -454,10 +454,10 @@
                             <constraint firstItem="ZRg-iv-B0M" firstAttribute="top" secondItem="DnG-n0-6yd" secondAttribute="top" constant="44" id="VFV-qU-0gh"/>
                             <constraint firstItem="DnG-n0-6yd" firstAttribute="bottom" secondItem="F3y-NI-QLI" secondAttribute="bottom" constant="60" id="Yso-Wc-Jl2"/>
                             <constraint firstItem="ZRg-iv-B0M" firstAttribute="centerX" secondItem="M9E-iO-c68" secondAttribute="centerX" id="aBk-2i-KF9"/>
-                            <constraint firstItem="F3y-NI-QLI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XJs-82-jXg" secondAttribute="bottom" priority="999" constant="80" id="dLa-P2-Au6"/>
-                            <constraint firstItem="S8D-yD-KO8" firstAttribute="top" secondItem="cK0-Z7-EAV" secondAttribute="bottom" constant="79" id="e81-Dr-fAx"/>
+                            <constraint firstItem="F3y-NI-QLI" firstAttribute="top" relation="lessThanOrEqual" secondItem="XJs-82-jXg" secondAttribute="bottom" priority="999" constant="80" id="dLa-P2-Au6"/>
+                            <constraint firstItem="S8D-yD-KO8" firstAttribute="top" secondItem="cK0-Z7-EAV" secondAttribute="top" constant="100" id="e81-Dr-fAx"/>
                             <constraint firstItem="XJs-82-jXg" firstAttribute="top" secondItem="S8D-yD-KO8" secondAttribute="bottom" constant="36" id="ogW-pL-ZVY"/>
-                            <constraint firstItem="cK0-Z7-EAV" firstAttribute="top" secondItem="ZRg-iv-B0M" secondAttribute="bottom" constant="40" id="q7E-gr-EJj"/>
+                            <constraint firstItem="cK0-Z7-EAV" firstAttribute="top" secondItem="ZRg-iv-B0M" secondAttribute="top" constant="140" id="q7E-gr-EJj"/>
                             <constraint firstItem="S8D-yD-KO8" firstAttribute="centerX" secondItem="M9E-iO-c68" secondAttribute="centerX" id="xFw-OE-YUy"/>
                         </constraints>
                     </view>
@@ -485,7 +485,7 @@
             <objects>
                 <viewController id="1Zg-4W-0dd" customClass="universityViewController" customModule="PUTSCH_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qkM-A7-x5G">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FP-Vs-OTh">
@@ -500,7 +500,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24o-p4-wsC">
-                                <rect key="frame" x="137.66666666666666" y="153" width="118" height="74"/>
+                                <rect key="frame" x="128.5" y="114" width="118" height="74"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="大学">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
@@ -527,14 +527,14 @@
             <objects>
                 <viewController id="hLs-3X-tlT" customClass="FirstViewController" customModule="PUTSCH_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FsH-R9-Uw2">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="VW7-xH-F9v">
-                                <rect key="frame" x="142.33333333333334" y="479" width="108.33333333333334" height="305"/>
+                                <rect key="frame" x="133.5" y="328" width="108.5" height="305"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7y-b2-yQy">
-                                        <rect key="frame" x="0.0" y="0.0" width="108.33333333333333" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="108.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="たし算">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -544,7 +544,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnr-4d-akE">
-                                        <rect key="frame" x="0.0" y="85" width="108.33333333333333" height="50"/>
+                                        <rect key="frame" x="0.0" y="85" width="108.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="引き算">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -554,7 +554,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0p-PN-XYk">
-                                        <rect key="frame" x="0.0" y="170" width="108.33333333333333" height="50"/>
+                                        <rect key="frame" x="0.0" y="170" width="108.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="掛け算">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -564,7 +564,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9p-Ju-TvD">
-                                        <rect key="frame" x="0.0" y="255" width="108.33333333333333" height="50"/>
+                                        <rect key="frame" x="0.0" y="255" width="108.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="割り算">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -576,7 +576,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HZa-qq-H6E">
-                                <rect key="frame" x="109.66666666666669" y="123" width="174" height="132"/>
+                                <rect key="frame" x="100.5" y="84" width="174" height="132"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb1-rp-HRb">
                                         <rect key="frame" x="0.0" y="0.0" width="174" height="62"/>
@@ -623,11 +623,11 @@
             <objects>
                 <viewController id="Dl8-Cc-4yP" customClass="middleViewController" customModule="PUTSCH_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FY6-P7-LYF">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRb-kA-pIR">
-                                <rect key="frame" x="114.33333333333333" y="153" width="164.33333333333337" height="74"/>
+                                <rect key="frame" x="105.5" y="114" width="164.5" height="74"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="中学校">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
@@ -637,10 +637,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Vig-NZ-SSv">
-                                <rect key="frame" x="86.333333333333329" y="479" width="220.66666666666669" height="305"/>
+                                <rect key="frame" x="77.5" y="328" width="220.5" height="305"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6w-bB-t8h">
-                                        <rect key="frame" x="0.0" y="0.0" width="220.66666666666666" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="一元一次方程式">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -650,7 +650,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABH-Hk-iZN">
-                                        <rect key="frame" x="0.0" y="85" width="220.66666666666666" height="50"/>
+                                        <rect key="frame" x="0.0" y="85" width="220.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="比例・反比例">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -660,7 +660,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJm-Ud-anh">
-                                        <rect key="frame" x="0.0" y="170" width="220.66666666666666" height="50"/>
+                                        <rect key="frame" x="0.0" y="170" width="220.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="連立方程式">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -670,7 +670,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhU-Gl-CkH">
-                                        <rect key="frame" x="0.0" y="255" width="220.66666666666666" height="50"/>
+                                        <rect key="frame" x="0.0" y="255" width="220.5" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="二次方程式">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -702,11 +702,11 @@
             <objects>
                 <viewController id="Pqd-t7-p6u" customClass="highViewController" customModule="PUTSCH_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qMq-31-Ze2">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRL-gN-cNG">
-                                <rect key="frame" x="137.66666666666666" y="153" width="117.66666666666666" height="74"/>
+                                <rect key="frame" x="128.5" y="114" width="118" height="74"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="高校">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
@@ -716,10 +716,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Xew-zx-I6e">
-                                <rect key="frame" x="58.333333333333343" y="479" width="276.66666666666663" height="305"/>
+                                <rect key="frame" x="49" y="328" width="277" height="305"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8O-tA-1oL">
-                                        <rect key="frame" x="0.0" y="0.0" width="276.66666666666669" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="277" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="確率">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -729,7 +729,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrj-Rq-mba">
-                                        <rect key="frame" x="0.0" y="85" width="276.66666666666669" height="50"/>
+                                        <rect key="frame" x="0.0" y="85" width="277" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="微分">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -739,7 +739,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6Y-La-Uc7">
-                                        <rect key="frame" x="0.0" y="170" width="276.66666666666669" height="50"/>
+                                        <rect key="frame" x="0.0" y="170" width="277" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="等差数列・等比数列">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -749,7 +749,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHX-yH-7Wm">
-                                        <rect key="frame" x="0.0" y="255" width="276.66666666666669" height="50"/>
+                                        <rect key="frame" x="0.0" y="255" width="277" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="指数">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
@@ -787,13 +787,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableCellBlueTextColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
