@@ -444,6 +444,13 @@
                                     <segue destination="uKV-XX-3Su" kind="unwind" identifier="toFirst" unwindAction="backToFirst:" id="mxk-07-sNj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wc-SH-w3O">
+                                <rect key="frame" x="267" y="122" width="70" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DnG-n0-6yd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -464,6 +471,7 @@
                     <navigationItem key="navigationItem" id="h1X-QD-Ny5"/>
                     <connections>
                         <outlet property="ranking" destination="cK0-Z7-EAV" id="gHp-OD-Eys"/>
+                        <outlet property="record" destination="9wc-SH-w3O" id="ZHF-iR-q81"/>
                         <outlet property="seikai" destination="eNS-K5-kEC" id="dqF-WQ-MNi"/>
                         <outlet property="sippai" destination="S4o-EX-n9D" id="bXn-N6-cOT"/>
                     </connections>
@@ -478,7 +486,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="32.824427480916029" y="-656.33802816901414"/>
+            <point key="canvasLocation" x="32.799999999999997" y="-657.12143928035982"/>
         </scene>
         <!--University View Controller-->
         <scene sceneID="ncH-Pf-ylf">
@@ -787,13 +795,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableCellBlueTextColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

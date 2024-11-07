@@ -12,6 +12,7 @@ class resultViewController: UIViewController {
     @IBOutlet var seikai:UILabel!
     @IBOutlet var sippai:UILabel!
     @IBOutlet var ranking:UILabel!
+    @IBOutlet var record:UILabel!
     var resultseikai=0
     var allresult = 0
     var clearTime = 0
@@ -26,10 +27,15 @@ class resultViewController: UIViewController {
         setStatusBarBackgroundColor(.tintColor)
         seikai.text = String(resultseikai)
         sippai.text = String(allresult-resultseikai)
-        ranking.text=String(format: "%02d", clearTime/60)+":"+String(format: "%03d", clearTime%60)
+        if clearTime<1800{
+            ranking.text=String(format: "%01d", clearTime/60)+":"+String(format: "%02d", clearTime%60)
+        }else{
+            ranking.text="9:59"
+        }
         if leaderboard.firstPlace[0]>clearTime{
          leaderboard.firstPlace[field] = clearTime
         }
+        record.text="これまでの記録\n"+String(format: "%01d", leaderboard.firstPlace[field]/60)+":"+String(format: "%02d", leaderboard.firstPlace[field]%60)+"\n"+String(format: "%01d", leaderboard.secondPlace[field]/60)+":"+String(format: "%02d", leaderboard.secondPlace[field]%60)+"\n"+String(format: "%01d", leaderboard.thirdPlace[field]/60)+":"+String(format: "%02d", leaderboard.thirdPlace[field]%60)
     }
     
 
