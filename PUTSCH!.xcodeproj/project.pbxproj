@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -141,7 +141,6 @@
 			);
 			mainGroup = 4B4512A62BEB42770065E38C;
 			packageReferences = (
-				4B8F25632C1179B300A2ADB5 /* XCLocalSwiftPackageReference "../../../Downloads/LaTeXSwiftUI-main" */,
 			);
 			productRefGroup = 4B4512B02BEB42770065E38C /* Products */;
 			projectDirPath = "";
@@ -404,13 +403,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		4B8F25632C1179B300A2ADB5 /* XCLocalSwiftPackageReference "../../../Downloads/LaTeXSwiftUI-main" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../../Downloads/LaTeXSwiftUI-main";
-		};
-/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = 4B4512A72BEB42770065E38C /* Project object */;
 }

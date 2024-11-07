@@ -19,28 +19,23 @@ class universityViewController: UIViewController{
         case "toSekibun":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 28
-                next?.outputValueTwo = 29
+                next?.outputValue = 31
         case "toRenritsu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 8
-                next?.outputValueTwo = 16
+                next?.outputValue = 8
         case "toHirei":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 16
-                next?.outputValueTwo = 18
+                next?.outputValue = 16
         case "toNiji":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 18
-                next?.outputValueTwo = 19
+                next?.outputValue = 18
         case "toMiddle":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValueOne = 6
-                next?.outputValueTwo = 19
+                next?.outputValue = 6
         default:break;
         }
     }
