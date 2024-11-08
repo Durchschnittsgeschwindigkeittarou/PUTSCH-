@@ -34,7 +34,7 @@ class MondaiViewController: UIViewController {
     var outputValue:Int?
     public var seikaiCount:Int = 0
     let delaySecond=1.5
-    let allmondai=1 //デバッグするたびに10問も答えてられるか！
+    let allmondai=3 //デバッグするたびに10問も答えてられるか！
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,14 +82,20 @@ class MondaiViewController: UIViewController {
             numberOfAnswer=[Float(ransuu[1])]
         case 05:
             //四則混合（５項）
-            randomNumber(abc: 5, underline: 1, upline: 15)
-            randomNumberSecond(abc: 4, underline: 0, upline: 4)
-            for i in 0..<4{
+            let kousuu = Int.random(in: 3..<6)
+            randomNumber(abc: kousuu, underline: 1, upline: 15)
+            randomNumberSecond(abc: kousuu-1, underline: 0, upline: 4)
+            for i in 0..<kousuu-1{
                 if ransuuSecond[i]==3{
                     ransuu[warizankenshou(enzankou: i)]=ransuu[warizankenshou(enzankou: i)]*ransuu[i+1]
                 }
             }
-            mondai.text="\(ransuu[0])\(enzankigoh[ransuuSecond[0]])\(ransuu[1])\(enzankigoh[ransuuSecond[1]])\(ransuu[2])\(enzankigoh[ransuuSecond[2]])\(ransuu[3])\(enzankigoh[ransuuSecond[3]])\(ransuu[4])=?"
+            //mondai.text="\(ransuu[0])\(enzankigoh[ransuuSecond[0]])\(ransuu[1])\(enzankigoh[ransuuSecond[1]])\(ransuu[2])\(enzankigoh[ransuuSecond[2]])\(ransuu[3])\(enzankigoh[ransuuSecond[3]])\(ransuu[4])=?"
+            mondai.text="\(ransuu[0])"
+            for i in 0..<kousuu-1{
+                mondai.text=mondai.text!+"\(enzankigoh[ransuuSecond[i]])\(ransuu[i+1])"
+            }
+            mondai.text=mondai.text!+"=?"
             kakewarikeisan()
             ransuu.removeAll(where: { (value) in // removeAllメソッドの引数whereにクロージャを指定することで、条件に一致する要素を削除する
                 value == 27

@@ -24,22 +24,24 @@ class resultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let leaderboard = UIApplication.shared.delegate as! AppDelegate
+        let resultsippai = allresult-resultseikai
         setStatusBarBackgroundColor(.tintColor)
         seikai.text = String(resultseikai)
-        sippai.text = String(allresult-resultseikai)
-        if clearTime<1800{
+        sippai.text = String(resultsippai)
+        if clearTime<600{
             ranking.text=String(format: "%01d", clearTime/60)+":"+String(format: "%02d", clearTime%60)
         }else{
             ranking.text="9:59"
         }
-        if leaderboard.firstPlace[field]>clearTime{
+        if leaderboard.firstPlace[field]>clearTime+1{
             leaderboard.firstPlace[field] = clearTime
         }else if leaderboard.secondPlace[field]>clearTime{
             leaderboard.secondPlace[field] = clearTime
         }else if leaderboard.thirdPlace[field]>clearTime{
             leaderboard.thirdPlace[field] = clearTime
         }
-        record.text="これまでの記録\n1."+String(format: "%01d", leaderboard.firstPlace[field]/60)+":"+String(format: "%02d", leaderboard.firstPlace[field]%60)+"\n2."+String(format: "%01d", leaderboard.secondPlace[field]/60)+":"+String(format: "%02d", leaderboard.secondPlace[field]%60)+"\n3."+String(format: "%01d", leaderboard.thirdPlace[field]/60)+":"+String(format: "%02d", leaderboard.thirdPlace[field]%60)
+        var uniuni=String(format: "%01d", leaderboard.firstPlace[field]/60)+":"+String(format: "%02d", leaderboard.firstPlace[field]%60)+"　　正解数"
+        record.text="これまでの記録\n1."+String(format: "%01d", leaderboard.firstPlace[field]/60)+":"+String(format: "%02d", leaderboard.firstPlace[field]%60)+""+"\n2."+String(format: "%01d", leaderboard.secondPlace[field]/60)+":"+String(format: "%02d", leaderboard.secondPlace[field]%60)+"\n3."+String(format: "%01d", leaderboard.thirdPlace[field]/60)+":"+String(format: "%02d", leaderboard.thirdPlace[field]%60)
     }
     
 
