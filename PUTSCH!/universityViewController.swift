@@ -20,18 +20,18 @@ class universityViewController: UIViewController{
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValue = 17
-        case "toRenritsu":
-            let next = segue.destination as? MondaiViewController
-                        // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValue = 8
-        case "toHirei":
-            let next = segue.destination as? MondaiViewController
-                        // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValue = 16
-        case "toNiji":
+        case "toShinsu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValue = 18
+        case "toKankei":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValue = 19
+        case "toNiji":
+            let next = segue.destination as? MondaiViewController
+                        // 3. １で用意した遷移先の変数に値を渡す
+                next?.outputValue = 20
         case "toMiddle":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す

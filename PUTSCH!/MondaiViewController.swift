@@ -34,7 +34,7 @@ class MondaiViewController: UIViewController {
     var outputValue:Int?
     public var seikaiCount:Int = 0
     let delaySecond=1.5
-    let allmondai=1 //デバッグするたびに10問も答えてられるか！
+    let allmondai=5 //デバッグするたびに10問も答えてられるか！ A.3問にしてもいいよ
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -269,6 +269,33 @@ class MondaiViewController: UIViewController {
             let bunshi=6*ransuu[1]+3*ransuu[2]+2*ransuu[3]
             let yakubun=gcd(bunshi, 6)
             numberOfAnswer=[Float(bunshi/yakubun),Float(6/yakubun)]
+        case 18://n進数→10進数
+            let shinsuu=Int.random(in:2..<10)
+            var numbering=Int.random(in: 100..<1000)
+            numberOfAnswer=[Float(numbering)]
+            mondai.text="次の数を10進数に直せ\n"
+            var shisuugenkai=1
+            while numbering > ruijou(kisuu: shinsuu, shisuu: shisuugenkai){
+                shisuugenkai+=1
+            }
+            for i in 1...shisuugenkai{
+                let wunde = ruijou(kisuu: shinsuu, shisuu: shisuugenkai-i)
+                mondai.text=mondai.text!+String(numbering/wunde)
+                numbering = numbering % wunde
+            }
+            mondai.text=mondai.text!+" (\(shinsuu))"
+        case 19://解と係数の関係
+            randomNumber(abc: 2, underline: 2, upline: 20)
+            switch Int.random(in:1...2){
+            case 1:
+                mondai.text="x²+\(ransuu[1])x+\(ransuu[0])=0\nの2つの解をα,βとしたとき、α²+β²=?"
+                numberOfAnswer=[Float(ransuu[1]*ransuu[1]-2*ransuu[0])]
+            case 2:
+                mondai.text="x²+\(ransuu[1])x+\(ransuu[0])=0\nの2つの解をα,βとしたとき、α³+β³=?"
+                let mochimochizunda=ransuu[1]*ransuu[1]-3*ransuu[0]
+                numberOfAnswer=[Float(ransuu[1]*mochimochizunda)]
+            default:break
+            }
         case 29:
             //累乗
             let basic=Int.random(in:1..<7)
@@ -314,33 +341,6 @@ class MondaiViewController: UIViewController {
             mondai.text="[\(ransuu[0]),\(ransuu[1]),\(ransuu[2]),\(ransuu[3]),\(ransuu[4])]\nの中央値は？"
             ransuu.sort()
             numberOfAnswer=[Float(ransuu[2])]
-        case 206://n進数→10進数
-            let shinsuu=Int.random(in:2..<10)
-            var numbering=Int.random(in: 30..<100)
-            numberOfAnswer=[Float(numbering)]
-            mondai.text="次の数を10進数に直せ\n"
-            var shisuugenkai=1
-            while numbering > ruijou(kisuu: shinsuu, shisuu: shisuugenkai){
-                shisuugenkai+=1
-            }
-            for i in 1...shisuugenkai{
-                let wunde = ruijou(kisuu: shinsuu, shisuu: shisuugenkai-i)
-                mondai.text=mondai.text!+String(numbering/wunde)
-                numbering = numbering % wunde
-            }
-            mondai.text=mondai.text!+" (\(shinsuu))"
-        case 207://解と係数の関係(2次)
-            randomNumber(abc: 2, underline: 2, upline: 20)
-            switch Int.random(in:1...2){
-            case 1:
-                mondai.text="x²+\(ransuu[1])x+\(ransuu[0])\nの2つの解をα,βとしたとき、α²+β²=?"
-                numberOfAnswer=[Float(ransuu[1]*ransuu[1]-2*ransuu[0])]
-            case 2:
-                mondai.text="x²+\(ransuu[1])x+\(ransuu[0])\nの2つの解をα,βとしたとき、α³+β³=?"
-                let mochimochizunda=ransuu[1]*ransuu[1]-3*ransuu[0]
-                numberOfAnswer=[Float(ransuu[1]*mochimochizunda)]
-            default:break
-            }
         default:break
         }
     }
