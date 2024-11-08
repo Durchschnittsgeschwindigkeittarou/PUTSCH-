@@ -19,7 +19,7 @@ class universityViewController: UIViewController{
         case "toSekibun":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValue = 31
+                next?.outputValue = 17
         case "toRenritsu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
