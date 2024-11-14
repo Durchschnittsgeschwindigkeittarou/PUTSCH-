@@ -7,13 +7,12 @@
 
 import UIKit
 import SwiftUI
+import simd
 
 class MondaiViewController: UIViewController {
     @IBOutlet var mondai:UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet var nanmonme: UILabel!
-    var nijoubig:Int!
-    var nijousmall:Int!
     var ransuu = [Int]()
     var ransuuSecond=[Int]()
     
@@ -34,7 +33,7 @@ class MondaiViewController: UIViewController {
     var outputValue:Int?
     public var seikaiCount:Int = 0
     let delaySecond=1.5
-    let allmondai=3 //デバッグするたびに10問も答えてられるか！
+    let allmondai=5 //デバッグするたびに10問も答えてられるか！
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +61,7 @@ class MondaiViewController: UIViewController {
             //[0]足される数、[1]足す数
             mondai.text=String(ransuu[0])+"+"+String(ransuu[1])
             numberOfAnswer+=[Float(ransuu[0]+ransuu[1])]
-        case 02:
+        case 702:
             //引き算
             randomNumber(abc: 2, underline: 1, upline: 500)
             //[0]引かれる数、[1]引く数
@@ -264,7 +263,7 @@ class MondaiViewController: UIViewController {
             default:break;
             }
         case 16:
-            shutudai(choise: Int.random(in: 21...24))
+            shutudai(choise: Int.random(in: 12...15))
         case 17: //積分
             randomNumber(abc: 3, underline: 2, upline: 10)
             let vorn=Int.random(in:1..<6)
@@ -345,6 +344,23 @@ class MondaiViewController: UIViewController {
                 mondai.text="x²+\(ransuu[1])x+\(ransuu[0])\nの2つの解をα,βとしたとき、α³+β³=?"
                 let mochimochizunda=ransuu[1]*ransuu[1]-3*ransuu[0]
                 numberOfAnswer=[Float(ransuu[1]*mochimochizunda)]
+            default:break
+            }
+        case 208://無限小数から分数への変換
+            let shousuubu = Int.random(in: 1..<33)
+            mondai.text="0."+String(format: "%02d",3*shousuubu)+String(format: "%02d",3*shousuubu)+"...=?(分子→分母)"
+            let kyoutuuinsuu=gcd(shousuubu, 33)
+            numberOfAnswer=[Float(shousuubu/kyoutuuinsuu),Float(33/kyoutuuinsuu)]
+        case 2://行列(仮)
+            switch Int.random(in: 1...1){
+            case 1:
+                randomNumber(abc: 4, underline: 0, upline: 5)
+                randomNumberSecond(abc: 4, underline: 0, upline: 5)
+                mondai.text="|\(ransuu[0]) \(ransuu[1])|  |\(ransuuSecond[0]) \(ransuuSecond[1])|\n|\(ransuu[2]) \(ransuu[3])|  |\(ransuuSecond[2]) \(ransuuSecond[3])|"
+                numberOfAnswer=[Float(ransuu[0]*ransuuSecond[0]+ransuu[1]*ransuuSecond[2]),Float(ransuu[0]*ransuuSecond[1]+ransuu[1]*ransuuSecond[3]),Float(ransuu[2]*ransuuSecond[0]+ransuu[3]*ransuuSecond[2]),Float(ransuu[2]*ransuuSecond[1]+ransuu[3]*ransuuSecond[3])]
+            case 2:
+                randomNumber(abc: 4, underline: -5, upline: 10)
+                randomNumberSecond(abc: 4, underline: 1, upline: 10)
             default:break
             }
         default:break
@@ -469,10 +485,14 @@ class MondaiViewController: UIViewController {
             shosuHantei=true
             operation = sender.tag
         }else if sender.tag == 11 {
+            numberOnScreen = 0
+            operation = 0
             //(Delete)が押されたら全てを初期値に戻す
+            if label.text==""{
+                numberOfHold.removeLast()
+            }else{
                 label.text = ""
-                numberOnScreen = 0
-                operation = 0
+            }
         }
         else if sender.tag == 14 && answering==false {
             answering=true
@@ -509,8 +529,8 @@ class MondaiViewController: UIViewController {
                     resetAction()
                 }
             }else{//解答数未了
-                answering=false
                 label.text = ""
+                answering = false
                 numberOnScreen = 0
                 operation = 0
             }
