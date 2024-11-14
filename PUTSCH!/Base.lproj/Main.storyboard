@@ -497,44 +497,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FP-Vs-OTh">
-                                <rect key="frame" x="0.0" y="502" width="393" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="積分">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="cfr-eD-fRQ" kind="show" identifier="toSekibun" id="Iq2-I5-OXj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL6-9z-Qvq">
-                                <rect key="frame" x="0.0" y="568" width="393" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="n進数">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="cfr-eD-fRQ" kind="show" identifier="toShinsu" id="FEi-1J-48f"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="42t-KH-65Q">
+                                <rect key="frame" x="86.333333333333329" y="479" width="220.66666666666669" height="305"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FP-Vs-OTh">
+                                        <rect key="frame" x="0.0" y="0.0" width="220.66666666666666" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="積分">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="cfr-eD-fRQ" kind="show" identifier="toSekibun" id="Iq2-I5-OXj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL6-9z-Qvq">
+                                        <rect key="frame" x="0.0" y="85" width="220.66666666666666" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="n進数">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="cfr-eD-fRQ" kind="show" identifier="toShinsu" id="FEi-1J-48f"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TI1-bD-Goa">
+                                        <rect key="frame" x="0.0" y="170" width="220.66666666666666" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="解と係数の関係">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="cfr-eD-fRQ" kind="show" identifier="toKankei" id="lMg-1Z-ar7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u87-Mt-gnD">
+                                        <rect key="frame" x="0.0" y="255" width="220.66666666666666" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="行列">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="cfr-eD-fRQ" kind="show" identifier="toGyouretsu" id="dVQ-Il-Qph"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24o-p4-wsC">
-                                <rect key="frame" x="137.66666666666666" y="153" width="118" height="74"/>
+                                <rect key="frame" x="137.66666666666666" y="153" width="117.66666666666666" height="74"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="大学">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
                                 </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TI1-bD-Goa">
-                                <rect key="frame" x="0.0" y="629" width="393" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="解と係数の関係">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                </buttonConfiguration>
                                 <connections>
-                                    <segue destination="cfr-eD-fRQ" kind="show" identifier="toKankei" id="lMg-1Z-ar7"/>
+                                    <segue destination="cfr-eD-fRQ" kind="show" identifier="toUniversity" id="xCm-dO-I0H"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -542,7 +557,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="24o-p4-wsC" firstAttribute="top" secondItem="gbw-H9-Gpn" secondAttribute="top" constant="50" id="Izk-EH-T9z"/>
+                            <constraint firstItem="42t-KH-65Q" firstAttribute="centerX" secondItem="qkM-A7-x5G" secondAttribute="centerX" id="PBN-Qv-N7u"/>
                             <constraint firstItem="24o-p4-wsC" firstAttribute="centerX" secondItem="qkM-A7-x5G" secondAttribute="centerX" id="XFF-uH-Xht"/>
+                            <constraint firstItem="gbw-H9-Gpn" firstAttribute="bottom" secondItem="42t-KH-65Q" secondAttribute="bottom" constant="34" id="v8Q-Vy-5nm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R1d-ta-EbV">
@@ -811,7 +828,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lMg-1Z-ar7"/>
+        <segue reference="xCm-dO-I0H"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -28,14 +28,14 @@ class universityViewController: UIViewController{
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValue = 19
-        case "toNiji":
+        case "toGyouretsu":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
                 next?.outputValue = 20
-        case "toMiddle":
+        case "toUniversity":
             let next = segue.destination as? MondaiViewController
                         // 3. １で用意した遷移先の変数に値を渡す
-                next?.outputValue = 6
+                next?.outputValue = 21
         default:break;
         }
     }
