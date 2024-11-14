@@ -24,22 +24,28 @@ class resultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let leaderboard = UIApplication.shared.delegate as! AppDelegate
+        let resultsippai = allresult-resultseikai
+        let clearScore = clearTime+1000*resultsippai
         setStatusBarBackgroundColor(.tintColor)
         seikai.text = String(resultseikai)
-        sippai.text = String(allresult-resultseikai)
-        if clearTime<1800{
+        sippai.text = String(resultsippai)
+        if clearTime<600{
             ranking.text=String(format: "%01d", clearTime/60)+":"+String(format: "%02d", clearTime%60)
         }else{
             ranking.text="9:59"
         }
-        if leaderboard.firstPlace[field]>clearTime{
-            leaderboard.firstPlace[field] = clearTime
-        }else if leaderboard.secondPlace[field]>clearTime{
-            leaderboard.secondPlace[field] = clearTime
-        }else if leaderboard.thirdPlace[field]>clearTime{
-            leaderboard.thirdPlace[field] = clearTime
+        if leaderboard.firstPlace[field]>clearScore{
+            leaderboard.firstPlace[field] = clearScore
+        }else if leaderboard.secondPlace[field]>clearScore{
+            leaderboard.secondPlace[field] = clearScore
+        }else if leaderboard.thirdPlace[field]>clearScore{
+            leaderboard.thirdPlace[field] = clearScore
         }
-        record.text="これまでの記録\n1."+String(format: "%01d", leaderboard.firstPlace[field]/60)+":"+String(format: "%02d", leaderboard.firstPlace[field]%60)+"\n2."+String(format: "%01d", leaderboard.secondPlace[field]/60)+":"+String(format: "%02d", leaderboard.secondPlace[field]%60)+"\n3."+String(format: "%01d", leaderboard.thirdPlace[field]/60)+":"+String(format: "%02d", leaderboard.thirdPlace[field]%60)
+        //以下のstringの正解数のところにある自然数はallmondaiと同じ。
+        let eins="\((leaderboard.firstPlace[field]%1000)/60):"+String(format: "%02d", (leaderboard.firstPlace[field]%1000)%60)+"　正解数\(5-leaderboard.firstPlace[field]/1000)"
+        let zwei="\((leaderboard.secondPlace[field]%1000)/60):"+String(format: "%02d",(leaderboard.secondPlace[field]%1000)%60)+"　正解数\(5-leaderboard.secondPlace[field]/1000)"
+        let drei="\((leaderboard.thirdPlace[field]%1000)/60):"+String(format: "%02d",(leaderboard.thirdPlace[field]%1000)%60)+"　正解数\(5-leaderboard.thirdPlace[field]/1000)"
+        record.text="これまでの記録\n1."+eins+"\n2."+zwei+"\n3."+drei
     }
     
 
