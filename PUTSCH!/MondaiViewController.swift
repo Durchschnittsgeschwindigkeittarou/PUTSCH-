@@ -304,9 +304,9 @@ class MondaiViewController: UIViewController {
         case 20://行列(正式)
             switch Int.random(in: 1...1){
             case 1:
-                randomNumber(abc: 4, underline: 0, upline: 5)
+                randomNumber(abc: 4, underline: 0, upline: 6)
                 randomNumberSecond(abc: 4, underline: 0, upline: 5)
-                mondai.text="|\(ransuu[0]) \(ransuu[1])|  |\(ransuuSecond[0]) \(ransuuSecond[1])|\n|\(ransuu[2]) \(ransuu[3])|  |\(ransuuSecond[2]) \(ransuuSecond[3])|"
+                mondai.text="|\(ransuu[0]) \(ransuu[1])|  |\(ransuuSecond[0]) \(ransuuSecond[1])|\n|\(ransuu[2]) \(ransuu[3])|  |\(ransuuSecond[2]) \(ransuuSecond[3])|\n左上右上左下右下の順に答えてね"
                 numberOfAnswer=[Float(ransuu[0]*ransuuSecond[0]+ransuu[1]*ransuuSecond[2]),Float(ransuu[0]*ransuuSecond[1]+ransuu[1]*ransuuSecond[3]),Float(ransuu[2]*ransuuSecond[0]+ransuu[3]*ransuuSecond[2]),Float(ransuu[2]*ransuuSecond[1]+ransuu[3]*ransuuSecond[3])]
             case 2:
                 randomNumber(abc: 4, underline: -5, upline: 10)
