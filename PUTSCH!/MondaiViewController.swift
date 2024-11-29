@@ -241,8 +241,8 @@ class MondaiViewController: UIViewController {
             switch Int.random(in: 1...3){
             case 1:
                 //指数(+)
-                let OneShisuu=Int.random(in: 0..<20)
-                let TwoShisuu=Int.random(in: 0..<20)
+                let OneShisuu=Int.random(in: 0..<21)
+                let TwoShisuu=Int.random(in: 0..<21)
                 randomNumber(abc: 1, underline: 1, upline: 10)
                 mondai.text="\(ransuu[0])\(shisuu[OneShisuu])×\(ransuu[0])\(shisuu[TwoShisuu])の時の指数は？"
                 numberOfAnswer=[Float(OneShisuu+TwoShisuu)]
