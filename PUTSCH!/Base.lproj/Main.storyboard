@@ -446,7 +446,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wc-SH-w3O">
-                                <rect key="frame" x="277" y="194" width="70" height="80"/>
+                                <rect key="frame" x="277" y="194" width="100" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
@@ -487,7 +487,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="1524" y="17"/>
+            <point key="canvasLocation" x="1521.3740458015266" y="16.901408450704228"/>
         </scene>
         <!--University View Controller-->
         <scene sceneID="ncH-Pf-ylf">

@@ -10,9 +10,10 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-     var  firstPlace = [Int](repeating: 5600, count: 18)
-     var  secondPlace = [Int](repeating: 5600, count: 18)
-     var  thirdPlace = [Int](repeating: 5600, count: 18)
+     var  firstPlace = [Int](repeating: 5600, count: 22)
+     var  secondPlace = [Int](repeating: 5600, count: 22)
+     var  thirdPlace = [Int](repeating: 5600, count: 22)
+    var times:Int = 1
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

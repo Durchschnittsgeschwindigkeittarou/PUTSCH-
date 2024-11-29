@@ -7,7 +7,6 @@
 
 import UIKit
 import SwiftUI
-import simd
 
 class MondaiViewController: UIViewController {
     @IBOutlet var mondai:UILabel!
@@ -21,6 +20,8 @@ class MondaiViewController: UIViewController {
     private var questionNumber: Int = 0
     private var numberOfAnswer = [Float]()
     private var numberOfHold=[Float]()
+    private var failedText=[String]()
+    private var failedAnswer=[Float]()
     private var operation = 0
     private var shosuHantei = false
     private var shosuKurai:Int = 0
@@ -29,6 +30,7 @@ class MondaiViewController: UIViewController {
     private var enzankigoh:[String] = ["+","-","×","÷"]
     private var time:Int = 0
     private var timer:Timer = Timer()
+    let operate = UIApplication.shared.delegate as! AppDelegate
     
     var outputValue:Int?
     public var seikaiCount:Int = 0
@@ -61,7 +63,7 @@ class MondaiViewController: UIViewController {
             //[0]足される数、[1]足す数
             mondai.text=String(ransuu[0])+"+"+String(ransuu[1])
             numberOfAnswer+=[Float(ransuu[0]+ransuu[1])]
-        case 02:
+        case 902:
             //引き算
             randomNumber(abc: 2, underline: 1, upline: 500)
             //[0]引かれる数、[1]引く数
@@ -69,8 +71,8 @@ class MondaiViewController: UIViewController {
             numberOfAnswer=[Float(ransuu[1])]
         case 03:
             //掛け算(２乗の差)
-            let randombig=Int.random(in:1..<6)*10
-            let randomsmall=Int.random(in:1..<10)
+            let randombig=Int.random(in:1*operate.times..<6*operate.times)*10
+            let randomsmall=Int.random(in:1*operate.times..<10*operate.times)
             mondai.text=String(randombig+randomsmall)+"×"+String(randombig-randomsmall)
             numberOfAnswer=[Float((randombig+randomsmall)*(randombig-randomsmall))]
         case 04:
@@ -83,13 +85,15 @@ class MondaiViewController: UIViewController {
             //四則混合（５項）
             let kousuu = Int.random(in: 3..<6)
             randomNumber(abc: kousuu, underline: 1, upline: 15)
-            randomNumberSecond(abc: kousuu-1, underline: 0, upline: 4)
+            //randomNumberSecond(abc: kousuu-1, underline: 0, upline: 4)
+            while ransuuSecond.count<kousuu-1{
+                ransuuSecond+=[Int.random(in: 0...3)]
+            }
             for i in 0..<kousuu-1{
                 if ransuuSecond[i]==3{
                     ransuu[warizankenshou(enzankou: i)]=ransuu[warizankenshou(enzankou: i)]*ransuu[i+1]
                 }
             }
-            //mondai.text="\(ransuu[0])\(enzankigoh[ransuuSecond[0]])\(ransuu[1])\(enzankigoh[ransuuSecond[1]])\(ransuu[2])\(enzankigoh[ransuuSecond[2]])\(ransuu[3])\(enzankigoh[ransuuSecond[3]])\(ransuu[4])=?"
             mondai.text="\(ransuu[0])"
             for i in 0..<kousuu-1{
                 mondai.text=mondai.text!+"\(enzankigoh[ransuuSecond[i]])\(ransuu[i+1])"
@@ -97,10 +101,10 @@ class MondaiViewController: UIViewController {
             mondai.text=mondai.text!+"=?"
             kakewarikeisan()
             ransuu.removeAll(where: { (value) in // removeAllメソッドの引数whereにクロージャを指定することで、条件に一致する要素を削除する
-                value == 27
+                value == 4
             })
             ransuuSecond.removeAll(where: { (value) in
-                value == 27
+                value == 4
             })
             minuslize()
             numberOfAnswer = [Float(ransuu.reduce(0, +))]
@@ -189,7 +193,7 @@ class MondaiViewController: UIViewController {
         case 11:
             shutudai(choise: Int.random(in: 07...10))
         case 12:
-            let randombig=Int.random(in:3..<10)
+            let randombig=Int.random(in:3*operate.times..<10*operate.times)
             let randomsmall=Int.random(in:1..<randombig+1)
             switch Int.random(in: 1...2){
             case 1:
@@ -220,7 +224,7 @@ class MondaiViewController: UIViewController {
             default:break;
             }
         case 14:
-            let vorsitz=Int.random(in:2..<6)
+            let vorsitz=Int.random(in:2*operate.times..<6*operate.times)
             switch Int.random(in: 1...2){
             case 1:
                 //微分 2乗
@@ -266,7 +270,7 @@ class MondaiViewController: UIViewController {
             shutudai(choise: Int.random(in: 12...15))
         case 17: //積分
             randomNumber(abc: 3, underline: 2, upline: 10)
-            let vorn=Int.random(in:1..<6)
+            let vorn=Int.random(in:1*operate.times..<6*operate.times)
             let unten=Int.random(in:0..<vorn)
             mondai.text=shisuu[vorn]+"∫ "+String(ransuu[2])+"x²+"+String(ransuu[1])+"x+"+String(ransuu[0])+" dx\n"+shisuu[unten]+" 　　　　　x=?\n（分子→分母の順に入力）"
             sekibunjunbi()
@@ -276,7 +280,7 @@ class MondaiViewController: UIViewController {
             numberOfAnswer=[Float(bunshi/yakubun),Float(6/yakubun)]
         case 18://n進数→10進数
             let shinsuu=Int.random(in:2..<10)
-            var numbering=Int.random(in: 100..<1000)
+            var numbering=Int.random(in: 100*operate.times..<1000*operate.times)
             numberOfAnswer=[Float(numbering)]
             mondai.text="次の数を10進数に直せ\n"
             var shisuugenkai=1
@@ -293,24 +297,31 @@ class MondaiViewController: UIViewController {
             randomNumber(abc: 2, underline: 2, upline: 20)
             switch Int.random(in:1...2){
             case 1:
-                mondai.text="x²+\(ransuu[1])x+\(ransuu[0])=0\nの2つの解をα,βとしたとき、α²+β²=?"
+                mondai.text="x²-\(ransuu[1])x+\(ransuu[0])=0\nの2つの解をα,βとしたとき、α²+β²=?"
                 numberOfAnswer=[Float(ransuu[1]*ransuu[1]-2*ransuu[0])]
             case 2:
-                mondai.text="x²+\(ransuu[1])x+\(ransuu[0])=0\nの2つの解をα,βとしたとき、α³+β³=?"
+                mondai.text="x²-\(ransuu[1])x+\(ransuu[0])=0\nの2つの解をα,βとしたとき、α³+β³=?"
                 let mochimochizunda=ransuu[1]*ransuu[1]-3*ransuu[0]
                 numberOfAnswer=[Float(ransuu[1]*mochimochizunda)]
             default:break
             }
         case 20://行列(正式)
-            switch Int.random(in: 1...1){
-            case 1:
+            switch Int.random(in: 1...3){
+            case 1://4*4
                 randomNumber(abc: 4, underline: 0, upline: 5)
                 randomNumberSecond(abc: 4, underline: 0, upline: 5)
-                mondai.text="|\(ransuu[0]) \(ransuu[1])|  |\(ransuuSecond[0]) \(ransuuSecond[1])|\n|\(ransuu[2]) \(ransuu[3])|  |\(ransuuSecond[2]) \(ransuuSecond[3])|"
+                mondai.text="|\(ransuu[0]) \(ransuu[1])| × |\(ransuuSecond[0]) \(ransuuSecond[1])|\n|\(ransuu[2]) \(ransuu[3])|      |\(ransuuSecond[2]) \(ransuuSecond[3])|"
                 numberOfAnswer=[Float(ransuu[0]*ransuuSecond[0]+ransuu[1]*ransuuSecond[2]),Float(ransuu[0]*ransuuSecond[1]+ransuu[1]*ransuuSecond[3]),Float(ransuu[2]*ransuuSecond[0]+ransuu[3]*ransuuSecond[2]),Float(ransuu[2]*ransuuSecond[1]+ransuu[3]*ransuuSecond[3])]
-            case 2:
-                randomNumber(abc: 4, underline: -5, upline: 10)
-                randomNumberSecond(abc: 4, underline: 1, upline: 10)
+            case 2://4*2
+                randomNumber(abc: 4, underline: 0, upline: 10)
+                randomNumberSecond(abc: 2, underline: 0, upline: 10)
+                mondai.text="|\(ransuu[0]) \(ransuu[1])| × |\(ransuuSecond[0]) |\n|\(ransuu[2]) \(ransuu[3])|　|\(ransuuSecond[1])|"
+                numberOfAnswer=[Float(ransuu[0]*ransuuSecond[0]+ransuu[1]*ransuuSecond[1]),Float(ransuu[2]*ransuuSecond[0]+ransuu[3]*ransuuSecond[1])]
+            case 3://2*4
+                randomNumber(abc: 2, underline: 0, upline: 10)
+                randomNumberSecond(abc: 4, underline: 0, upline: 10)
+                mondai.text="|\(ransuu[0]) \(ransuu[1])| × |\(ransuuSecond[0]) \(ransuuSecond[1])|\n         |\(ransuuSecond[2]) \(ransuuSecond[3])|"
+                numberOfAnswer=[Float(ransuu[0]*ransuuSecond[0]+ransuu[1]*ransuuSecond[2]),Float(ransuu[0]*ransuuSecond[1]+ransuu[1]*ransuuSecond[3])]
             default:break
             }
         case 21:
@@ -344,7 +355,7 @@ class MondaiViewController: UIViewController {
             let timing=Int.random(in:60..<600)
             mondai.text=String(timing)+"秒 (作成中。表示されている秒数そのまま入力して)"
             numberOfAnswer=[Float(timing)]
-        case 101:
+        case 101://おそらく微分か
             randomNumber(abc: 3, underline: 2, upline: 10)
             let schale=Int.random(in:2..<6)
             mondai.text=String(ransuu[2])+"x^2+"+String(ransuu[1])+"x+"+String(ransuu[0])+"\nx="+String(schale)
@@ -360,38 +371,28 @@ class MondaiViewController: UIViewController {
             mondai.text="[\(ransuu[0]),\(ransuu[1]),\(ransuu[2]),\(ransuu[3]),\(ransuu[4])]\nの中央値は？"
             ransuu.sort()
             numberOfAnswer=[Float(ransuu[2])]
-        case 206://n進数→10進数
-            let shinsuu=Int.random(in:2..<10)
-            var numbering=Int.random(in: 30..<100)
-            numberOfAnswer=[Float(numbering)]
-            mondai.text="次の数を10進数に直せ\n"
-            var shisuugenkai=1
-            while numbering > ruijou(kisuu: shinsuu, shisuu: shisuugenkai){
-                shisuugenkai+=1
-            }
-            for i in 1...shisuugenkai{
-                let wunde = ruijou(kisuu: shinsuu, shisuu: shisuugenkai-i)
-                mondai.text=mondai.text!+String(numbering/wunde)
-                numbering = numbering % wunde
-            }
-            mondai.text=mondai.text!+" (\(shinsuu))"
-        case 207://解と係数の関係(2次)
-            randomNumber(abc: 2, underline: 2, upline: 20)
-            switch Int.random(in:1...2){
-            case 1:
-                mondai.text="x²+\(ransuu[1])x+\(ransuu[0])\nの2つの解をα,βとしたとき、α²+β²=?"
-                numberOfAnswer=[Float(ransuu[1]*ransuu[1]-2*ransuu[0])]
-            case 2:
-                mondai.text="x²+\(ransuu[1])x+\(ransuu[0])\nの2つの解をα,βとしたとき、α³+β³=?"
-                let mochimochizunda=ransuu[1]*ransuu[1]-3*ransuu[0]
-                numberOfAnswer=[Float(ransuu[1]*mochimochizunda)]
-            default:break
-            }
+       
         case 208://無限小数から分数への変換
             let shousuubu = Int.random(in: 1..<33)
             mondai.text="0."+String(format: "%02d",3*shousuubu)+String(format: "%02d",3*shousuubu)+"...=?(分子→分母)"
             let kyoutuuinsuu=gcd(shousuubu, 33)
             numberOfAnswer=[Float(shousuubu/kyoutuuinsuu),Float(33/kyoutuuinsuu)]
+        case 2://楕円
+            randomNumber(abc: 2, underline: 1, upline: 10)
+            mondai.text="x²/\(ransuu[0]*ransuu[0])+y²\(ransuu[1]*ransuu[1])=1で表される楕円について、\n"
+            ransuu.sort()
+            switch Int.random(in:1...3){
+            case 1:
+                mondai.text=mondai.text!+"長軸の長さを求めよ"
+                numberOfAnswer=[Float(2*ransuu[0])]
+            case 2:
+                mondai.text=mondai.text!+"短軸の長さを求めよ"
+                numberOfAnswer=[Float(2*ransuu[1])]
+            case 3:
+                mondai.text=mondai.text!+"焦点と原点の距離の2乗を求めよ"
+                numberOfAnswer=[Float(ransuu[1]*ransuu[1]+ransuu[0]*ransuu[0])]
+            default:break
+            }
         default:break
         }
     }
@@ -402,7 +403,7 @@ class MondaiViewController: UIViewController {
         }
         return kisuu*ruijou(kisuu:kisuu,shisuu:shisuu-1)
     }
-    /// 最大公約数 GCD(greatest common divisor)
+    /// 最大公約数 GCD(greatest common divisor)　　　よく考えたら使ってない
     func gcd(_ a : Int, _ b : Int) -> Int {
         var a = a
         var b = b
@@ -417,12 +418,12 @@ class MondaiViewController: UIViewController {
     }
     func randomNumber(abc:Int,underline:Int,upline:Int){
         for i in 0..<abc {
-            ransuu.insert(Int.random(in:underline..<upline),at: i)
+            ransuu.insert(Int.random(in:underline*operate.times..<upline*operate.times),at: i)
         }
     }
     func randomNumberSecond(abc:Int,underline:Int,upline:Int){
         for i in 0..<abc {
-            ransuuSecond.insert(Int.random(in:underline..<upline),at: i)
+            ransuuSecond.insert(Int.random(in:underline*operate.times..<upline*operate.times),at: i)
         }
     }
     func bibunjunbi(){
@@ -470,9 +471,9 @@ class MondaiViewController: UIViewController {
             }
             if ransuuSecond[i] == 2 || ransuuSecond[i] == 3{
                 ransuu.remove(at:i+1)
-                ransuu.insert(27, at: 0)
+                ransuu.insert(4, at: 0)
                 ransuuSecond.remove(at:i)
-                ransuuSecond.insert(27, at: 0)
+                ransuuSecond.insert(4, at: 0)
             }
         }
     }
@@ -533,6 +534,14 @@ class MondaiViewController: UIViewController {
                 numberOnScreen = Float(-numberOnScreen)
             default:break
             }
+            if numberOnScreen == 6.2831853071 {
+                operate.times=operate.times*2
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            if numberOnScreen == 1.5707963267 {
+                operate.times=1
+                self.navigationController?.popToRootViewController(animated: true)
+            }
             numberOfHold+=[numberOnScreen]
             //プレイヤーの解答入力数と模範解答数を比較
             if numberOfHold.count == numberOfAnswer.count{//全部解答
@@ -551,6 +560,9 @@ class MondaiViewController: UIViewController {
                     resetAction()
                 }else{
                     //不正解だと
+                    failedText+=[mondai.text!]
+                    failedAnswer+=numberOfAnswer
+                    failedAnswer+=[0.91]//なんか答えにならなさそうな数字入れる
                     mondai.text="残念"
                     //mondai.text="残念\(numberOfAnswer[0])"
                     //デバッグ時にこれにしとくと便利やもしれん
