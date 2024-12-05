@@ -63,7 +63,7 @@ class MondaiViewController: UIViewController {
             //[0]足される数、[1]足す数
             mondai.text=String(ransuu[0])+"+"+String(ransuu[1])
             numberOfAnswer+=[Float(ransuu[0]+ransuu[1])]
-        case 902:
+        case 02:
             //引き算
             randomNumber(abc: 2, underline: 1, upline: 500)
             //[0]引かれる数、[1]引く数
@@ -245,8 +245,8 @@ class MondaiViewController: UIViewController {
             switch Int.random(in: 1...3){
             case 1:
                 //指数(+)
-                let OneShisuu=Int.random(in: 0..<20)
-                let TwoShisuu=Int.random(in: 0..<20)
+                let OneShisuu=Int.random(in: 0..<21)
+                let TwoShisuu=Int.random(in: 0..<21)
                 randomNumber(abc: 1, underline: 1, upline: 10)
                 mondai.text="\(ransuu[0])\(shisuu[OneShisuu])×\(ransuu[0])\(shisuu[TwoShisuu])の時の指数は？"
                 numberOfAnswer=[Float(OneShisuu+TwoShisuu)]
@@ -310,7 +310,7 @@ class MondaiViewController: UIViewController {
             case 1://4*4
                 randomNumber(abc: 4, underline: 0, upline: 5)
                 randomNumberSecond(abc: 4, underline: 0, upline: 5)
-                mondai.text="|\(ransuu[0]) \(ransuu[1])| × |\(ransuuSecond[0]) \(ransuuSecond[1])|\n|\(ransuu[2]) \(ransuu[3])|      |\(ransuuSecond[2]) \(ransuuSecond[3])|"
+                mondai.text="|\(ransuu[0]) \(ransuu[1])|  |\(ransuuSecond[0]) \(ransuuSecond[1])|\n|\(ransuu[2]) \(ransuu[3])|  |\(ransuuSecond[2]) \(ransuuSecond[3])|\n左上右上左下右下の順に答えてね"
                 numberOfAnswer=[Float(ransuu[0]*ransuuSecond[0]+ransuu[1]*ransuuSecond[2]),Float(ransuu[0]*ransuuSecond[1]+ransuu[1]*ransuuSecond[3]),Float(ransuu[2]*ransuuSecond[0]+ransuu[3]*ransuuSecond[2]),Float(ransuu[2]*ransuuSecond[1]+ransuu[3]*ransuuSecond[3])]
             case 2://4*2
                 randomNumber(abc: 4, underline: 0, upline: 10)
