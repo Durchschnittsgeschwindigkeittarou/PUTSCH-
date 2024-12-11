@@ -28,6 +28,7 @@ class MondaiViewController: UIViewController {
     private var shisuu:[String]=["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹","¹⁰","¹¹","¹²","¹³","¹⁴","¹⁵","¹⁶","¹⁷","¹⁸","¹⁹","²⁰"]
     private var shita:[String]=["₀","₁","₂","₃","₄","₅","₆","₇","₈","₉","₁₀","₁₁","₁₂","₁₃","₁₄","₁₅","₁₆","₁₇","₁₈","₁₉","₂₀"]
     private var enzankigoh:[String] = ["+","-","×","÷"]
+    private var shinsuusuuji:[String] = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]
     private var time:Int = 0
     private var timer:Timer = Timer()
     let operate = UIApplication.shared.delegate as! AppDelegate
@@ -279,7 +280,14 @@ class MondaiViewController: UIViewController {
             let yakubun=gcd(bunshi, 6)
             numberOfAnswer=[Float(bunshi/yakubun),Float(6/yakubun)]
         case 18://n進数→10進数
-            let shinsuu=Int.random(in:2..<10)
+            var shinsuu:Int = 0
+            switch Int.random(in: 1...2){
+            case 1:
+                shinsuu=Int.random(in:2..<10)
+            case 2:
+                shinsuu=Int.random(in:11..<17)
+            default:break;
+            }
             var numbering=Int.random(in: 100*operate.times..<1000*operate.times)
             numberOfAnswer=[Float(numbering)]
             mondai.text="次の数を10進数に直せ\n"
@@ -289,7 +297,8 @@ class MondaiViewController: UIViewController {
             }
             for i in 1...shisuugenkai{
                 let wunde = ruijou(kisuu: shinsuu, shisuu: shisuugenkai-i)
-                mondai.text=mondai.text!+String(numbering/wunde)
+                //mondai.text=mondai.text!+String(numbering/wunde)
+                mondai.text=mondai.text!+shinsuusuuji[numbering/wunde]
                 numbering = numbering % wunde
             }
             mondai.text=mondai.text!+" (\(shinsuu))"
@@ -377,7 +386,7 @@ class MondaiViewController: UIViewController {
             mondai.text="0."+String(format: "%02d",3*shousuubu)+String(format: "%02d",3*shousuubu)+"...=?(分子→分母)"
             let kyoutuuinsuu=gcd(shousuubu, 33)
             numberOfAnswer=[Float(shousuubu/kyoutuuinsuu),Float(33/kyoutuuinsuu)]
-        case 2://楕円
+        case 209://楕円
             randomNumber(abc: 2, underline: 1, upline: 10)
             mondai.text="x²/\(ransuu[0]*ransuu[0])+y²\(ransuu[1]*ransuu[1])=1で表される楕円について、\n"
             ransuu.sort()
